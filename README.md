@@ -8,18 +8,18 @@
 - wk1: Hello React
 - wk2: GIT / Github / Npm / Yarn
 - wk3: React Components
-- wk4: SPA & Router
-- wk5: Material UI
-- wk6: UX Design
-- wk7: 放假
-- wk8: Dynamic Web & Hook States
-- wk9: 期中專題展演
-- wk10: Conditional Render / List / Form
-- wk11: Service Design
-- wk12: NEXTJS
-- wk13: CommerceJS
-- wk14: PWA
-- wk15: Service Design
-- wk16: PWA / Firebase
-- wk17: Firebase
-- wk18: 期末專題展演
+- wk4: UI Design
+- wk5: Ant Design
+- wk6: SPA & Router
+- wk7: Women and Children's Day
+- wk8: UX Design
+- wk9: Midterm Project Demo
+- wk10: Dynamic Web / Hook States
+- wk11: Conditional Render / List / Form
+- wk12: Animations
+- wk13: Service Design
+- wk14: Firebase
+- wk15: NEXTJS
+- wk16: PWA
+- wk17: Final Recap
+- wk18: Final Project Demo
