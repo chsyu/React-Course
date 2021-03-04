@@ -8,7 +8,7 @@ function Home() {
             <div className="row">
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/4ae68c/globalassets/product-pictures/by-on/40697-01-02.jpg?quality=80&format=webp&width=740"
                                 alt="Pom Pom cushion 45x45 cm" />
@@ -24,7 +24,7 @@ function Home() {
                                 a pure dream for those who love soft and cosy styles of decor. This wonderful cushion.
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@ function Home() {
                 </section>
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/490535/globalassets/product-pictures/house-doctor/23723-01-02.jpg?quality=80&format=webp&width=740"
                                 alt="Rustic mug" />
@@ -56,7 +56,7 @@ function Home() {
                             <p className="text-white opacity-3 mb-3">The beautiful Rustic mug from House Doctor is made of ceramics and has an appealing glaze in grey and blue that contributes to a rustic.
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ function Home() {
                 </section>
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/4af2b7/globalassets/product-pictures/dbkd/42551-01-03.jpg?quality=80&format=webp&width=740"
                                 alt="Triplets easter rabbit 3-pack" />
@@ -88,7 +88,7 @@ function Home() {
                             <p className="text-white opacity-3 mb-3">Cas plays modern with rustic wood, framing the rich color and defined grain of natural oak veneer in dark grey high-gloss lacquer.
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ function Home() {
                 </section>
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/4ae4ed/globalassets/product-pictures/vita/p_22134-01-02.jpg?quality=80&format=webp&width=740"
                                 alt="Silvia lamp white" />
@@ -120,7 +120,7 @@ function Home() {
                             <p className="text-white opacity-3 mb-3">Renew your home with the trendy Silvia lamp in white designed by the Danish brand Umage / Vita. Silvia is a lampshade made of polypropylene.
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ function Home() {
                 </section>
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/4b01ac/globalassets/product-pictures/fritz-hansen/37338-02-02.jpg?quality=80&format=webp&width=740"
                                 alt="High Dot stool leather" />
@@ -152,7 +152,7 @@ function Home() {
                             <p className="text-white opacity-3 mb-3">The High Dot stool leather from Fritz Hansen is a stable little seat made from premium leather and three legs of quality steel.
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -169,7 +169,7 @@ function Home() {
                 </section>                
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
                     <div className="border border-secondary border-1 rounded overflow-hidden">
-                        <a href="#">
+                        <a href="/">
                             <img className="w-100"
                                 src="https://www.nordicnest.com/4ae6b2/globalassets/product-pictures/satake/33932-01-02.jpg?quality=80&format=webp&width=740"
                                 alt="Satake Kuro chopper" />
@@ -184,7 +184,7 @@ function Home() {
                             <p className="text-white opacity-3 mb-3">The Satake Kuro Chopper is a handmade and rough forged knife of exceptional quality. It has been developed with a focus on sharpness, precision .
                             </p>
                             <div className="d-flex justify-content-between flex-wrap ">
-                                <a href="#" className="text-decoration-none text-color-1">
+                                <a href="/" className="text-decoration-none text-color-1">
                                     See More
                                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round"
                                         strokeLinejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
