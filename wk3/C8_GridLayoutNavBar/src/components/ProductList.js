@@ -3,7 +3,7 @@ import products from "../json/products.json";
 
 export default function ProductList() {
   return (
-    <div className="main row products">
+    <div className="row products main">
       {products.map(product => (
         <ProductItem key={product.id} product={product} />
       ))}

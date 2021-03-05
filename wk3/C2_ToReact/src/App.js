@@ -11,7 +11,7 @@ function App() {
                 </h2>
 
                 <p
-                    className="text-light opacity-3 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-400 text-opacity-80">
+                    className="text-light opacity-3">
                     An example made by Create-React-App.
                 </p>
                 <div className="flex mt-6 justify-center">

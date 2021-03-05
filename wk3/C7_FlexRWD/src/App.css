@@ -4,17 +4,9 @@
     "header"
     "main"
     "footer";
-  grid-template-rows: 13rem 1fr 6rem;
+  grid-template-rows: auto 1fr 6rem;
   grid-template-columns: 1fr;
   min-height: 100vh;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-1 {
-  opacity: 0.2;
 }
 
 .opacity-2 {
@@ -23,14 +15,6 @@
 
 .opacity-3 {
   opacity: 0.6;
-}
-
-.opacity-4 {
-  opacity: 0.8;
-}
-
-.opacity-5 {
-  opacity: 1;
 }
 
 .header {
@@ -75,7 +59,7 @@
 .hr-footer-line {
   margin: 25px auto 30px;
   padding: 0;
-  width: 300;
+  width: 300px;
   border: 0;
   border-top: solid 2px;
   border-color: #3e3f97;

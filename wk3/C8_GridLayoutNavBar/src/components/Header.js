@@ -1,10 +1,9 @@
 export default function Header() {
     return (
-        <header className="header text-center d-flex row flex-column">
-            <h2 className="text-white pt-5 pb-2">
+        <header className="text-center d-flex row header flex-column">
+            <h2 className="text-white header-title">
                 NORDIC NEST Shopping Cart
             </h2>
-
             <p
                 className="text-light opacity-3">
                 An example made by Create-React-App.

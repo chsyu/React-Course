@@ -6,9 +6,9 @@ function Home() {
   return (
     <div className="bg-color">
         <div className="container grid-container">
-            <Header className="header" />
-            <ProductList className="main products" />
-            <Footer className="footer" />
+            <Header />
+            <ProductList />
+            <Footer />
         </div>
     </div>
   );
