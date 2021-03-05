@@ -1,6 +1,6 @@
 export default function NavBar() {
     return (
-        <ul className="navBar navList list-unstyled">
+        <ul className="navBar bg-color list-unstyled">
             <li className="navItem">Tableware</li>
             <li className="navItem">Cookware</li>
             <li className="navItem">Home accessories</li>
