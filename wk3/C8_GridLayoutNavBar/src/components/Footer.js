@@ -1,11 +1,9 @@
 export default function Footer() {
     return (
-        <footer className="text-center d-flex row flex-column footer">
-            <div className="flex mt-6 justify-center">
-                <hr className="hr-footer-line rounded" />
-            </div>                
+        <footer className="text-center footer">
+            <hr className="hr-footer-line mt-6 rounded" />
             <p
-                className="text-light opacity-3 mx-auto">
+                className="text-light opacity-3">
                 Copyright.
             </p>
         </footer>           
