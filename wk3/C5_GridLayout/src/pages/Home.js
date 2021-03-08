@@ -4,10 +4,12 @@ import ProductList from "../components/ProductList";
 
 function Home() {
   return (
-    <div className="container grid-container">
-        <Header />
-        <ProductList />
-        <Footer />
+    <div className="bg-color">
+        <div className="container grid-container">
+            <Header />
+            <ProductList />
+            <Footer />
+        </div>
     </div>
   );
 }
