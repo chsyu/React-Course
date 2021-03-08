@@ -2,8 +2,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 function Home() {
   return (
-    <div className="bg-color">
-        <div className="container">
+    <div className="container">
             <Header />
             <div className="row">
                 <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
@@ -202,7 +201,6 @@ function Home() {
             </div>
             <Footer />
         </div>
-    </div>
   );
 }
 
