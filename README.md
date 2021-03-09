@@ -7,7 +7,7 @@
 ## 教學進度
 - wk1: Hello React
 - wk2: GIT / Github / Npm / Yarn
-- wk3: React Components
+- wk3: React Components & Grid Layout
 - wk4: UI Design
 - wk5: Ant Design
 - wk6: SPA & Router
