@@ -1,3 +1,5 @@
+@import '~antd/lib/style/themes/default.less';
+
 /* RWD Container */
 .container {
     width: 100%;
@@ -103,6 +105,7 @@ body {
   border: 0;
   border-top: solid 6px;
   border-color: #6366F2;
+  border-radius: 50%;
   opacity: 1;
 }
 
@@ -146,7 +149,11 @@ body {
 .product-item-link {
   text-decoration: none;
   align-self: center;
-  color: #8183ff;
+  color: @cyan-4
+}
+
+.product-item-link:hover {
+  color: @lime-4
 }
 
 
