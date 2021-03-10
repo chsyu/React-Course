@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 /* RWD Container */
 .container {
     width: 100%;
