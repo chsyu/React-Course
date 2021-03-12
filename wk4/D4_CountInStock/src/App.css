@@ -130,6 +130,11 @@ body {
   opacity: 1;
 }
 
+.nav-item--active {
+  opacity: 1;
+}
+
+
 .hr-header-line {
   margin: 25px auto 30px;
   padding: 0;
