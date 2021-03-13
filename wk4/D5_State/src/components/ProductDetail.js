@@ -29,7 +29,7 @@ function ProductDetail({ product }) {
         <Col 
           lg={{ span: 12 }}
         >
-         <div className="product-info">
+         <div className="product-info--detail">
             <h2 className="product-category">
                {product.category}
             </h2>
