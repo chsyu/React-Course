@@ -9,9 +9,9 @@ const { Header, Content, Footer } = Layout;
 
 function Home() {
   return (
-    <Layout className="container">
+    <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader/>
+        <AppHeader title="NORDIC NEST Shopping Cart"/>
       </Header>
       <Content className="layout-content">
         <ProductList/>
