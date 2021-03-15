@@ -1,9 +1,13 @@
-export default function Header() {
+import { Link } from "react-router-dom"
+
+export default function Header({title}) {
    return (
       <div className="header">
-         <h1 className="header-title">
-            NORDIC NEST Shopping Cart
-         </h1>
+         <Link to="/">
+            <h1 className="header-title">
+               {title}
+            </h1>
+         </Link>
 
          <p
             className="header-slogan">

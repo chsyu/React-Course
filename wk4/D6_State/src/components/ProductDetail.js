@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Row, Col } from "antd";
 import { Select } from 'antd';
 import AddToCart from "./AddToCart"
@@ -7,13 +7,6 @@ const { Option } = Select;
 
 function ProductDetail({ product }) {
    const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
-   const handleChange = value => {
-      setQty(value);
-    };
-
-   useEffect(()=>{
-      console.log(`The selected qty = ${qty}`)
-   },[qty]);
 
    return (
       <Row gutter={[32, 32]}>
@@ -49,7 +42,7 @@ function ProductDetail({ product }) {
                   <Select 
                      defaultValue={qty} 
                      className="select-style"
-                     onChange={handleChange}
+                     onChange={val=>setQty(val)}
                   >
                      {[...Array(product.countInStock).keys()].map((x) => (
                         <Option key={x + 1} value={x + 1}>

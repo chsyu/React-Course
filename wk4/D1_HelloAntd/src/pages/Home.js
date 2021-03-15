@@ -6,11 +6,9 @@ import ProductList from "../components/ProductList";
 
 const { Header, Content, Footer } = Layout;
 
-
-
 function Home() {
   return (
-    <Layout className="container">
+    <Layout className="container main-layout">
       <Header className="layout-header">
         <AppHeader/>
       </Header>

@@ -3,18 +3,14 @@ import AddToCart from "./AddToCart"
 function ProductDetail({ product }) {
    return (
       <Row gutter={[32, 32]}>
-        <Col 
-          lg={{ span: 8, offset: 2 }}
-        >
+        <Col lg={{ span: 8, offset: 2 }}>
          <img
-            alt=""
+            alt={product.name}
             className="product-image"
             src={product.image}
          />           
         </Col>
-        <Col 
-          lg={{ span: 12 }}
-        >
+        <Col lg={{ span: 12 }} >
          <div className="product-info--detail">
             <h2 className="product-category">
                {product.category}
