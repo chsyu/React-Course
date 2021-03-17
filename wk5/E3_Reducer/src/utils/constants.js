@@ -1,0 +1,2 @@
+export const PAGE_CONTENT_SET = 'PAGE_CONTENT_SET';
+

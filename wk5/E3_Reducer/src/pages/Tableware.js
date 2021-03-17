@@ -1,21 +1,19 @@
-import { useContext } from "react"; 
 import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductList from "../components/ProductList";
-import products from "../json/products.json";
-import { StoreContext } from "../store"
+import tableware from "../json/tableware.json"
+
 const { Header, Content, Footer } = Layout;
 
-function Home() {
-  const { title } = useContext(StoreContext);
+function Tableware() {
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader title={title}/>
+        <AppHeader title="Tableware" />
       </Header>
       <Content className="layout-content">
-        <ProductList products={products}/>
+        <ProductList products={tableware} />
       </Content>
       <Footer className="layout-footer">
         <AppFooter/>  
@@ -24,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Tableware;

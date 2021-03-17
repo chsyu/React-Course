@@ -1,4 +1,3 @@
-import { createContext } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css';
 import Home from './pages/Home'
@@ -9,12 +8,11 @@ import HomeAccessories from './pages/HomeAccessories'
 import Lighting from './pages/Lighting'
 import Textile from './pages/Textile'
 import Furniture from './pages/Furniture'
-import products from "./json/products.json"
-export const StoreContext = createContext();  
+import { StoreProvider } from "./store";
 
 function App() {
   return (
-    <StoreContext.Provider value={{ products }}>
+    <StoreProvider>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,7 +25,7 @@ function App() {
           <Route path="/furniture" component={Furniture} />
         </Switch>
       </BrowserRouter>
-    </StoreContext.Provider>
+    </StoreProvider>
   );
 }
 

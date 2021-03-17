@@ -1,21 +1,19 @@
-import { useContext } from "react"; 
 import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductList from "../components/ProductList";
-import products from "../json/products.json";
-import { StoreContext } from "../store"
+import homeAccessories from "../json/home-accessories.json";
+
 const { Header, Content, Footer } = Layout;
 
-function Home() {
-  const { title } = useContext(StoreContext);
+function HomeAccessories() {
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader title={title}/>
+        <AppHeader title="Home Accessories" />
       </Header>
       <Content className="layout-content">
-        <ProductList products={products}/>
+        <ProductList products={homeAccessories} />
       </Content>
       <Footer className="layout-footer">
         <AppFooter/>  
@@ -24,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAccessories;

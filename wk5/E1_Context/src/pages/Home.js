@@ -4,7 +4,7 @@ import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
-import { StoreContext } from "../store"
+import { StoreContext } from "../App"
 const { Header, Content, Footer } = Layout;
 
 function Home() {
