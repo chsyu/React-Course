@@ -1,0 +1,3 @@
+export const PAGE_TITLE_SET = 'PAGE_TITLE_SET';
+export const PAGE_CONTENT_SET = 'PAGE_CONTENT_SET';
+export const NAVBAR_ITEM_SET = 'NAVBAR_ITEM_SET';
