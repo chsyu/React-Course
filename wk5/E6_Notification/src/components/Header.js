@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom"
-import { PAGE_TITLE_SET, PAGE_CONTENT_SET } from "../utils/constants"
+import { PAGE_TITLE_SET, PAGE_CONTENT_SET, NAVBAR_ITEM_SET } from "../utils/constants"
 import { StoreContext } from "../store"
 import NavBar from "./NavBar";
 import products from "../json/products.json"
@@ -16,6 +16,10 @@ export default function Header(props) {
       dispatch({ 
          type: PAGE_CONTENT_SET, 
          payload: products, 
+      });
+      dispatch({ 
+         type: NAVBAR_ITEM_SET, 
+         payload: "",
       });
       history.push("/");
    };
