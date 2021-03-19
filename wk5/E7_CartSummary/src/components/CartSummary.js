@@ -9,7 +9,7 @@ export default function CartSummary() {
   return (
     <>
       <nav onClick={toggleModal} className="header-cart-summary" >
-        <Badge count={5}>
+        <Badge count={5} style={{ color: 'white', backgroundColor: '#6366F2'}}>
           <CartIcon />
         </Badge> 
         <p className="cart-summary-text"> Shopping bag </p>         

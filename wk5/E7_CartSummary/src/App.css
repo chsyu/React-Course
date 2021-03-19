@@ -104,7 +104,7 @@ body {
   color: white;
   font-size: 0.8rem;
   opacity: 0.6;
-  margin-top: -4px
+  margin-top: -4px;
 }
 
 .header-text {
@@ -127,9 +127,20 @@ body {
   line-height: 0.8;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+
   .header-title {
     font-size: 1.3rem;
+  }
+
+  .header-cart-summary {
+    right: 2rem;
+    bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .cart-summary-text {
+    display: none;
   }
 } 
 

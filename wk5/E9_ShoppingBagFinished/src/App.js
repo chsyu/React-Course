@@ -11,12 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/tableware" component={Home} />
-          <Route path="/cookware" component={Home} />
-          <Route path="/home-accessories" component={Home} />
-          <Route path="/lighting" component={Home} />
-          <Route path="/textile" component={Home} />
-          <Route path="/furniture" component={Home} />
+          <Route exact path="/:pageName" component={Home} />
           <Route path="/product/:productId" component={Product} />
         </Switch>
       </BrowserRouter>
