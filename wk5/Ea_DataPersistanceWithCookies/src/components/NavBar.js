@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { Drawer } from "antd";
 import NavItem from "./NavItem";
+import HamMenu from "./HamMenu";
 
-export default function NavBar({ isOnTouch, setIsOnTouch }) {
+export default function NavBar() {
+    const [isOnTouch, setIsOnTouch] = useState(false);
     const handleCloseDrawer = () => setIsOnTouch(false);
     return (
-        <>
+        <div>
+            <HamMenu
+                onClick={() => setIsOnTouch(!isOnTouch)}
+                isOnTouch={isOnTouch}
+            />
             <div className="nav-bar collapse-mobile">
                 <NavItem to="/tableware" className="nav-item" activeClassName="nav-item--active">
                     Tableware
@@ -34,8 +41,8 @@ export default function NavBar({ isOnTouch, setIsOnTouch }) {
                 key={"left"}
                 width={400}
                 zIndex={99}
-                bodyStyle={{backgroundColor: "#111828"}}
-                headerStyle={{backgroundColor: "#111828", color: "#fff"}}
+                bodyStyle={{ backgroundColor: "#111828" }}
+                headerStyle={{ backgroundColor: "#111828", color: "#fff" }}
             >
                 <NavItem onClose={handleCloseDrawer} to="/tableware" className="nav-item" activeClassName="nav-item--active">
                     Tableware
@@ -54,8 +61,8 @@ export default function NavBar({ isOnTouch, setIsOnTouch }) {
                 </NavItem>
                 <NavItem onClose={handleCloseDrawer} to="/furniture" className="nav-item" activeClassName="nav-item--active">
                     Furniture
-                </NavItem>                    
+                </NavItem>
             </Drawer>
-        </>
+        </div>
     );
 }

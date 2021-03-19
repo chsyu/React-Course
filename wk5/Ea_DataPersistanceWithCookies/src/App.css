@@ -120,7 +120,7 @@ body {
 .header-cart-summary {
   position: absolute;
   bottom: -15px;
-  right: 0;
+  right: 1rem;
   cursor: pointer;
 }
 
@@ -137,11 +137,17 @@ body {
 
   .header-cart-summary {
     right: 1rem;
-    bottom: 1.4rem;
+    top: 3rem;
     font-size: 0.8rem;
   }
 
 } 
+
+@media (max-width: 576px) {
+  .header-cart-summary {
+    margin-right: 1rem;
+  }
+}
 
 /* Cart */
 .cart-summary-text {
@@ -302,15 +308,16 @@ body {
 /* Hamburger Menu */
 .ham-menu {
   display: inline-block;
-  position: absolute;
+  position: relative;
+  margin-left: -4rem;
   z-index: 999;
   background-color: #111828;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 2rem;
   opacity: 0.7;
-  left: 1rem;
-  top: 0rem;
+  left: 5rem;
+  top: 2.5rem;
   transition: all .25s linear;
 }
 
@@ -327,21 +334,22 @@ body {
 
 span.ham-menu-bar1 {
   display: inline-block;
-  position: relative;
+  position: absolute;
   background-color: #8183ff;
   width: 24px;
   height: 3px;
-  top: 16px;
-  transition: all .25s linear;
+  top: 0rem;
+  transition: all .05s linear;
   transform: rotate(-4deg);
 }
 
 span.ham-menu-bar2 {
   display: inline-block;
   background-color: #8183ff;
-  position: relative;
+  position: absolute;
   width: 24px;
   height: 3px;
+  top: 0.55rem;
   transition: all .25s linear;
   transform: rotate(2deg);
 }
@@ -349,17 +357,17 @@ span.ham-menu-bar2 {
 span.ham-menu-bar3 {
   display: inline-block;
   background-color: #8183ff;
-  position: relative;
+  position: absolute;
   width: 24px;
   height: 3px;
-  bottom: 16px;
+  top: 1.1rem;
   transition: all .25s linear;
   transform: rotate(-2deg);
 }
 
 span.ham-menu-bar1--touch {
   display: inline-block;
-  position: relative;
+  position: absolute;
   background-color: #8183ff;
   width: 30px;
   height: 3px;
@@ -371,10 +379,11 @@ span.ham-menu-bar1--touch {
 span.ham-menu-bar2--touch {
   display: inline-block;
   background-color: #8183ff;
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 3px;
   opacity: 1;
+  top: 0.6rem;
   transition: all .25s linear;
   transform: rotate(45deg);
 }
@@ -382,12 +391,11 @@ span.ham-menu-bar2--touch {
 span.ham-menu-bar3--touch {
   display: inline-block;
   background-color: #8183ff;
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 3px;
-  bottom: 25.5px;
+  top: 0.6rem;
   opacity: 1;
-  transform: rotate(-2deg);
   transition: all .25s linear;
   transform: rotate(-45deg);
 }
