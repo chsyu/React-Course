@@ -1,4 +1,6 @@
 import { createContext, useReducer } from "react";
+import Cookie from "js-cookie"
+
 import products from "../json/products.json"
 import {
    PAGE_TITLE_SET,
@@ -9,6 +11,8 @@ import {
 } from "../utils/constants"
 
 export const StoreContext = createContext();
+let cartItems = Cookie.getJSON("cartItems");
+if (!cartItems) cartItems = [];
 
 const initialState = {
    page: {
@@ -18,10 +22,8 @@ const initialState = {
    navBar: {
       activeItem: "",
    },
-   cartItems: [],
+   cartItems,
 };
-
-let cartItems = {};
 
 function reducer(state, action) {
    switch (action.type) {

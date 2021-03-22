@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
-import { 
+import { Link } from "react-router-dom";
+import {
    PAGE_TITLE_SET,
    PAGE_CONTENT_SET,
-   NAVBAR_ITEM_SET, 
+   NAVBAR_ITEM_SET,
 } from "../utils/constants"
 import { StoreContext } from "../store"
 
-import textile from "../json/tableware.json";
+import products from "../json/products.json";
+import textile from "../json/textile.json";
 import cookware from "../json/cookware.json";
 import furniture from "../json/furniture.json";
 import homeAccessories from "../json/home-accessories";
@@ -16,49 +17,52 @@ import tableware from "../json/tableware.json";
 
 export default function NavItem(props) {
    const { children, to, className, activeClassName } = props
-
    const { state, dispatch } = useContext(StoreContext);
-   const history = useHistory();
    const getJSON = url => {
       switch (url) {
          case "/textile":
-            return textile;      
+            return textile;
          case "/tableware":
-            return tableware;      
+            return tableware;
          case "/lighting":
-            return lighting;      
+            return lighting;
          case "/cookware":
-            return cookware;      
+            return cookware;
          case "/furniture":
-            return furniture;      
+            return furniture;
          case "/home-accessories":
-            return homeAccessories;      
+            return homeAccessories;
+         default:
+            return products;
       }
    }
-   
-   const onClick= () => {
-       dispatch({ 
-          type: PAGE_TITLE_SET, 
-          payload: children,
-       });
-       dispatch({ 
-         type: PAGE_CONTENT_SET, 
+
+   const onClick = () => {
+      console.log(children)
+      dispatch({
+         type: PAGE_TITLE_SET,
+         payload: children,
+      });
+      dispatch({
+         type: PAGE_CONTENT_SET,
          payload: getJSON(to),
       });
-      dispatch({ 
-         type: NAVBAR_ITEM_SET, 
+      dispatch({
+         type: NAVBAR_ITEM_SET,
          payload: to,
       });
-      history.push(to);
-    };
+   };
    return (
-      <p 
-         onClick={onClick} 
-         className={`
-         ${className} 
-         ${state.navBar.activeItem==to? activeClassName: ""}`}
-      >
-         {children}
-      </p>
+      <Link to={to}>
+         <div
+            onClick={onClick}
+            className={`
+            ${className} 
+            ${state.navBar.activeItem === to ? activeClassName : ""}`}
+         >
+            {children}
+         </div>
+      </Link>
+
    );
 }

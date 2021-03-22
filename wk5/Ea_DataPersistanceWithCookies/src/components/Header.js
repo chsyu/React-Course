@@ -41,7 +41,6 @@ export default function Header({ title }) {
          </div>
 
          <hr className="hr-header-line" />
-         <NavBar />
       </header>
    );
 }
