@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import products from "../json/products.json"
 
 export const StoreContext = createContext();  
 export function StoreProvider(props) {
@@ -8,4 +9,3 @@ export function StoreProvider(props) {
       </StoreContext.Provider>
    );
  }
- 
