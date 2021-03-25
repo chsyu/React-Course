@@ -1,9 +1,8 @@
 import { useEffect, useContext } from "react";
-
 import { Button, notification } from "antd"
 import { StoreContext } from "../store"
-import { cartItemAdd } from "../actions";
 import { CartIcon } from "./Icons";
+import { cartItemAdd } from "../actions";
 
 export default function AddToCart({ product, qty }) {
   const { state: { cartItems }, dispatch } = useContext(StoreContext);

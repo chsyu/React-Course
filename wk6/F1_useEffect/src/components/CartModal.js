@@ -2,7 +2,7 @@ import { Modal, Button, Select } from "antd";
 import { useContext } from "react";
 import { StoreContext } from "../store"
 import { CartIcon } from "./Icons";
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../utils/constants";
+import { ADD_CART_ITEM, REMOVE_CART_ITEM } from "../utils/constants";
 
 const { Option } = Select;
 
@@ -11,7 +11,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    const handleCancel = () => toggleModal(!isModalVisible);
    const addToCart = (product, qty) => {
       dispatch({
-         type: CART_ADD_ITEM,
+         type: ADD_CART_ITEM,
          payload: {
             id: product.id,
             name: product.name,
@@ -24,7 +24,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    };
 
    const removeFromCart = (productId) => {
-      dispatch({ type: CART_REMOVE_ITEM, payload: productId });
+      dispatch({ type: REMOVE_CART_ITEM, payload: productId });
    };
 
    const getTotalPrice = () => {
@@ -67,9 +67,9 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                   </div>
                   <div className="cart-item-end">
                      <div className="cart-price">
-                        ${item.price * item.qty}
+                        ${item.price * item.qty}    
                      </div>
-                     <div className="cart-item-delete" onClick={() => removeFromCart(item.id)}>
+                     <div className="cart-item-delete" onClick={()=>removeFromCart(item.id)}>
                         x
                      </div>
                   </div>
@@ -78,7 +78,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
             ))
          )}
          <div className="cart-total-price-wrap">
-            Total
+           Total
             <div className="cart-total-price">${getTotalPrice()}</div>
          </div>
          <Button

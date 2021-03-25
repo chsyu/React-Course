@@ -1,38 +1,42 @@
 import { useContext } from "react";
-import { useHistory } from "react-router-dom"
-import { PAGE_TITLE_SET, PAGE_CONTENT_SET, NAVBAR_ITEM_SET } from "../utils/constants"
+import { Link } from "react-router-dom"
+import { SET_PAGE_TITLE, SET_PAGE_CONTENT, SET_NAVBAR_ACTIVEITEM } from "../utils/constants"
 import { StoreContext } from "../store"
 import NavBar from "./NavBar";
-import products from "../json/products.json"
+import products from "../json/products.json";
 
-export default function Header(props) {
+export default function Header({title}) {
    const { dispatch } = useContext(StoreContext);
-   const history = useHistory();
    const onClickHeader = () => {
       dispatch({ 
-         type: PAGE_TITLE_SET, 
+         type: SET_PAGE_TITLE, 
          payload: "NORDIC NEST Shopping Cart" 
       });
       dispatch({ 
-         type: PAGE_CONTENT_SET, 
+         type: SET_PAGE_CONTENT, 
          payload: products, 
-      });
+      });    
       dispatch({ 
-         type: NAVBAR_ITEM_SET, 
-         payload: "",
-      });
-      history.push("/");
+         type: SET_NAVBAR_ACTIVEITEM, 
+         payload: "/",
+      }); 
    };
 
    return (
       <div className="header">
-         <h1 className="header-title" onClick={onClickHeader}>
-            {props.title}
-         </h1>
-         <p
-            className="header-slogan">
-            An example made by Create-React-App.
-         </p>
+         <div onClick={onClickHeader}>
+            <Link to="/">
+               <h1 className="header-title">
+                  {title}
+               </h1>
+            </Link>
+
+            <p
+               className="header-slogan">
+               An example made by Create-React-App.
+            </p>
+         </div>
+
          <hr className="hr-header-line" />
          <NavBar />
       </div>

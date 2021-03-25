@@ -4,7 +4,7 @@ import Cookie from "js-cookie"
 
 import { StoreContext } from "../store"
 import { CartIcon } from "./Icons";
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../utils/constants";
+import { ADD_CART_ITEM, REMOVE_CART_ITEM } from "../utils/constants";
 
 const { Option } = Select;
 
@@ -13,7 +13,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    const handleCancel = () => toggleModal(!isModalVisible);
    const addToCart = (product, qty) => {
       dispatch({
-         type: CART_ADD_ITEM,
+         type: ADD_CART_ITEM,
          payload: {
             id: product.id,
             name: product.name,
@@ -26,7 +26,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    };
 
    const removeFromCart = (productId) => {
-      dispatch({ type: CART_REMOVE_ITEM, payload: productId });
+      dispatch({ type: REMOVE_CART_ITEM, payload: productId });
    };
 
    const getTotalPrice = () => {

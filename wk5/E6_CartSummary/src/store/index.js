@@ -1,9 +1,9 @@
 import { createContext, useReducer } from "react";
 import products from "../json/products.json"
 import { 
-   PAGE_TITLE_SET,
-   PAGE_CONTENT_SET,
-   NAVBAR_ITEM_SET 
+   SET_PAGE_TITLE,
+   SET_PAGE_CONTENT,
+   SET_NAVBAR_ACTIVEITEM 
 } from "../utils/constants"
 
 export const StoreContext = createContext();
@@ -14,13 +14,14 @@ const initialState = {
       products,
    },
    navBar: {
-      activeItem: "",
+      activeItem: "/",
    }
 };
 
 function reducer(state, action) {
+   console.log(action)
    switch (action.type) {
-      case PAGE_TITLE_SET:
+      case SET_PAGE_TITLE:
          return {
             ...state,
             page: {
@@ -28,7 +29,7 @@ function reducer(state, action) {
                title: action.payload,
             },
          };
-      case PAGE_CONTENT_SET:
+      case SET_PAGE_CONTENT:
          return {
             ...state,
             page: {
@@ -36,13 +37,13 @@ function reducer(state, action) {
                products: action.payload,
             },
          };
-      case NAVBAR_ITEM_SET:
+      case SET_NAVBAR_ACTIVEITEM:
          return {
             ...state,
             navBar: {
                activeItem: action.payload
             }
-         }
+         };
       default:
          return state;
    }

@@ -1,11 +1,11 @@
 import { createContext, useReducer } from "react";
 import products from "../json/products.json"
 import {
-   PAGE_TITLE_SET,
-   PAGE_CONTENT_SET,
-   NAVBAR_ITEM_SET,
-   CART_ADD_ITEM,
-   CART_REMOVE_ITEM,
+   SET_PAGE_TITLE,
+   SET_PAGE_CONTENT,
+   SET_NAVBAR_ACTIVEITEM,
+   ADD_CART_ITEM,
+   REMOVE_CART_ITEM,
 } from "../utils/constants"
 
 export const StoreContext = createContext();
@@ -16,7 +16,7 @@ const initialState = {
       products,
    },
    navBar: {
-      activeItem: "",
+      activeItem: "/",
    },
    cartItems: [],
 };
@@ -25,7 +25,7 @@ let cartItems = {};
 
 function reducer(state, action) {
    switch (action.type) {
-      case PAGE_TITLE_SET:
+      case SET_PAGE_TITLE:
          return {
             ...state,
             page: {
@@ -33,7 +33,7 @@ function reducer(state, action) {
                title: action.payload,
             },
          };
-      case PAGE_CONTENT_SET:
+      case SET_PAGE_CONTENT:
          return {
             ...state,
             page: {
@@ -41,14 +41,14 @@ function reducer(state, action) {
                products: action.payload,
             },
          };
-      case NAVBAR_ITEM_SET:
+      case SET_NAVBAR_ACTIVEITEM:
          return {
             ...state,
             navBar: {
                activeItem: action.payload
             }
          };
-      case CART_ADD_ITEM:
+      case ADD_CART_ITEM:
          const item = action.payload;
          const product = state.cartItems.find((x) => x.id === item.id);
          if (product) {
@@ -59,7 +59,7 @@ function reducer(state, action) {
          }
          cartItems = [...state.cartItems, item];
          return { ...state, cartItems };
-      case CART_REMOVE_ITEM:
+      case REMOVE_CART_ITEM:
          cartItems = state.cartItems.filter((x) => x.id !== action.payload);
          return { ...state, cartItems };
       default:

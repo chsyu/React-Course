@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom"
-import { PAGE_TITLE_SET, PAGE_CONTENT_SET, NAVBAR_ITEM_SET } from "../utils/constants"
+import { SET_PAGE_TITLE, SET_PAGE_CONTENT, SET_NAVBAR_ACTIVEITEM } from "../utils/constants"
 import { StoreContext } from "../store"
 import products from "../json/products.json"
 import CartSummary from "./CartSummary";
@@ -8,21 +8,20 @@ import CartSummary from "./CartSummary";
 export default function Header({ title }) {
    const { dispatch } = useContext(StoreContext);
    const onClickHeader = () => {
-      console.log(`Before dispatch(title), title = ${title}`)
-      dispatch({
-         type: PAGE_TITLE_SET,
-         payload: "NORDIC NEST Shopping Cart"
+      dispatch({ 
+         type: SET_PAGE_TITLE, 
+         payload: "NORDIC NEST Shopping Cart" 
       });
-      console.log(`After dispatch(title), title = ${title}`)
-      dispatch({
-         type: PAGE_CONTENT_SET,
-         payload: products,
-      });
-      dispatch({
-         type: NAVBAR_ITEM_SET,
-         payload: "",
-      });
+      dispatch({ 
+         type: SET_PAGE_CONTENT, 
+         payload: products, 
+      });    
+      dispatch({ 
+         type: SET_NAVBAR_ACTIVEITEM, 
+         payload: "/",
+      }); 
    };
+
 
    useEffect(()=>{
       console.log(`In useEffect, title = ${title}`)

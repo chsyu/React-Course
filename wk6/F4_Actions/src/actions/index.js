@@ -1,8 +1,8 @@
 import {
-  PAGE_CONTENT_SET,
-  NAVBAR_ACTIVEITEM_SET,
-  CART_ITEM_ADD,
-  CART_ITEM_REMOVE,
+  SET_PAGE_CONTENT,
+  SET_NAVBAR_ACTIVEITEM,
+  ADD_CART_ITEM,
+  REMOVE_CART_ITEM,
 } from "../utils/constants";
 
 export const cartItemAdd = (dispatch, product, qty) => {
@@ -15,28 +15,28 @@ export const cartItemAdd = (dispatch, product, qty) => {
     qty,
   };
   dispatch({
-    type: CART_ITEM_ADD,
+    type: ADD_CART_ITEM,
     payload: item,
   });
 };
 
 export const cartItemRemove = (dispatch, productId) => {
   dispatch({
-    type: CART_ITEM_REMOVE,
+    type: REMOVE_CART_ITEM,
     payload: productId,
   });
 };
 
 export const pageContentsSet = (dispatch, title, products) => {
   dispatch({
-    type: PAGE_CONTENT_SET,
+    type: SET_PAGE_CONTENT,
     payload: {title, products},
   });
 };
 
 export const activeNavItemSet = (dispatch, activeNavItem) => {
   dispatch({
-    type: NAVBAR_ACTIVEITEM_SET,
+    type: SET_NAVBAR_ACTIVEITEM,
     payload: activeNavItem,
   });
 };
