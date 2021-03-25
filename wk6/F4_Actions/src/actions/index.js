@@ -1,5 +1,4 @@
 import {
-  PAGE_TITLE_SET,
   PAGE_CONTENT_SET,
   NAVBAR_ACTIVEITEM_SET,
   CART_ITEM_ADD,
@@ -30,12 +29,8 @@ export const cartItemRemove = (dispatch, productId) => {
 
 export const pageContentsSet = (dispatch, title, products) => {
   dispatch({
-    type: PAGE_TITLE_SET,
-    payload: title,
-  });
-  dispatch({
     type: PAGE_CONTENT_SET,
-    payload: products,
+    payload: {title, products},
   });
 };
 

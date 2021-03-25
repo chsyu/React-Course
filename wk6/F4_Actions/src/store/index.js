@@ -1,7 +1,6 @@
 import { createContext, useReducer } from "react";
 import products from "../json/products.json"
 import {
-   PAGE_TITLE_SET,
    PAGE_CONTENT_SET,
    NAVBAR_ACTIVEITEM_SET,
    CART_ITEM_ADD,
@@ -26,21 +25,10 @@ const initialState = {
 
 function reducer(state, action) {
    switch (action.type) {
-     case PAGE_TITLE_SET:
-       return {
-         ...state,
-         page: {
-           ...state.page,
-           title: action.payload,
-         },
-       };
      case PAGE_CONTENT_SET:
        return {
          ...state,
-         page: {
-           ...state.page,
-           products: action.payload,
-         },
+         page: action.payload,
        };
      case NAVBAR_ACTIVEITEM_SET:
        return {
