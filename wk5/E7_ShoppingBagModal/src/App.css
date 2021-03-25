@@ -1,0 +1,332 @@
+@import '~antd/dist/antd.css';
+
+/* RWD Container */
+.container {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    margin: auto;
+}
+
+/* sm */
+@media (min-width: 576px) { 
+  .container {
+    width: 540px;
+  }
+} 
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+} 
+
+/* lg */
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+} 
+
+/* xl */
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+} 
+
+/* xxl */
+@media (min-width: 1600px) {
+  .container {
+    width: 1500px;
+  }
+} 
+
+/* general */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #111828;
+  color: white;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.layout-header,
+.layout-footer {
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+  background-color: #111828;
+}
+
+.layout-content {
+  background-color: #111828;
+}
+
+.main-layout {
+  min-height: 100vh;
+}
+
+.bg-gray {
+  background-color: #111828;
+}
+
+.text-gray {
+  color: white;
+  opacity: 0.6; 
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.header-wrap {
+  display: flex;
+  padding-top: 2rem;
+  position: relative;
+}
+
+
+.header-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-title {
+  color: white;
+  font-size: 1.8rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header-slogan {
+  color: white;
+  opacity: 0.6;
+  padding: 0;
+  margin: 0;
+  line-height: 0.8;
+}
+
+.header-cart-summary {
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .header-title {
+    font-size: 1.3rem;
+    width: 10rem;
+  }
+
+  .header-slogan {
+    display: none;
+  }
+
+  .header-cart-summary {
+    right: 1rem;
+    bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+} 
+
+/* Cart Summary */
+.cart-summary-text {
+  color: white;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: -4px;
+}
+
+.ant-modal-title {
+  font-weight: lighter;
+  font-size: 1.7rem;
+}
+
+.ant-modal-body {
+  font-size: 1rem;
+}
+
+.cart-modal-btn {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  padding: 0.7rem;
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .cart-summary-text {
+    display: none;
+  }
+} 
+
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.nav-item {
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  transition: opacity .25s linear;
+}
+
+.nav-item:hover {
+  color: white;
+  opacity: 1;
+}
+
+.nav-item--active {
+  opacity: 1;
+}
+
+.hr-header-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 100px;
+  border: 0;
+  border-top: solid 6px;
+  border-color: #6366F2;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+
+/* Product Item */
+.product {
+  border-radius: 1%;
+  border: solid gray 1px;
+}
+
+.ant-card-body{
+  padding: 0;
+}
+
+.product-info {
+  padding: 1.2rem;
+}
+
+.product-info--detail {
+  padding: 0 1.2rem;
+}
+
+.product-category {
+  color: white;
+  opacity: 0.4;
+  margin-bottom: 0.2rem;
+}
+
+.product-name {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: white;
+  opacity: 0.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.product-link {
+  text-decoration: none;
+  align-self: center;
+  color: #8183ff;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.hr-footer-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 300px;
+  border: 0;
+  border-top: solid 2px;
+  border-color: #3e3f97;
+  opacity: 1;
+  border-radius: 0.2rem;
+}
+
+/* Detail Page */
+.product-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.product-name--large {
+  font-size: 1.5rem;
+}
+
+.product-price--large {
+  font-size: 1.5rem;
+}
+
+.product-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-status,
+.product-qty {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.qty-number {
+  color: white;
+  background-color: #111828;
+}
+
+.select-style {
+  font-size: 0.8rem;
+}
+
+.btn-tocar {
+  height: auto;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+}
+
+@media (min-width: 992px) {
+  .product-image {
+    height: 24rem;
+  }
+}

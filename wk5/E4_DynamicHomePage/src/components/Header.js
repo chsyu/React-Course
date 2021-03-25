@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
-import { PAGE_TITLE_SET, PAGE_CONTENT_SET } from "../utils/constants"
+import { PAGE_TITLE_SET, PAGE_CONTENT_SET, NAVBAR_ITEM_SET } from "../utils/constants"
 import { StoreContext } from "../store"
 import NavBar from "./NavBar";
 import products from "../json/products.json";
@@ -15,21 +15,28 @@ export default function Header({title}) {
       dispatch({ 
          type: PAGE_CONTENT_SET, 
          payload: products, 
-      });      
+      });     
+      dispatch({ 
+         type: NAVBAR_ITEM_SET, 
+         payload: "",
+      }); 
    };
 
    return (
-      <div className="header" onClick={onClickHeader}>
-         <Link to="/">
-            <h1 className="header-title">
-               {title}
-            </h1>
-         </Link>
+      <div className="header">
+         <div onClick={onClickHeader}>
+            <Link to="/">
+               <h1 className="header-title">
+                  {title}
+               </h1>
+            </Link>
 
-         <p
-            className="header-slogan">
-            An example made by Create-React-App.
-         </p>
+            <p
+               className="header-slogan">
+               An example made by Create-React-App.
+            </p>
+         </div>
+
          <hr className="hr-header-line" />
          <NavBar />
       </div>
