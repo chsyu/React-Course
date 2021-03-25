@@ -3,9 +3,9 @@ import products from "../json/products.json"
 import {
    PAGE_TITLE_SET,
    PAGE_CONTENT_SET,
-   NAVBAR_ITEM_SET,
-   CART_ADD_ITEM,
-   CART_REMOVE_ITEM,
+   NAVBAR_ACTIVEITEM_SET,
+   CART_ITEM_ADD,
+   CART_ITEM_REMOVE,
 } from "../utils/constants"
 
 export const StoreContext = createContext();
@@ -25,37 +25,46 @@ const initialState = {
 };
 
 function reducer(state, action) {
-   console.log(action)
    switch (action.type) {
-      case PAGE_TITLE_SET:
-         return {
-            ...state,
-            page: {
-               ...state.page,
-               title: action.payload,
-            },
-         };
-      case PAGE_CONTENT_SET:
-         return {
-            ...state,
-            page: {
-               ...state.page,
-               products: action.payload,
-            },
-         };
-      case NAVBAR_ITEM_SET:
-         return {
-            ...state,
-            navBar: {
-               activeItem: action.payload
-            }
-         };
-      case CART_ADD_ITEM:
-         return { ...state, cartItems: action.payload };
-      case CART_REMOVE_ITEM:
-         return { ...state, cartItems: action.payload };
-      default:
-         return state;
+     case PAGE_TITLE_SET:
+       return {
+         ...state,
+         page: {
+           ...state.page,
+           title: action.payload,
+         },
+       };
+     case PAGE_CONTENT_SET:
+       return {
+         ...state,
+         page: {
+           ...state.page,
+           products: action.payload,
+         },
+       };
+     case NAVBAR_ACTIVEITEM_SET:
+       return {
+         ...state,
+         navBar: {
+           activeItem: action.payload,
+         },
+       };
+     case CART_ITEM_ADD:
+       const item = action.payload;
+       const product = state.cartItems.find((x) => x.id === item.id);
+       if (product) {
+         cartItems = state.cartItems.map((x) =>
+           x.id === product.id ? item : x
+         );
+         return { ...state, cartItems };
+       }
+       cartItems = [...state.cartItems, item];
+       return { ...state, cartItems };
+     case CART_ITEM_REMOVE:
+       cartItems = state.cartItems.filter((x) => x.id !== action.payload);
+       return { ...state, cartItems };
+     default:
+       return state;
    }
 }
 

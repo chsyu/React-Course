@@ -1,12 +1,12 @@
 import {
   PAGE_TITLE_SET,
   PAGE_CONTENT_SET,
-  NAVBAR_ITEM_SET,
-  CART_ADD_ITEM,
-  CART_REMOVE_ITEM,
+  NAVBAR_ACTIVEITEM_SET,
+  CART_ITEM_ADD,
+  CART_ITEM_REMOVE,
 } from "../utils/constants";
 
-export const cartAddItem = (product, qty, cartItemsOld, dispatch) => {
+export const cartItemAdd = (dispatch, product, qty) => {
   const item = {
     id: product.id,
     name: product.name,
@@ -15,26 +15,20 @@ export const cartAddItem = (product, qty, cartItemsOld, dispatch) => {
     countInStock: product.countInStock,
     qty,
   };
-  const findProduct = cartItemsOld.find((x) => x.id === item.id);
-  let cartItems;
-  if (findProduct) {
-    cartItems = cartItemsOld.map((x) => (x.id === findProduct.id ? item : x));
-  } else cartItems = [...cartItemsOld, item];
   dispatch({
-    type: CART_ADD_ITEM,
-    payload: cartItems,
+    type: CART_ITEM_ADD,
+    payload: item,
   });
 };
 
-export const cartRemoveItem = (productId, cartItemsOld, dispatch) => {
-  let cartItems = cartItemsOld.filter((x) => x.id !== productId);
+export const cartItemRemove = (dispatch, productId) => {
   dispatch({
-    type: CART_REMOVE_ITEM,
-    payload: cartItems,
+    type: CART_ITEM_REMOVE,
+    payload: productId,
   });
 };
 
-export const pageContentsSet = (title, products, dispatch) => {
+export const pageContentsSet = (dispatch, title, products) => {
   dispatch({
     type: PAGE_TITLE_SET,
     payload: title,
@@ -45,9 +39,9 @@ export const pageContentsSet = (title, products, dispatch) => {
   });
 };
 
-export const activeNavItemSet = (activeNavItem, dispatch) => {
+export const activeNavItemSet = (dispatch, activeNavItem) => {
   dispatch({
-    type: NAVBAR_ITEM_SET,
+    type: NAVBAR_ACTIVEITEM_SET,
     payload: activeNavItem,
   });
 };

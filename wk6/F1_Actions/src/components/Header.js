@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store";
-import products from "../json/products.json";
 import CartSummary from "./CartSummary";
 import { pageContentsSet, activeNavItemSet } from "../actions";
+import { getJSON } from "../api";
 
 export default function Header({ title }) {
   const { dispatch } = useContext(StoreContext);
   const onClickHeader = () => {
-    pageContentsSet("NORDIC NEST Shopping Cart", products, dispatch);
-    activeNavItemSet(null, dispatch);
+    pageContentsSet(dispatch, "NORDIC NEST Shopping Cart", getJSON("/"));
+    activeNavItemSet(dispatch, "/");
   };
 
   return (
