@@ -5,7 +5,7 @@ import {
   REMOVE_CART_ITEM,
 } from "../utils/constants";
 
-export const addCartItem = (dispatch, product, qty) => {
+export const cartItemAdd = (dispatch, product, qty) => {
   const item = {
     id: product.id,
     name: product.name,
@@ -20,21 +20,21 @@ export const addCartItem = (dispatch, product, qty) => {
   });
 };
 
-export const removeCartItem = (dispatch, productId) => {
+export const cartItemRemove = (dispatch, productId) => {
   dispatch({
     type: REMOVE_CART_ITEM,
     payload: productId,
   });
 };
 
-export const setPageContent = (dispatch, title, products) => {
+export const pageContentsSet = (dispatch, title, products) => {
   dispatch({
     type: SET_PAGE_CONTENT,
     payload: {title, products},
   });
 };
 
-export const setActiveNavItem = (dispatch, activeNavItem) => {
+export const activeNavItemSet = (dispatch, activeNavItem) => {
   dispatch({
     type: SET_NAVBAR_ACTIVEITEM,
     payload: activeNavItem,
