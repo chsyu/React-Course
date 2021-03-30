@@ -3,9 +3,12 @@ import {
   SET_NAVBAR_ACTIVEITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  SET_PRODUCT_DETAIL,
 } from "../utils/constants";
 
-export const cartItemAdd = (dispatch, product, qty) => {
+import products from "../json/products.json";
+
+export const addCartItem = (dispatch, product, qty) => {
   const item = {
     id: product.id,
     name: product.name,
@@ -20,17 +23,35 @@ export const cartItemAdd = (dispatch, product, qty) => {
   });
 };
 
-export const cartItemRemove = (dispatch, productId) => {
+export const removeCartItem = (dispatch, productId) => {
   dispatch({
     type: REMOVE_CART_ITEM,
     payload: productId,
   });
 };
 
+
+export const setProductDetail = (dispatch, productId, qty) => {
+  const product = products.find(
+    x => x.id === productId
+  );
+  
+  if(qty === 0 && product.countInStock > 0)
+      qty = 1;
+
+  dispatch({
+    type: SET_PRODUCT_DETAIL,
+    payload: {
+      product,
+      qty,
+    }
+  })
+}
+
 export const pageContentsSet = (dispatch, title, products) => {
   dispatch({
     type: SET_PAGE_CONTENT,
-    payload: {title, products},
+    payload: { title, products },
   });
 };
 

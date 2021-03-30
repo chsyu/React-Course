@@ -3,7 +3,7 @@ import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
 import { CartIcon } from "./Icons";
-import { cartItemAdd, cartItemRemove } from "../actions";
+import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 const { Option } = Select;
 
 export default function CartModal({ isModalVisible, toggleModal }) {
@@ -32,7 +32,10 @@ export default function CartModal({ isModalVisible, toggleModal }) {
             cartItems.map(item => (
                <li key={item.id} className="cart-item">
                   <Link to={`/product/${item.id}`}>
-                     <div className="cart-image" onClick={handleCancel}>
+                     <div className="cart-image" onClick={()=>{
+                        setProductDetail(dispatch, item.id, item.qty);
+                        handleCancel();
+                     }}>
                         <img src={item.image} alt={item.name} />
                      </div>
                   </Link>
@@ -42,8 +45,9 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                         Qty: {"   "}
                         <Select
                            defaultValue={item.qty}
+                           value={item.qty}
                            className="select-style"
-                           onChange={(qty) => cartItemAdd(dispatch, item, qty)}
+                           onChange={(qty) => addCartItem(dispatch, item, qty)}
                         >
                            {[...Array(item.countInStock).keys()].map((x) => (
                               <Option key={x + 1} value={x + 1}>
@@ -57,7 +61,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                      <div className="cart-price">
                         ${item.price * item.qty}
                      </div>
-                     <div className="cart-item-delete" onClick={() => cartItemRemove(dispatch, item.id)}>
+                     <div className="cart-item-delete" onClick={() => removeCartItem(dispatch, item.id)}>
                         x
                      </div>
                   </div>
