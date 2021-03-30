@@ -3,6 +3,8 @@ import {
   SET_NAVBAR_ACTIVEITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  SET_FROM_CART_TO_PRODUCT,
+  REMOVE_FROM_CART_TO_PRODUCT,
 } from "../utils/constants";
 
 export const cartItemAdd = (dispatch, product, qty) => {
@@ -19,6 +21,20 @@ export const cartItemAdd = (dispatch, product, qty) => {
     payload: item,
   });
 };
+
+export const setFromCartToProduct = (dispatch, qtyFromCart, productIdFromCart) => {
+  dispatch({
+    type: SET_FROM_CART_TO_PRODUCT,
+    payload: {
+      qtyFromCart,
+      productIdFromCart,
+    }
+  })
+}
+
+export const removeFromCartToProduct = (dispatch) => {
+  dispatch({type: REMOVE_FROM_CART_TO_PRODUCT});
+}
 
 export const cartItemRemove = (dispatch, productId) => {
   dispatch({

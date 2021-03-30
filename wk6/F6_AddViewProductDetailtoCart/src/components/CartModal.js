@@ -3,7 +3,7 @@ import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
 import { CartIcon } from "./Icons";
-import { cartItemAdd, cartItemRemove } from "../actions";
+import { cartItemAdd, cartItemRemove, setFromCartToProduct } from "../actions";
 const { Option } = Select;
 
 export default function CartModal({ isModalVisible, toggleModal }) {
@@ -32,7 +32,10 @@ export default function CartModal({ isModalVisible, toggleModal }) {
             cartItems.map(item => (
                <li key={item.id} className="cart-item">
                   <Link to={`/product/${item.id}`}>
-                     <div className="cart-image" onClick={handleCancel}>
+                     <div className="cart-image" onClick={()=>{
+                        setFromCartToProduct(dispatch, item.qty, item.id);
+                        handleCancel();
+                     }}>
                         <img src={item.image} alt={item.name} />
                      </div>
                   </Link>
