@@ -1,0 +1,34 @@
+[
+   {
+      "name": "AllProducts",
+      "url": "/"
+   },
+   {
+      "name": "Cookware",
+      "url": "/cookware"
+   },
+   {
+      "name": "Furniture",
+      "url": "/furniture"
+   },
+   {
+      "name": "HomeAccessories",
+      "url": "/home-accessories"
+   },
+   {
+      "name": "Lighting",
+      "url": "/lighting"
+   },
+   {
+      "name": "Tableware",
+      "url": "/tableware"
+   },
+   {
+      "name": "Textile",
+      "url": "/textile"
+   },
+   {
+      "name": "FeedJSONPage",
+      "url": "/products/feeder"
+   }
+]

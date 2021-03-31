@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
+import jsonInfo from "../json/jsonInfo.json";
 import products from "../json/products.json";
 import textile from "../json/textile.json";
 import cookware from "../json/cookware.json";
@@ -25,7 +26,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-
 export const getJSON = (url) => {
   switch (url) {
     case "/":
@@ -47,21 +47,43 @@ export const getJSON = (url) => {
   }
 };
 
+export const getProducts = async (url) => {
+  const collection = jsonInfo.find(element => element.url === url);
+  const collectionName = collection.name || "AllProducts";
+  let jsonproducts = [];
+  // REFERENCE PRODUCTS DOCUMENT
+  const productsCollectionRef = firebase.firestore()
+    .collection("products");
+  const productsDocRef = productsCollectionRef.doc("json");
+  // REFERENCE PRODUCTS COLLECTION
+  const categorizedCollectionRef = productsDocRef.collection(`${collectionName}`);
+  const querySnapshot = await categorizedCollectionRef.get();
+
+  querySnapshot.forEach((doc) => {
+    jsonproducts.push(doc.data());
+  });
+  return jsonproducts;
+}
+
+export const feedProducts = (name, products) => {
+  // REFERENCE PRODUCTS DOCUMENT
+  const productsCollectionRef = firebase.firestore()
+    .collection("products");
+  const productsDocRef = productsCollectionRef.doc("json");
+  // REFERENCE PRODUCTS COLLECTION
+  const categorizedCollectionRef = productsDocRef.collection(`${name}`);
+  products.forEach((product) => {
+    const docRef = categorizedCollectionRef.doc();
+    const id = docRef.id;
+    docRef.set({
+      ...product,
+      id
+    });
+  })
+}
 
 export const authenticateAnonymously = () => {
   return firebase.auth().signInAnonymously();
 };
 
-export const postChatContent = (senderName, message) => {
-  // REFERENCE CHATROOM DOCUMENT
-  let chatroomDocRef = firebase.firestore()
-    .collection("chatrooms")
-    .doc("chatroom2");
-  // REFERENCE CHATROOM MESSAGES
-  let messagesCollectionRef = chatroomDocRef.collection("messages");
-  messagesCollectionRef.add({
-    senderName,
-    message,
-    timeStamp: Date.now(),
-  });
-}
+

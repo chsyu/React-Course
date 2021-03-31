@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
 import { CartIcon } from "./Icons";
 import { addCartItem, removeCartItem, setProductDetail } from "../actions";
-import { postChatContent, authenticateAnonymously } from "../api"
+import { authenticateAnonymously } from "../api"
 const { Option } = Select;
 
 export default function CartModal({ isModalVisible, toggleModal }) {
@@ -18,7 +18,6 @@ export default function CartModal({ isModalVisible, toggleModal }) {
 
    const onAuth = () => {
       const auth = authenticateAnonymously();
-      postChatContent('chsyu','1234');
       console.log(`auth =`);
       console.log(auth)
    }
