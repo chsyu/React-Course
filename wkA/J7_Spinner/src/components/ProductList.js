@@ -6,7 +6,7 @@ import ProductItem from "./ProductItem";
 import { StoreContext } from "../store";
 
 export default function ProductList() {
-  const { state: { page: { products }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+  const { state: { page: { products }, requestProducts: { loading } } } = useContext(StoreContext);
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
 
   return (
