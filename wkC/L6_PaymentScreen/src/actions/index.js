@@ -4,6 +4,7 @@ import {
   SET_NAVBAR_ACTIVEITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  EMPTY_CART,
   SAVE_SHIPPING_ADDRESS,
   SAVE_PAYMENT_METHOD,
   SET_PRODUCT_DETAIL,
@@ -24,6 +25,9 @@ import {
   BEGIN_UPDATE_USERINFO,
   SUCCESS_UPDATE_USERINFO,
   FAIL_UPDATE_USERINFO,
+  BEGIN_ORDER_CREATE,
+  SUCCESS_ORDER_CREATE,
+  FAIL_ORDER_CREATE,
 } from "../utils/constants";
 
 import {
@@ -34,6 +38,7 @@ import {
   registerWithEmailPassword,
   signOut,
   updateUserInfoApi,
+  addOrderApi
 } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
@@ -60,8 +65,6 @@ export const removeCartItem = (dispatch, productId) => {
 };
 
 export const saveShippingAddress = (dispatch, shippingAddress) => {
-  console.log('Address: ')
-  console.log(shippingAddress)
   dispatch({
     type: SAVE_SHIPPING_ADDRESS,
     payload: shippingAddress,
@@ -70,11 +73,9 @@ export const saveShippingAddress = (dispatch, shippingAddress) => {
 }
 
 export const savePaymentMethod = (dispatch, paymentMethod) => {
-  console.log('paymentMethod: ')
-  console.log(paymentMethod)
   dispatch({
     type: SAVE_PAYMENT_METHOD,
-    payload: paymentMethod,
+    payload: paymentMethod.paymentMethod,
   });
 }
 
@@ -210,3 +211,34 @@ export const logoutFromFirebase = async (dispatch) => {
   signOut();
   dispatch({ type: LOGOUT_REQUEST });
 }
+
+export const addOrdertoFirebase = async (dispatch, cart) => {
+  dispatch({ type: BEGIN_ORDER_CREATE });
+  try {
+    const item = {
+      orderItems: cart.cartItems,
+      shippingAddress: cart.shippingAddress,
+      paymentMethod: cart.paymentMethod,
+      itemsPrice: cart.itemsPrice,
+      shippingPrice: cart.shippingPrice,
+      taxPrice: cart.taxPrice,
+      totalPrice: cart.totalPrice,
+    };    
+    const orderInfo = await addOrderApi(item);
+    dispatch({ 
+      type: SUCCESS_ORDER_CREATE, 
+      payload: orderInfo 
+    });
+    dispatch({ type: EMPTY_CART,})
+    localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
+    localStorage.removeItem("cartItems");
+    return orderInfo;
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_ORDER_CREATE, payload: error });
+    return null;
+  }  
+
+
+};
+

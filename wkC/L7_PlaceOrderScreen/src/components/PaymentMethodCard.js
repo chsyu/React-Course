@@ -10,8 +10,7 @@ export default function PaymentMethodCard() {
    const [form] = Form.useForm();
 
    const handleSubmit = (values) => {
-      console.log(values)
-      savePaymentMethod(dispatch, values)
+      savePaymentMethod(dispatch, values);
       history.push('/placeorder');
    };
 
@@ -20,7 +19,7 @@ export default function PaymentMethodCard() {
          onFinish={handleSubmit}
          name="normal_login"
          className="register-form"
-         initialValues={paymentMethod}
+         initialValues={{paymentMethod}}
          form={form}
       >
 

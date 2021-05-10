@@ -3,7 +3,7 @@ import ShippingHeader from "../components/ShippingHeader";
 import AppFooter from "../components/Footer";
 const { Header, Content, Footer } = Layout;
 
-function Shipping() {
+function Payment() {
   return (
     <Layout className="container main-layout">
       <Layout className="bg-gray main-area">
@@ -20,4 +20,4 @@ function Shipping() {
   );
 }
 
-export default Shipping;
+export default Payment;

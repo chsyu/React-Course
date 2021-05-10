@@ -6,6 +6,7 @@ import {
   SET_NAVBAR_ACTIVEITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  EMPTY_CART,
   SAVE_SHIPPING_ADDRESS,
   SAVE_PAYMENT_METHOD,
   SET_PRODUCT_DETAIL,
@@ -26,6 +27,9 @@ import {
   BEGIN_UPDATE_USERINFO,
   SUCCESS_UPDATE_USERINFO,
   FAIL_UPDATE_USERINFO,
+  BEGIN_ORDER_CREATE,
+  SUCCESS_ORDER_CREATE,
+  FAIL_ORDER_CREATE,
 } from "../utils/constants";
 
 export const StoreContext = createContext();
@@ -52,6 +56,14 @@ const initialState = {
       ? JSON.parse(localStorage.getItem('shippingAddress'))
       : {},
     paymentMethod: 'Google',
+  },
+  orderInfo: { 
+    loading: false,
+    order: localStorage.getItem('orderInfo')
+    ? JSON.parse(localStorage.getItem('orderInfo'))
+    : { id: ""},
+    success: false,
+    error: null,
   },
   feedProducts: {
     loading: false,
@@ -115,6 +127,9 @@ function reducer(state, action) {
     case REMOVE_CART_ITEM:
       cartItems = state.cart.cartItems.filter((x) => x.id !== action.payload);
       return { ...state, cart: { ...state.cart, cartItems } };
+    case EMPTY_CART:
+      cartItems = [];
+      return { ...state, cart: { ...state.cart, cartItems }};
     case SAVE_SHIPPING_ADDRESS:
       console.log('action.payload.shippingAddress = ')
       console.log(action.payload)
@@ -253,6 +268,30 @@ function reducer(state, action) {
           error: action.payload,
         },
       };
+      case BEGIN_ORDER_CREATE:
+        return { ...state, orderInfo: { ...state.orderInfo, loading: true } };
+      case SUCCESS_ORDER_CREATE:
+        return {
+          ...state,
+          orderInfo: {
+            ...state.orderInfo,
+            loading: false,
+            order: action.payload,
+            success: true,
+            error: null,
+          },
+        };
+      case FAIL_ORDER_CREATE:
+        return {
+          ...state,
+          orderInfo: {
+            ...state.orderInfo,
+            loading: false,
+            order: {id:""},
+            success: false,
+            error: action.payload,
+          },
+        };
     default:
       return state;
   }

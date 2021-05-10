@@ -70,11 +70,9 @@ export const saveShippingAddress = (dispatch, shippingAddress) => {
 }
 
 export const savePaymentMethod = (dispatch, paymentMethod) => {
-  console.log('paymentMethod: ')
-  console.log(paymentMethod)
   dispatch({
     type: SAVE_PAYMENT_METHOD,
-    payload: paymentMethod,
+    payload: paymentMethod.paymentMethod,
   });
 }
 
