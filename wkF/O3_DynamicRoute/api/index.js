@@ -6,14 +6,14 @@ import products from "../json/products.json";
 
 // INITIALIZE FIREBASE
 const firebaseConfig = {
-  apiKey: "AIzaSyDUH6vOCALEXSjYHgv8P9d2y3tKklE44qA",
-  authDomain: "f2e2020-bd468.firebaseapp.com",
-  databaseURL: "https://f2e2020-bd468.firebaseio.com",
-  projectId: "f2e2020-bd468",
-  storageBucket: "f2e2020-bd468.appspot.com",
-  messagingSenderId: "832044128799",
-  appId: "1:832044128799:web:5dedad46efcd2c3253932a",
-  measurementId: "G-QWW610MX3Z"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 };
 
 if (!firebase.apps.length) {
