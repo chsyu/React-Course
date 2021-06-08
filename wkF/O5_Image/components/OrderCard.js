@@ -46,7 +46,7 @@ export default function OrderCard({ orderId }) {
    useEffect(() => {
       // console.log('request Order from firebase')
       (async () => {
-         const requestorder = await requestOrderDetail(dispatch, orderId);
+         await requestOrderDetail(dispatch, orderId);
       })();
    }, [orderId])
 
