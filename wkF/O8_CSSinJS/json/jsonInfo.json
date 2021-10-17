@@ -1,0 +1,42 @@
+[
+   {
+      "title": "NORDIC NEST Shopping Cart",
+      "name": "allProducts",
+      "url": "/"
+   },
+   {
+      "title": "Cookware",
+      "name": "cookware",
+      "url": "/products/cookware"
+   },
+   {
+      "title": "Furniture",
+      "name": "furniture",
+      "url": "/products/furniture"
+   },
+   {
+      "title": "Home Acessories",
+      "name": "home-accessories",
+      "url": "/products/home-accessories"
+   },
+   {
+      "title": "Lighting",
+      "name": "lighting",
+      "url": "/products/lighting"
+   },
+   {
+      "title": "Tableware",
+      "name": "tableware",
+      "url": "/products/tableware"
+   },
+   {
+      "title": "Textile",
+      "name": "textile",
+      "url": "/products/textile"
+   },
+   {
+      "title": "Feed JSON Page",
+      "name": "FeedJSONPage",
+      "url": "/admin/feed-products"
+   }
+]

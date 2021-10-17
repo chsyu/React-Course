@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  pointer-events: none;
+  max-width: 100%;
+}
+
+.App-header {
+  background-color: #262626;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-main {
+  padding: 200px 10% 400px 10%;
+  margin: 0 auto;
+  background: #FC466B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.App-section {
+  max-width: calc(80% - 50px);
+  margin: 0 auto 100px auto;
+  padding: 50px;
+  background-color: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
