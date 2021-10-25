@@ -1,5 +1,6 @@
 [
   {
+    "id": "3",
     "category": "Tableware",
     "name": "Rustic mug",
     "sku": "sku_313356",
@@ -11,6 +12,7 @@
     "countInStock": 6 
   },
   {
+    "id": "4",
     "category": "Tableware",
     "name": "Essence white wine glass 4-pack",
     "sku": "sku_313358",

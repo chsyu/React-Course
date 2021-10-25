@@ -1,5 +1,6 @@
 [
   {
+    "id": "7",
     "category": "Lighting",
     "name": "Silvia lamp white",
     "sku": "sku_125983",
@@ -11,6 +12,7 @@
     "countInStock": 5
   },
   {
+    "id": "8",
     "category": "Lighting",
     "name": "Luciakör candle arch",
     "sku": "sku_125982",

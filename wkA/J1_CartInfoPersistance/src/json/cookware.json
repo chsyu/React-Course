@@ -1,5 +1,6 @@
 [
   {
+    "id": "11",
     "category": "Cookware",
     "name": "Satake Kuro chopper",
     "sku": "sku_119140",
@@ -11,6 +12,7 @@
     "countInStock": 7 
   },
   {
+    "id": "12",
     "category": "Cookware",
     "name": "Eva Solo knife holder",
     "sku": "sku_119139",

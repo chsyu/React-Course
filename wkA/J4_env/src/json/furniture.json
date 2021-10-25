@@ -1,5 +1,6 @@
 [
   {
+    "id": "9",
     "category": "Furniture",
     "name": "High Dot stool leather",
     "sku": "sku_559961",
@@ -11,6 +12,7 @@
     "countInStock": 2 
   },
   {
+    "id": "10",
     "category": "Furniture",
     "name": "Frame 49 sidotable with tre lådor",
     "sku": "sku_559960",
