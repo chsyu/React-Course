@@ -237,21 +237,6 @@ body {
   flex-direction: column;
 }
 
-.product-status,
-.product-qty {
-  font-size: 1rem;
-  opacity: 0.7;
-}
-
-.qty-number {
-  color: white;
-  background-color: #111828;
-}
-
-.select-style {
-  font-size: 0.8rem;
-}
-
 .btn-tocar {
   height: auto;
   font-size: 1.2rem;

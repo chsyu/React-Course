@@ -134,6 +134,7 @@ body {
   opacity: 1;
 }
 
+
 .hr-header-line {
   margin: 25px auto 30px;
   padding: 0;
@@ -234,21 +235,6 @@ body {
 .product-price-wrap {
   display: flex;
   flex-direction: column;
-}
-
-.product-status,
-.product-qty {
-  font-size: 1rem;
-  opacity: 0.7;
-}
-
-.qty-number {
-  color: white;
-  background-color: #111828;
-}
-
-.select-style {
-  font-size: 0.8rem;
 }
 
 .btn-tocar {
