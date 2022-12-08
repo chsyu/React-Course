@@ -17,7 +17,6 @@ export default function UserInfo(props) {
    };
 
    return (
-
       <nav onClick={goToProfile} style={{ ...props.style }} className="header-cart-summary" >
          {userInfo
             ? <UserOutlined className='userInfo-outlined' />
@@ -31,6 +30,5 @@ export default function UserInfo(props) {
             }
          </p>
       </nav>
-
    );
 }

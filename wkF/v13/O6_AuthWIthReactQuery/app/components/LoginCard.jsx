@@ -12,9 +12,6 @@ import { selectIsRemember } from "../redux/usersSlice";
 const LoginCard = () => {
 
   const { mutate, error, isLoading, isError, isSuccess, data } = useSignInWithEmailPassword();
-  console.log({ error, isError, isSuccess, data })
-  console.log('data.detail = ')
-  console.log(data?.detail)
   const isRemember = useSelector(selectIsRemember);
   const dispatch = useDispatch();
   const [form] = Form.useForm();
