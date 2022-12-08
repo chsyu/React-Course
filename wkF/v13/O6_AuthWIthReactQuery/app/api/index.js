@@ -1,7 +1,7 @@
 import axios from "axios"
 
-// const api_url = "https://fastapi4railway2022-production.up.railway.app/api/v1"
-const api_url = "http://127.0.0.1:5000/api/v1"
+const api_url = "https://fastapi4railway2022-production.up.railway.app/api/v1"
+// const api_url = "http://127.0.0.1:5000/api/v1"
 
 export const getProductById = async (product_id) => {
   const res = await fetch(`${api_url}/products/id/${product_id}`);
