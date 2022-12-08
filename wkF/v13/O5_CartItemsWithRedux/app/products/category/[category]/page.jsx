@@ -2,12 +2,12 @@
 import Header from "../../../components/Header"
 import Footer from "../../../components/Footer"
 import ProductList from "../../../components/ProductList";
-import { getCategoryProducts } from '../../../api';
+import { getProductsByCategory } from '../../../api';
 
 
 async function Home({params}) {
   const { category } = params;
-  const data = await getCategoryProducts(category);
+  const data = await getProductsByCategory(category);
   const products = data || [];
   const title = category.toUpperCase();
 
