@@ -1,9 +1,18 @@
 # NTUE React [投影片下載](https://drive.google.com/drive/folders/1ywqhSuS3Yjb0vbK3wgDrO21xoCdsMd8m?usp=sharing) 
 
 ## 課程大綱
-> 現今的前端工程技術已經逐漸開始應用至不同平台與不同領域。為了讓學生能確實掌握前端工程的技術層面，以便能在不同領域進行開發。本門課在學生已經具有基本的前端UI/UX與技術的基礎上，引導學生在前端工程技術與設計持續精進，並且將所學之技術應用至不同的應用平台實現更符合業界需求之產品
+> 本門課程基於同學已經具有前端工程設計基礎的HTML/CSS/JS 程式開發與UI / UX 設計能力而設計。課程目標在於建立同學運用SPA框架設計前端頁面，與運用後台資源進行服務設計的能力
+>
+> 本課程包含前端框架React相關的元件設計，元件庫運用，進階CSS設計與資料設計，並且結合Wireflow進行服務設計。
 
+---
 
 ## 教學進度
 
 ![alt text](react-syllabus.png "Syllabus")
+
+---
+
+### 課程架構
+
+![alt-text-1](js.png "JS") ![alt-text-2](react.png "React")![alt-text-2](uiux.png "UIUX")
