@@ -9,10 +9,10 @@
 
 ## 教學進度
 
-![alt text](react-syllabus.png "Syllabus")
+![syllabus](./assets/react-syllabus.png "Syllabus")
 
 ---
 
 ### 課程架構
 
-![alt-text-1](js.png "JS") ![alt-text-2](react.png "React")![alt-text-2](uiux.png "UIUX")
+![js](./assets/js.png "JS") ![react](./assets/react.png "React")![uiux2](./assets/uiux.png "UIUX")
