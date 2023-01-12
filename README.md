@@ -5,21 +5,5 @@
 
 
 ## 教學進度
-- wk1: Hello React
-- wk2: Terminal / GIT / Github / Npm / Yarn
-- wk3: React Components
-- wk4: Ant Design / Router / useState
-- wk5: useContext / useReducer
-- wk6: useEffect / Data Persistance / Use Case
-- wk7: Women and Children's Day
-- wk8: Design Specification
-- wk9: Midterm Project Demo
-- wk10: FireStore / API
-- wk11: Form / Controlled Input
-- wk12: Wireflow
-- wk13: Animations
-- wk14: PWA
-- wk15: NEXTJS
-- wk16: Wireflow Review
-- wk17: Final Recap
-- wk18: Final Project Demo
+
+![alt text](react-syllabus.png "Syllabus")
