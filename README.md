@@ -15,4 +15,4 @@
 
 ### 課程架構
 
-![js](./assets/js.png "JS") ![react](./assets/react.png "React")![uiux2](./assets/uiux.png "UIUX")
+![struct](./assets/struct.png "Struct")
