@@ -60,17 +60,17 @@ body {
 .layout-header {
   grid-area: header;
   padding: 0;
-  height: auto!important;
+  height: auto;
   line-height: 1.6;
-  background-color: #111828!important;
+  background-color: #111828;
 }
 
 .layout-footer {
   grid-area: footer;
   padding: 0;
-  height: auto!important;
+  height: auto;
   line-height: 1.6;
-  background-color: #111828!important;
+  background-color: #111828;
 }
 
 .layout-content {
