@@ -1,8 +1,6 @@
-import { Card } from "antd"
-
 export default function ProductItem( { product }) {
     return (
-        <Card className="bg-gray product-item">
+        <div className="bg-gray product-item">
             <a href="/">
                 <img 
                     style={{width: '100%'}}
@@ -29,7 +27,7 @@ export default function ProductItem( { product }) {
                     </span>
                 </div>
             </div>
-        </Card>
+        </div>
     );
   }
   

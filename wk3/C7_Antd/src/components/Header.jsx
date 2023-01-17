@@ -1,13 +1,12 @@
-export default function Header() {
+export default function Header({ title, slogan }) {
     return (
        <div className="header">
           <h1 className="header-title">
-             NORDIC NEST Shopping Cart
+             {title}
           </h1>
- 
           <p
              className="header-slogan">
-             An example made by Vite.
+             {slogan}
           </p>
           <hr className="hr-header-line" />
        </div>
