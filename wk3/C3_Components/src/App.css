@@ -1,3 +1,31 @@
+body {
+  background-color: #111828;
+}
+
+.main-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas: 
+    'header'
+    'content'
+    'footer'
+  ;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.layout-header {
+  grid-area: header;
+}
+
+.layout-content {
+  grid-area: content;
+}
+
+.layout-footer {
+  grid-area: footer;
+}
+
 .opacity-2 {
   opacity: 0.4;
 }
@@ -24,10 +52,6 @@
   border-top: solid 2px;
   border-color: #3e3f97;
   opacity: 1;
-}
-
-.bg-color {
-  background-color: #111828;
 }
 
 .text-color-1 {

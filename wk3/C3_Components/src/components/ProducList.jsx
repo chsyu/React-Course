@@ -1,7 +1,7 @@
 export default function ProductList() {
     return (
       <div className="row">
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img
@@ -42,7 +42,7 @@ export default function ProductList() {
             </div>
           </div>
         </section>
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img className="w-100" src="images/table1.png" alt="Rustic mug" />
@@ -79,7 +79,7 @@ export default function ProductList() {
             </div>
           </div>
         </section>
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img
@@ -120,7 +120,7 @@ export default function ProductList() {
             </div>
           </div>
         </section>
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img
@@ -161,7 +161,7 @@ export default function ProductList() {
             </div>
           </div>
         </section>
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img
@@ -201,7 +201,7 @@ export default function ProductList() {
             </div>
           </div>
         </section>
-        <section className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4">
+        <section className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4">
           <div className="border border-secondary border-1 rounded overflow-hidden">
             <a href="/">
               <img

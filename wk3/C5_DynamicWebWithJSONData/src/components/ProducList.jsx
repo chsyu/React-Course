@@ -5,7 +5,7 @@ export default function ProductList() {
     <div className="row">
       {products.map(product => (
         <section 
-          className="col-md-6 col-lg-4 pt-4 p-md-3 p-lg-4"
+          className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4"
           key={product.id}
         >
           <div className="border border-secondary border-1 rounded overflow-hidden">

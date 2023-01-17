@@ -3,12 +3,10 @@ import ProductList from "../components/ProducList"
 import Footer from "../components/Footer"
 function Home() {
   return (
-    <div className="bg-color">
-        <div className="container">
-            <Header />
-            <ProductList />
-            <Footer />
-        </div>
+    <div className="container main-layout">
+      <Header className="layout-header" />
+      <ProductList className="layout-content" />
+      <Footer className="layout-footer" />
     </div>
   );
 }
