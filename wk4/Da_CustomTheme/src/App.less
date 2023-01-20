@@ -1,0 +1,176 @@
+@import '~antd/lib/style/themes/default.less';
+@import 'color.less';
+
+/* RWD Container */
+.container {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    margin: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+} 
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+} 
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+} 
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+} 
+
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1500px;
+  }
+} 
+
+/* general */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #111828 !important;
+}
+
+.container .layout-header,
+.container .layout-footer {
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+  background-color: #111828 !important;
+}
+
+.container .layout-content {
+  background-color: #111828 !important;
+}
+
+.mainLayout {
+  min-height: 100vh;
+}
+
+.bg-gray {
+  background-color: #111828 !important;
+}
+
+.text-gray {
+  color: white;
+  opacity: 0.6; 
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.header-title {
+  color: @gray-6;
+  font-size: 1.8rem;
+  padding: 0;
+  padding-top: 2rem;
+}
+
+.header-slogan {
+  color: white;
+  opacity: 0.6;
+  padding: 0;
+  margin: 0;
+  line-height: 0.8;
+}
+
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 1.3rem;
+  }
+} 
+
+
+.hr-header-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 100px;
+  border: 0;
+  border-top: solid 6px;
+  border-color: #6366F2;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* Product Item */
+.ant-card-body {
+  padding: 0 !important;
+}
+
+.product-item {
+  border-radius: 2% !important;
+  border: solid gray 1px !important;
+}
+
+.product-item-info {
+  padding: 1.2rem;
+}
+
+.product-item-category {
+  color: white;
+  opacity: 0.4;
+  margin-bottom: 0.2rem;
+}
+
+.product-item-name {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.product-item-description {
+  color: white;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.product-item-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-item-link {
+  text-decoration: none;
+  align-self: center;
+  color: @cyan-4
+}
+
+.product-item-link:hover {
+  color: @lime-4
+}
+
+
+/* Footer */
+.footer {
+  text-align: center;
+}
+
+.hr-footer-line {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 300px;
+  border: 0;
+  border-top: solid 2px;
+  border-color: #3e3f97;
+  opacity: 1;
+  border-radius: 0.2rem;
+}
+

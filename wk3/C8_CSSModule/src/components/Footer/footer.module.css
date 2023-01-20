@@ -1,0 +1,22 @@
+.footer {
+   display: flex;
+   justify-content: center; 
+   align-items: center;    
+   height: 4rem;  
+}
+
+.hrFooterLine {
+   margin: 25px auto 30px;
+   padding: 0;
+   width: 100%;
+   border: 0;
+   border-top: solid 2px;
+   border-color: #3e3f97;
+   opacity: 1;
+   border-radius: 0.2rem;
+}
+
+.copyRight {
+   color: white;
+   opacity: 0.6;
+}

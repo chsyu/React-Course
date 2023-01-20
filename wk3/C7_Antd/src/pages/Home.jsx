@@ -1,6 +1,7 @@
 import Header from "../components/Header"
+import ProductList from "../components/ProducList"
 import Footer from "../components/Footer"
-import ProductList from "../components/ProductList";
+import products from "../json/products.json"
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
         title="NORDIC NEST Shopping Cart"
         slogan="An example made by Vite."
       />
-      <ProductList className="layout-content" />
+      <ProductList product={products} className="laytout-content" />
       <Footer className="layout-footer" />
     </div>
   );

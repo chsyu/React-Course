@@ -1,0 +1,26 @@
+[
+  {
+    "id": "5",
+    "category": "Home Accessories",
+    "name": "Triplets easter rabbit 3-pack",
+    "sku": "sku_622147",
+    "price": 16,
+    "image": "/images/home1.png",
+    "description": "Cas plays modern with rustic wood, framing the rich color and defined grain of natural oak veneer in dark grey high-gloss lacquer.",
+    "description_long": "Cas plays modern with rustic wood, framing the rich color and defined grain of natural oak veneer in dark grey high-gloss lacquer. Tinted warm brown with hints of grey, planks of veneer arrange the nightstand's four drawers in seamless asymmetry.",
+    "currency": "USD",
+    "countInStock": 4 
+  },
+  {
+    "id": "6",
+    "category": "Home Accessories",
+    "name": "Nova pedal bin",
+    "sku": "sku_622146",
+    "price": 83,
+    "image": "/images/home2.png",
+    "description": "The Nova bin by the Danish brand Zone Denmark is the perfect little bin for the bathroom. The bin opens with a foot pedal and is easy to",
+    "description_long": "The Nova bin by the Danish brand Zone Denmark is the perfect little bin for the bathroom. The bin opens with a foot pedal and is easy to empty when needed. Available in several wonderful colours and beautiful in combination with other pieces from the Nova collection.",
+    "currency": "USD",
+    "countInStock": 5 
+  }
+]

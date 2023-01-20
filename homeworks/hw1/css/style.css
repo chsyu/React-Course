@@ -72,7 +72,11 @@
     }
  }
 
-/* Course Style */
+/* Image Style */
+.image {
+  position: relative;;
+}
+
 .image__layout {
   background-color: #fff;
   font-size: 1rem;
@@ -87,7 +91,16 @@
   display: block;
 }
 
-/* Resume Style */
+.image_title {
+  color: white;
+  right: 2rem;
+  bottom: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+/* Descriptions Style */
 .description__layout {
   background-color: #00979c;
   padding-top: 50px;

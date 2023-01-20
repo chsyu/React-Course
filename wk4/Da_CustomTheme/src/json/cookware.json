@@ -1,0 +1,26 @@
+[
+  {
+    "id": "11",
+    "category": "Cookware",
+    "name": "Satake Kuro chopper",
+    "sku": "sku_119140",
+    "price": 150,
+    "image": "/images/cook1.png",
+    "description": "The Satake Kuro Chopper is a handmade and rough forged knife of exceptional quality. It has been developed with a focus on sharpness, precision ",
+    "description_long": "The Satake Kuro Chopper is a handmade and rough forged knife of exceptional quality. It has been developed with a focus on sharpness, precision and strength, as evidenced by the 5CR15MOV steel of the blade, which has been processed eight times over. The knife even has a hole to hang it up when not in use. The beautiful burnt wood handle provides excellent stability to an already elegant knife. All of the knives in Satake's Kuro series make perfect gifts for cooking enthusiasts who are looking for high quality knives with a little something special.",
+    "currency": "USD",
+    "countInStock": 7 
+  },
+  {
+    "id": "12",
+    "category": "Cookware",
+    "name": "Eva Solo knife holder",
+    "sku": "sku_119139",
+    "price": 102,
+    "image": "/images/cook2.png",
+    "description": "The stylish and functional knife holder from Eva Solo is available in aluminum or black anodized aluminum and has an easy-to-clean pleated",
+    "description_long": "The stylish and functional knife holder from Eva Solo is available in aluminum or black anodized aluminum and has an easy-to-clean pleated removable plastic insert. For all sorts of knives and kitchen tools",
+    "currency": "USD",
+    "countInStock": 5 
+  }
+]

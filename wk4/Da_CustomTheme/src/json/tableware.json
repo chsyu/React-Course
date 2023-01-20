@@ -1,0 +1,26 @@
+[
+  {
+    "id": "3",
+    "category": "Tableware",
+    "name": "Rustic mug",
+    "sku": "sku_313356",
+    "price": 6,
+    "image": "/images/table1.png",
+    "description": "The beautiful Rustic mug from House Doctor is made of ceramics and has an appealing glaze in grey and blue that contributes to a rustic.",
+    "description_long": "The beautiful Rustic mug from House Doctor is made of ceramics and has an appealing glaze in grey and blue that contributes to a rustic feeling. Since it's handmade, every mug is unique. Match it with other tableware in the Rustic series.",
+    "currency": "USD",
+    "countInStock": 6 
+  },
+  {
+    "id": "4",
+    "category": "Tableware",
+    "name": "Essence white wine glass 4-pack",
+    "sku": "sku_313358",
+    "price": 63,
+    "image": "/images/table2.png",
+    "description": "These Essence white wine glasses were designed by Alfredo Häberli in 2001. The style and the elegance of these glasses will make your dining",
+    "description_long": "These Essence white wine glasses were designed by Alfredo Häberli in 2001. The style and the elegance of these glasses will make your dining",
+    "currency": "USD",
+    "countInStock": 3 
+  }
+]

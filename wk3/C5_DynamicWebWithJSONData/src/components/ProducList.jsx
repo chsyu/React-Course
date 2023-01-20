@@ -1,10 +1,8 @@
-import products from "../json/products.json";
-
-export default function ProductList() {
+export default function ProductList({ products }) {
   return (
     <div className="row">
       {products.map(product => (
-        <section 
+        <section
           className="col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 p-md-3 p-lg-4"
           key={product.id}
         >

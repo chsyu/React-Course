@@ -1,0 +1,26 @@
+[
+  { 
+    "id": "1",
+    "category": "Textile",
+    "name": "Domino wool throw",
+    "sku": "sku_313354",
+    "price": 82,
+    "image": "/images/textile2.png",
+    "description": "Keep warm with the cozy Domino wool throw from Klippan Yllefabrik. Klippan Yllefabric was founded in 1879 with a philosophy to combine Swedish ",
+    "description_long": "Keep warm with the cozy Domino wool throw from Klippan Yllefabrik. Klippan Yllefabric was founded in 1879 with a philosophy to combine Swedish design with the traditional knowledge of textiles. This particular throw has a simple, classic pattern design and is available in different colors.",
+    "currency": "USD",
+    "countInStock": 10    
+  },
+  {
+    "id": "2",
+    "category": "Textile",
+    "name": "Pom Pom cushion 45x45 cm",
+    "sku": "sku_313355",
+    "price": 76,
+    "image": "/images/textile1.png",
+    "description": "The Pom Pom cushion 45x45 cm from the Swedish By On is a pure dream for those who love soft and cosy styles of decor. This wonderful cushion.",
+    "description_long": "The Pom Pom cushion 45x45 cm from the Swedish By On is a pure dream for those who love soft and cosy styles of decor. This wonderful cushion is covered in small, fluffy Pom Poms, which quickly helps you create an inviting and snug feel on your corner sofa, your favourite recliner, or on the bed in the bedroom.",
+    "currency": "USD",
+    "countInStock": 3    
+  }
+]
