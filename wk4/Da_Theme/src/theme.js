@@ -5,6 +5,6 @@ export default {
    components: {
      Button: {
        colorPrimary: '#6366f2;',
-     },
+     }
    },
  }

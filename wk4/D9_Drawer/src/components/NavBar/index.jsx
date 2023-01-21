@@ -39,7 +39,12 @@ export default function NavBar({ open, onClose }) {
             <div className={styles.navBar}>
                 <NavBarContent />
             </div>
-            <Drawer title="Category" placement="left" onClose={onClose} open={open} >
+            <Drawer 
+                title="CATEGORY" 
+                placement="left" 
+                onClose={onClose} 
+                open={open} 
+            >
                 <div className={styles.drawer}>
                     <NavBarContent />
                 </div>

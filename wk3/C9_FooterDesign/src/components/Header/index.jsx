@@ -1,13 +1,10 @@
-import { Grid } from 'antd';
-const { useBreakpoint } = Grid;
 import styles from "./header.module.css";
 
 export default function Header({ title, slogan }) {
-    const { sm } = useBreakpoint();
 
     return (
         <div className={styles.header}>
-            <h1 className={sm ? styles.headerTitle_sm : styles.headerTitle}>
+            <h1 className={styles.headerTitle}>
                 {title}
             </h1>
 
