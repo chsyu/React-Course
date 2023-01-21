@@ -1,0 +1,29 @@
+ /* nav bar */
+ .navBar {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-top: 3rem;
+   margin-bottom: 2rem;
+ }
+ 
+ .navItem {
+   font-size: 1rem;
+   text-align: center;
+   cursor: pointer;
+   color: white;
+   opacity: 0.6;
+   text-decoration: none;
+   transition: opacity .25s linear;
+ }
+ 
+ .navItem:hover {
+   color: white;
+   opacity: 1;
+ }
+ 
+ .navItemActive {
+  composes: navItem;
+  opacity: 1;
+ }
+ 
