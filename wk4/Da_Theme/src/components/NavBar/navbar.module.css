@@ -25,8 +25,10 @@
 }
 
 .navItem:hover {
-  color: black;
+  color: white;
   opacity: 1;
+  text-shadow: 0px 0px 30px white;
+  transition: all 0.2s ease-in;
 }
 
 .navItemActive {
