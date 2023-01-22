@@ -1,0 +1,21 @@
+.cartSummary {
+   display: inline-block;
+   position: absolute;
+   top: 1.5rem;
+   right: 0.5rem;
+   cursor: pointer;
+ }
+ 
+ .cartText {
+   color: white;
+   font-size: 0.8rem;
+   opacity: 0.6;
+   margin-top: -4px;
+ }
+
+ @media (min-width: 768px) {
+   .cartSummary {
+      right: 1.5rem;
+   }
+ }
+
