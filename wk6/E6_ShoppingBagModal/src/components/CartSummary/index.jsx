@@ -24,7 +24,7 @@ export default function CartSummary() {
         <p className={styles.cartText}> Shopping bag </p>
       </nav>
       <BasketModal
-        isModalVisible={isOpen}
+        isOpen={isOpen}
         toggleModal={toggleOpen}
       />
     </>

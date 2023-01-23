@@ -5,6 +5,7 @@ export default {
    components: {
      Button: {
        colorPrimary: '#6366f2;',
+       colorPrimaryHover: '#9192f5'
      }
    },
  }

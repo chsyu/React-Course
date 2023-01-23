@@ -46,7 +46,8 @@ function ProductDetail({ product }) {
                   <div className={styles.qty}>
                      Qty: {"   "}
                      <Select
-                        defaultValue={product.countInStock > 0 ? 1 : 0}
+                        defaultValue={qty}
+                        key={qty}                        
                         className={styles.selectStyle}
                         onChange={val => setQty(val)}
                      >
