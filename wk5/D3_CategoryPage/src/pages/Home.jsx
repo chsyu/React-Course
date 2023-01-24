@@ -6,14 +6,13 @@ import products from "../json/products.json";
 
 function Home() {
   const { categoryName } = useParams();
-  const url = categoryName || "/";
-  let _products;
-  if (url == "/")
-    _products = products
-  else
-    _products = products.filter(x => x?.category.toUpperCase() === url.toUpperCase());
-
-  const title = url === "/"
+  const _products = !categoryName
+    ? products
+    : products.filter(
+        x => x?.category.toUpperCase() === categoryName.toUpperCase()
+      );
+    
+  const title = !categoryName
     ? "NORDIC NEST Shopping Cart"
     : _products[0]?.category;
 

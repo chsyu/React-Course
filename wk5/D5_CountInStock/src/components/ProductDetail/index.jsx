@@ -7,21 +7,21 @@ function ProductDetail({ product }) {
 
    return (
       <Row gutter={[32, 32]}
-         style={{justifyContent: 'center'}}
+         style={{ justifyContent: 'center' }}
       >
-         <Col 
-            xs={{ span: 24 }} 
-            lg={{ span: 6 }} 
+         <Col
+            xs={{ span: 24 }}
+            lg={{ span: 6 }}
          >
             <img
                alt={product.name}
                className={styles.image}
                src={product.image}
-            />                          
+            />
          </Col>
-         <Col 
-            xs={{ span: 24 }} 
-            lg={{ span: 14 }} 
+         <Col
+            xs={{ span: 24 }}
+            lg={{ span: 14 }}
          >
             <div className={styles.info} >
                <h2 className={styles.category} >
@@ -38,26 +38,26 @@ function ProductDetail({ product }) {
                      US${product.price}.00
                   </p>
                   <p className={styles.status}>
-                  Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
-               </p>
-               <div className={styles.qty}>
-                  Qty: {"   "}
-                  <Select 
-                     defaultValue={product.countInStock > 0 ? 1 : 0} 
-                     className={styles.selectStyle}
-                  >
-                     {[...Array(product.countInStock).keys()].map((x) => (
-                        <Option key={x + 1} value={x + 1}>
-                           {x + 1}
-                        </Option>
-                     ))}
-                  </Select>
-               </div>
+                     Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
+                  </p>
+                  <div className={styles.qty}>
+                     Qty: {"   "}
+                     <Select
+                        defaultValue={product.countInStock > 0 ? 1 : 0}
+                        className={styles.selectStyle}
+                     >
+                        {[...Array(product.countInStock).keys()].map((x) => (
+                           <Option key={x + 1} value={x + 1}>
+                              {x + 1}
+                           </Option>
+                        ))}
+                     </Select>
+                  </div>
                   <AddToBasket />
                </div>
-            </div>           
+            </div>
          </Col>
-      </Row>         
+      </Row>
    );
 }
 

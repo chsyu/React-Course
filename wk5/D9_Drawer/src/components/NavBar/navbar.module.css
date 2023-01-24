@@ -14,19 +14,20 @@
 }
 
 .navItem {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   margin-left: 2rem;
   cursor: pointer;
-  color: black;
+  color: white;
   opacity: 0.6;
   text-decoration: none;
-  transition: opacity 0.25s linear;
+  transition: all 0.5s ease-in-out;
 }
 
 .navItem:hover {
-  color: black;
+  color: white;
   opacity: 1;
+  text-shadow: 0px 0px 30px white;
 }
 
 .navItemActive {
