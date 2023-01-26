@@ -1,21 +1,15 @@
 import styles from "./hamburgermenu.module.css"
 
-export default function HamMenu({onClick, isOnTouch}) {
+export default function HamMenu({ onClick, isOnTouch }) {
+   const bar1Style = isOnTouch ? styles.hamMenuBar1_Touch : styles.hamMenuBar1;
+   const bar2Style = isOnTouch ? styles.hamMenuBar2_Touch : styles.hamMenuBar2;
+   const bar3Style = isOnTouch ? styles.hamMenuBar3_Touch : styles.hamMenuBar3;
+
    return (
-      <>
-         {isOnTouch ? (
-            <span onClick={onClick} className={`${styles.hamMenu} ${styles.showMobile}`}>
-               <span className={styles.hamMenuBar1_Touch}></span>
-               <span className={styles.hamMenuBar2_Touch}></span>
-               <span className={styles.hamMenuBar3_Touch}></span>
-            </span>
-         ):(
-            <span onClick={onClick} className={`${styles.hamMenu} ${styles.showMobile}`}>
-               <span className={styles.hamMenuBar1}></span>
-               <span className={styles.hamMenuBar2}></span>
-               <span className={styles.hamMenuBar3}></span>
-            </span>
-         )}
-      </>
+      <span onClick={onClick} className={`${styles.hamMenu} ${styles.showMobile}`}>
+         <span className={bar1Style}></span>
+         <span className={bar2Style}></span>
+         <span className={bar3Style}></span>
+      </span>
    );
 }
