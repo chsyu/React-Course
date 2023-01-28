@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Badge, theme } from "antd";
 import Cookie from "js-cookie"
 import BasketModal from "../BasketModal"
-import { CartIcon } from "./Icons";
+import { CartIcon } from "../Icons";
 import styles from "./cartsummary.module.css"
 import { selectCartItems } from "../../redux/cartSlice";
 

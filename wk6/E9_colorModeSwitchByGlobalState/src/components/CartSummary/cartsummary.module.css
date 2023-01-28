@@ -8,19 +8,3 @@
    margin-top: -4px;
  }
 
- .icon {
-  width: 1.7rem;
-  height: 1.7rem;
- }
-
- @media (min-width: 768px) {
-   .cartSummary {
-      right: 1.5rem;
-   }
-
-   .icon {
-    width: 2rem;
-    height: 2rem;
-   }
- }
-

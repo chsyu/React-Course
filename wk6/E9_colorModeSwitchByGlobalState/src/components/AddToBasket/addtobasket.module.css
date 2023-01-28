@@ -1,9 +1,12 @@
 .btn {
-   height: auto;
+   height: 4rem;
    font-size: 1.2rem;
    padding: 0.5rem 2rem;
-   font-weight: 300;
+   font-weight: 200;
    text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .image {

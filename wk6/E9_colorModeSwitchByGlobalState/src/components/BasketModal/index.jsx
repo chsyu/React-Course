@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems } from "../../redux/cartSlice";
 
 import styles from "./basketmodal.module.css"
-import { CartIcon } from "./Icons";
+import { CartIcon } from "../Icons";
 import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
@@ -80,7 +80,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             className={styles.btn}
             type="primary"
          >
-            <CartIcon size={20} color={"#ffffff"} />
+            <CartIcon color={"#ffffff"} />
             <span style={{ marginLeft: 12 }}>Start Checkout</span>
          </Button>
       </Modal>
