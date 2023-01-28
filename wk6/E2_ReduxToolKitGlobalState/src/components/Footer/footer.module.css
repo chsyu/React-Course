@@ -1,5 +1,6 @@
 .footer {
    display: grid;
+   padding-top: 2rem;
    padding-right: 1rem;
    padding-left: 1rem;
    grid-template-areas: 
@@ -8,7 +9,8 @@
    ;
    grid-template-rows: auto 3rem;
    grid-template-columns: 12fr 2fr minmax(7rem, 1fr);
-   gap: 1em,        
+   gap: 1em;
+   overflow: hidden;
 }
 
 .hrFooterLine {
@@ -50,7 +52,6 @@
 .copyRight {
    grid-area: copyRight;
    height: 4rem;
-   color: white;
    opacity: 0.6;
    display: flex;
    justify-content: center;

@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import Link from '../Link';
 import styles from './productitem.module.css';
 
 export default function ProductItem({ product }) {

@@ -4,8 +4,6 @@
    object-fit: cover;
    object-position: center;
    border-radius: 2%;
-   margin-bottom: 0;
-   padding-bottom: 0;
 }
 
 .info {
@@ -13,19 +11,16 @@
 }
 
 .category {
-   color: white;
    opacity: 0.4;
    margin-bottom: 0.2rem;
 }
 
 .name {
-   color: white;
    margin-bottom: 0.5rem;
    font-size: 1.5rem;
 }
 
 .description {
-   color: white;
    opacity: 0.6;
    font-size: 1rem;
    margin-bottom: 1rem;

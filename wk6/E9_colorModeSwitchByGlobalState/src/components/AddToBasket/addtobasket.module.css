@@ -1,0 +1,14 @@
+.btn {
+   height: auto;
+   font-size: 1.2rem;
+   padding: 0.5rem 2rem;
+   font-weight: 300;
+   text-transform: uppercase;
+}
+
+.image {
+   width: 1.5rem;
+   height: 1.5rem;
+   margin-right: 0.5rem;
+   padding-bottom: 0.3rem;
+}

@@ -6,11 +6,11 @@ import { HelmetProvider } from 'react-helmet-async'
 import './App.css';
 import Home from './pages/Home'
 import Product from './pages/Product';
-import theme from './theme';
+import { darkTheme, lightTheme } from './theme';
 
 function App() {
   return (
-    <ConfigProvider theme={theme} >
+    <ConfigProvider theme={lightTheme} >
       <HelmetProvider context={{}}>
         <BrowserRouter>
           <Routes>

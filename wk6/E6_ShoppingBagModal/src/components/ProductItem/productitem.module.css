@@ -1,5 +1,4 @@
 .item {
-   background-color: #111828;
    border-radius: 1%;
    border: solid gray 1px;
    padding: 0;
@@ -10,18 +9,15 @@
 }
 
 .category {
-   color: white;
    opacity: 0.4;
    margin-bottom: 0.2rem;
 }
 
 .name {
-   color: white;
    margin-bottom: 0.5rem;
 }
 
 .description {
-   color: white;
    opacity: 0.6;
    margin-bottom: 1rem;
 }
@@ -33,6 +29,5 @@
 }
 
 .textGray {
-   color: white;
    opacity: 0.6;
 }

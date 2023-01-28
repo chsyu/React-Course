@@ -2,18 +2,17 @@ import 'antd/dist/reset.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ConfigProvider } from 'antd';
 import { Provider } from "react-redux";
-
 import { HelmetProvider } from 'react-helmet-async'
 import './App.css';
 import Home from './pages/Home'
 import Product from './pages/Product';
-import theme from './theme';
+import { darkTheme, lightTheme } from './theme';
 import store from './redux/store';
 
 function App() {
   return (
     <Provider store={store}>
-      <ConfigProvider theme={theme} >
+      <ConfigProvider theme={lightTheme} >
         <HelmetProvider context={{}}>
           <BrowserRouter>
             <Routes>

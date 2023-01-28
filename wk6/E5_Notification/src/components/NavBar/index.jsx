@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import NavLink from '../NavLink';
 import { Drawer } from 'antd';
 
 import styles from './navbar.module.css';
