@@ -1,14 +1,16 @@
-import { Modal, Button, Select } from "antd";
+import { Modal, Button, Select, theme } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems } from "../../redux/cartSlice";
 
 import styles from "./basketmodal.module.css"
-import { CartIcon } from "./Icons";
+import { CartIcon } from "../Icons";
 import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
 export default function BasketModal({ isOpen, toggleModal }) {
+   const { token: { colorTextBase } } = theme.useToken();
+
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
 
@@ -31,7 +33,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
          ) : (
             cartItems.map(item => (
                <li key={item.id} className={styles.item}>
-                  <Link to={`/products/id/${item.id}`}>
+                  <Link to={`/products/id/${item.id}?qtyFromBasket=${item.qty}`}>
                      <div onClick={handleCancel}>
                         <img className={styles.image} src={item.image} alt={item.name} />
                      </div>
@@ -78,7 +80,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             className={styles.btn}
             type="primary"
          >
-            <CartIcon size={20} color={"#ffffff"}/>
+            <CartIcon color={"#ffffff"} />
             <span style={{ marginLeft: 12 }}>Start Checkout</span>
          </Button>
       </Modal>
