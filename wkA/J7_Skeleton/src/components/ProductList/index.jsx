@@ -12,7 +12,7 @@ export default function ProductList({ products, isLoading }) {
           xl={{ span: 6 }}
           xxl={{ span: 4 }}
         >
-          <Skeleton loading={isLoading} active>
+          <Skeleton loading={isLoading} avatar active>
             <ProductItem product={product} />
           </Skeleton>
         </Col>
