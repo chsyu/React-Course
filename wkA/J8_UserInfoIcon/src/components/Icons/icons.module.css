@@ -1,0 +1,17 @@
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.headerIcon {
+   width: 1.7rem;
+   height: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  .headerIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
