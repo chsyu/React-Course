@@ -30,7 +30,7 @@ export default function NavBar({ open, onClose }) {
             <NavLink to="/products/category/furniture"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
                 Furniture
-            </NavLink>        
+            </NavLink>
         </>
     )
 
@@ -39,11 +39,11 @@ export default function NavBar({ open, onClose }) {
             <div className={styles.navBar}>
                 <NavBarContent />
             </div>
-            <Drawer 
-                title="CATEGORY" 
-                placement="left" 
-                onClose={onClose} 
-                open={open} 
+            <Drawer
+                title="CATEGORY"
+                placement="left"
+                onClose={onClose}
+                open={open}
             >
                 <div className={styles.drawer}>
                     <NavBarContent />

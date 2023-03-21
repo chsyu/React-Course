@@ -7,6 +7,7 @@ const { Option } = Select;
 function ProductDetail({ product }) {
    const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
 
+
    return (
       <Row gutter={[32, 32]}
          style={{ justifyContent: 'center' }}

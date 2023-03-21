@@ -5,6 +5,7 @@ import { ConfigProvider } from 'antd';
 import { HelmetProvider } from 'react-helmet-async'
 import './App.css';
 import Home from './pages/Home'
+import Category from './pages/Category'
 import Product from './pages/Product';
 import theme from './theme';
 
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="products">
-              <Route path="category/:categoryName" element={<Home />} />
+              <Route path="category/:categoryName" element={<Category />} />
               <Route path="id/:productId" element={<Product />} />
             </Route>
           </Routes>

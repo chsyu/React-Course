@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './productitem.module.css';
 
 export default function ProductItem({ product }) {
-
    return (
       <div className={styles.item}>
         <Link to={`/products/id/${product.id}`}>
