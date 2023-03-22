@@ -4,16 +4,16 @@ import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
-import products from "../json/products.json";
+import { useProductById } from '../react-query';
 
 function Product() {
    const {
       token: { colorBgBase, colorTextBase },
    } = theme.useToken();
    const { productId } = useParams();
-   const product = products.find(
-      (x) => x.id === productId
-   );
+   const { data, isLoading } = useProductById(productId);
+
+   const product = data || {};
 
    return (
       <div className="mainLayout">
@@ -32,7 +32,7 @@ function Product() {
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">
-            <ProductDetail product={product} />
+            <ProductDetail product={product} isLoading={isLoading} />
          </div>
          <Footer className="layoutFooter" />
       </div>

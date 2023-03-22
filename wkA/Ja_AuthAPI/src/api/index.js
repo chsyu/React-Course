@@ -51,12 +51,20 @@ export const feedProducts = async () => {
   // ADD NEW DOCS
   products.forEach(async (product) => {
     const docRef = await doc(productsCollection);
-    await setDoc(docRef, {
-      ...product,
-      id: docRef.id,
-      category: product.category.toUpperCase(),
-    });
+    await setDoc(docRef, { ...product, id: docRef.id, category: product.category.toUpperCase() });
   });
+};
+
+export const getProducts = async () => {
+  let querySnapshot = await getDocs(productsCollection);
+
+  // Convert the query to a json array.
+  let result = [];
+  querySnapshot.forEach(async (product) => {
+    await result.push(product.data());
+  });
+  console.log({ result });
+  return result;
 };
 
 export const getProductById = async ({ queryKey }) => {
@@ -66,17 +74,13 @@ export const getProductById = async ({ queryKey }) => {
   return docSnap.data();
 };
 
-export const getProducts = async ({ queryKey }) => {
+export const getProductsByCategory = async ({ queryKey }) => {
   const [category] = queryKey;
-  let querySnapshot;
-  if (category == "/") querySnapshot = await getDocs(productsCollection);
-  else {
-    const q = await query(
-      productsCollection,
-      where("category", "==", category.toUpperCase())
-    );
-    querySnapshot = await getDocs(q);
-  }
+  const q = await query(
+    productsCollection,
+    where("category", "==", category.toUpperCase())
+  );
+  let querySnapshot = await getDocs(q);
   // Convert the query to a json array.
   let result = [];
   querySnapshot.forEach(async (product) => {

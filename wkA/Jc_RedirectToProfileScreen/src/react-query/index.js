@@ -1,12 +1,17 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/usersSlice";
-import { getProductById, getProducts, login, register } from "../api";
+import { getProductById, getProducts, getProductsByCategory, login, register } from "../api";
 
-export const useProducts = (category) => {
-  const { data, isLoading } = useQuery([category], getProducts);
+export const useProducts = () => {
+  const { data, isLoading } = useQuery([], getProducts);
   return { data, isLoading };
 };
+
+export const useProductsByCategory = (category) => {
+   const { data, isLoading } = useQuery([category], getProductsByCategory);
+   return { data, isLoading };
+ };
 
 export const useProductById = (productId) => {
   const { data, isLoading } = useQuery([productId], getProductById);

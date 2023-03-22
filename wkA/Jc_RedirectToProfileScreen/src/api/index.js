@@ -9,14 +9,8 @@ import {
   deleteDoc,
   query,
   where,
+  initializeFirestore,
 } from "firebase/firestore";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut,
-  updateProfile,
-} from "firebase/auth";
 import products from "../json/products.json";
 
 const firebaseConfig = {
@@ -34,10 +28,7 @@ const app_length = getApps().length > 0;
 const app = app_length ? getApp() : initializeApp(firebaseConfig);
 
 // REFERENCE DB
-const db = getFirestore(app);
-
-//REFERENCE AUTH
-const auth = getAuth(app);
+const db = app_length ? getFirestore(app) : initializeFirestore(app, { experimentalForceLongPolling: true, });
 
 // REFERENCE COLLECTION
 const productsCollection = collection(db, "products");
@@ -59,6 +50,18 @@ export const feedProducts = async () => {
   });
 };
 
+export const getProducts = async () => {
+  let querySnapshot = await getDocs(productsCollection);
+
+  // Convert the query to a json array.
+  let result = [];
+  querySnapshot.forEach(async (product) => {
+    await result.push(product.data());
+  });
+  console.log({ result });
+  return result;
+};
+
 export const getProductById = async ({ queryKey }) => {
   const [id] = queryKey;
   const docRef = await doc(db, "products", id);
@@ -66,17 +69,13 @@ export const getProductById = async ({ queryKey }) => {
   return docSnap.data();
 };
 
-export const getProducts = async ({ queryKey }) => {
+export const getProductsByCategory = async ({ queryKey }) => {
   const [category] = queryKey;
-  let querySnapshot;
-  if (category == "/") querySnapshot = await getDocs(productsCollection);
-  else {
-    const q = await query(
-      productsCollection,
-      where("category", "==", category.toUpperCase())
-    );
-    querySnapshot = await getDocs(q);
-  }
+  const q = await query(
+    productsCollection,
+    where("category", "==", category.toUpperCase())
+  );
+  let querySnapshot = await getDocs(q);
   // Convert the query to a json array.
   let result = [];
   querySnapshot.forEach(async (product) => {
