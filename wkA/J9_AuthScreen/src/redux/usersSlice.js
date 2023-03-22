@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import Cookie from "js-cookie"
 
 // Define initialState 
 
 
-const userInfo = !Cookie.get().userInfo ? null : JSON.parse(Cookie.get().userInfo);
+const userInfo = null;
 
 const initialState = {
   userInfo,

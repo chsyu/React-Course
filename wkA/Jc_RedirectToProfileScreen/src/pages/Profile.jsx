@@ -2,7 +2,7 @@ import { theme } from 'antd';
 import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import RegisterCard from '../components/RegisterCard';
+import ProfileCard from '../components/ProfileCard';
 
 function Profile() {
    const {
@@ -26,7 +26,7 @@ function Profile() {
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">
-            <RegisterCard />
+            <ProfileCard />
          </div>
          <Footer className="layoutFooter" />
       </div>

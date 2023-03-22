@@ -4,15 +4,16 @@ import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
-import { useProductById } from '../react-query';
+import products from "../json/products.json";
 
 function Product() {
    const {
       token: { colorBgBase, colorTextBase },
    } = theme.useToken();
    const { productId } = useParams();
-   const { data, isLoading } = useProductById(productId);
-   const product = data || {};
+   const product = products.find(
+      (x) => x.id === productId
+   );
 
    return (
       <div className="mainLayout">
