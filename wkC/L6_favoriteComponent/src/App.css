@@ -1,0 +1,86 @@
+/* General Styles */
+/* RWD Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+/* body */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Layout */
+.mainLayout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.layoutHeader {
+  grid-area: header;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+.layoutFooter {
+  grid-area: footer;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+.layoutContent {
+  grid-area: content;
+}
+
+/* spinner */
+.spinner-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.spinner {
+  margin-top: 20vh;
+}
