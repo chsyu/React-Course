@@ -60,9 +60,7 @@ export const feedProducts = async () => {
   });
 };
 
-export const addLikeToProduct = async (productId, uid) => {
-  const docRef = await doc(db, "products", productId);
-
+export const toggleFavoriteProduct = async (productId, uid) => {
 
 }
 
