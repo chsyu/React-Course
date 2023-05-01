@@ -1,12 +1,11 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import styles from "./profilecard.module.css"
-import { selectUserInfo } from "../../redux/usersSlice";
-import { useUpdateProfile, useLogout } from "../../react-query";
+import { useUpdateProfile, useLogout, useUserInfo } from "../../react-query";
 
 const ProfileCard = ({ redirect }) => {
-  const userInfo = useSelector(selectUserInfo);
+  const { data: userInfo } = useUserInfo() || {};
   const update = useUpdateProfile();
   const logout = useLogout();
   const navigate = useNavigate();
@@ -21,6 +20,10 @@ const ProfileCard = ({ redirect }) => {
     logout.mutate();
     navigate("/");
   }
+
+  useEffect(() => {
+    form.setFieldsValue(userInfo)
+  }, [userInfo])
 
   return (
     <Form
@@ -99,3 +102,4 @@ const ProfileCard = ({ redirect }) => {
   );
 };
 export default ProfileCard;
+``

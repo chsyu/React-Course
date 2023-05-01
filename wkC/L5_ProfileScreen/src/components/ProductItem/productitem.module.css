@@ -31,3 +31,14 @@
 .textGray {
    opacity: 0.6;
 }
+
+.more {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.favorite {
+   cursor: pointer;
+}
+

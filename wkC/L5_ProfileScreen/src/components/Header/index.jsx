@@ -11,37 +11,29 @@ export default function Header({ title, slogan }) {
     const [isOnTouch, setIsOnTouch] = useState(false);
 
     return (
-        <div className="container">
-            <div className={styles.header}>
-                <div className={styles.headerWwrap}>
-                    <HamburgerMenu
-                        onClick={() => setIsOnTouch(!isOnTouch)}
-                        isOnTouch={isOnTouch}
-                    />
-                    <Link to="/">
-                        <h1 className={styles.headerTitle}>
-                            {title}
-                        </h1>
-                    </Link>
+      <div className="container">
+        <div className={styles.header}>
+          <div className={styles.headerWwrap}>
+            <HamburgerMenu
+              onClick={() => setIsOnTouch(!isOnTouch)}
+              isOnTouch={isOnTouch}
+            />
+            <Link to="/">
+              <h1 className={styles.headerTitle}>{title}</h1>
+            </Link>
 
-                    <p className={styles.headerSlogan}>
-                        {slogan}
-                    </p>
+            <p className={styles.headerSlogan}>{slogan}</p>
+          </div>
 
-                </div>
-
-
-                <hr className={styles.hrHeaderLine} />
-                <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
-            </div>
-            <div className={styles.iconWrap}>
-                <SetColorMode/>
-                <UserInfo />
-                <CartSummary/>                
-            </div>
-
+          <hr className={styles.hrHeaderLine} />
+          <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
         </div>
-
+        <div className={styles.iconWrap}>
+          <SetColorMode className={styles.hideInMobile} />
+          <UserInfo className={styles.hideInMobile} />
+          <CartSummary />
+        </div>
+      </div>
     );
 }
 

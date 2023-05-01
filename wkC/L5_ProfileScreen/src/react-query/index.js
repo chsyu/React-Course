@@ -1,67 +1,67 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
-import { setUser } from "../redux/usersSlice";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   getProductById,
   getProducts,
   getProductsByCategory,
   login,
   register,
+  getUserInfo,
   updateUserInfo,
   logout,
 } from "../api";
 
 export const useProducts = () => {
-  const { data, isLoading } = useQuery([], getProducts);
-  return { data, isLoading };
+  return useQuery([], getProducts);
 };
 
 export const useProductsByCategory = (category) => {
-  const { data, isLoading } = useQuery([category], getProductsByCategory);
-  return { data, isLoading };
+  return useQuery([category], getProductsByCategory);
 };
 
 export const useProductById = (productId) => {
-  const { data, isLoading } = useQuery([productId], getProductById);
-  return { data, isLoading };
+  return useQuery([productId], getProductById);
+};
+
+export const useUserInfo = () => {
+  return useQuery({
+    queryKey: ["uid"],
+    queryFn: getUserInfo,
+    initialData: {},
+  });
 };
 
 export const useSignInWithEmailPassword = () => {
-  const dispatch = useDispatch();
-  const { mutate, isLoading, isSuccess, isError, data, error, status } =
-    useMutation(login, {
-      onSuccess: (data) => {
-        dispatch(
-          setUser(data)
-        );
-      },
-    });
-  return { mutate, isLoading, isSuccess, isError, data, error, status };
+  const queryClient = useQueryClient();
+  return useMutation(login, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["uid"]);
+    },
+  });
 };
 
 export const useRegisterWithEmailPassword = () => {
-  const dispatch = useDispatch();
-  const { mutate, isLoading, isSuccess, isError, data, error, status } =
-    useMutation(register, {
-      onSuccess: (data) => {
-        dispatch(
-          setUser(data)
-        );
-      },
-    });
-  return { mutate, isLoading, isSuccess, isError, data, error, status };
+  const queryClient = useQueryClient();
+  return useMutation(register, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["uid"]);
+    },
+  });
 };
 
 export const useUpdateProfile = () => {
-  const dispatch = useDispatch();
-  const { mutate, isLoading, isSuccess, isError, data, error, status } =
-    useMutation(updateUserInfo);
-  return { mutate, isLoading, isSuccess, isError, data, error, status };
+  const queryClient = useQueryClient();
+  return useMutation(updateUserInfo, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["uid"]);
+    },
+  });
 };
 
 export const useLogout = () => {
-  const dispatch = useDispatch();
+  const queryClient = useQueryClient();
   return useMutation(logout, {
-    onSuccess: () => dispatch(setUser(null)),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["uid"]);
+    },
   });
 };

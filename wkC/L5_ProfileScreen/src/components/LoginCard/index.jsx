@@ -1,31 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { WarningOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
-
-import { remember } from "../../redux/usersSlice";
-import { useSignInWithEmailPassword } from "../../react-query";
-import { selectIsRemember } from "../../redux/usersSlice";
-
 import styles from './logincard.module.css';
-
+import { useSignInWithEmailPassword } from "../../react-query";
 
 const LoginCard = ({ redirect }) => {
 
+   const [isRemember, setIsRemember] = useState(false);
    const { mutate, error, isLoading, isError, isSuccess, data } = useSignInWithEmailPassword();
-   const isRemember = useSelector(selectIsRemember);
-   const dispatch = useDispatch();
    const [form] = Form.useForm();
    const navigate = useNavigate();
 
-   const onFinish = async (values) => {
+   const onFinish = (values) => {
       console.log("Received values of form: ", values);
       mutate(values);
-   };
-
-   const onChange = (e) => {
-      dispatch(remember(e.target.checked));
    };
 
    useEffect(() => {
@@ -43,7 +32,6 @@ const LoginCard = ({ redirect }) => {
             isRemember: true,
          }}
          onFinish={onFinish}
-      // onFihishFailed={onFinishFailed}
       >
          <Form.Item
             name="email"
@@ -81,15 +69,14 @@ const LoginCard = ({ redirect }) => {
             />
          </Form.Item>
          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-               <Checkbox onChange={onChange} checked={isRemember}>
-                  Remember me
-               </Checkbox>
-            </Form.Item>
-
             <Link className={styles.loginForm__forgot} to={"/"}>
                Forgot password
             </Link>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+               <Checkbox onChange={() => setIsRemember(!isRemember)} checked={isRemember}>
+                  Remember me
+               </Checkbox>
+            </Form.Item>
          </Form.Item>
 
          <Form.Item>

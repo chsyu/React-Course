@@ -5,7 +5,6 @@ import {
   doc,
   setDoc,
   getDoc,
-  updateDoc,
   getDocs,
   deleteDoc,
   query,
@@ -16,8 +15,9 @@ import {
   getAuth, signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
   initializeAuth,
+  signOut,
+  updateProfile,
 } from 'firebase/auth';
-import _ from "lodash";
 import products from "../json/products.json";
 
 const firebaseConfig = {
@@ -51,7 +51,7 @@ export const feedProducts = async () => {
   });
   // ADD NEW DOCS
   products.forEach(async (product) => {
-    const docRef = doc(productsCollection);
+    const docRef = await doc(productsCollection);
     await setDoc(docRef, {
       ...product,
       id: docRef.id,
@@ -68,12 +68,13 @@ export const getProducts = async () => {
   querySnapshot.forEach(async (product) => {
     await result.push(product.data());
   });
+  console.log({ result });
   return result;
 };
 
 export const getProductById = async ({ queryKey }) => {
   const [id] = queryKey;
-  const docRef = doc(db, "products", id);
+  const docRef = await doc(db, "products", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 };
@@ -113,8 +114,3 @@ export const register = async ({ name, email, password }) => {
     name,
   });
 };
-
-export const logout = async () => {
-  await auth.signOut();
-}
-
