@@ -1,5 +1,6 @@
-.cartSummary {
+.colorMode {
    cursor: pointer;
+   display: none;
  }
  
  .cartText {
@@ -7,3 +8,10 @@
    opacity: 0.6;
    margin-top: -4px;
  }
+
+
+@media (min-width: 920px) {
+  .colorMode {
+    display: block;
+  }
+}

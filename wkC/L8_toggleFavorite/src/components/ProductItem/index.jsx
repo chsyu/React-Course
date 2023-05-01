@@ -1,26 +1,22 @@
 
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { theme } from 'antd';
 import _ from 'lodash';
 import Link from '../Link';
 import { FavoriteIcon } from '../Icons';
 import { useToggleFavoriteProduct, useUserInfo } from '../../react-query';
-import { selectUserInfo } from '../../redux/usersSlice';
 import styles from './productitem.module.css';
 
 export default function ProductItem({ product }) {
-   useUserInfo();
    const {
       token: { colorTextBase },
-    } = theme.useToken();
+   } = theme.useToken();
    const { mutate } = useToggleFavoriteProduct();
-   const userInfo = useSelector(selectUserInfo) || {};
+   const { data: userInfo } = useUserInfo() || {};
    const favorites = userInfo.favorites || [];
-   const isFavorite = _.includes(favorites, product.id );
+   let isFavorite = _.includes(favorites, product.id);
    const toggleFavorite = () => {
-      if(!!userInfo?.uid)
-         mutate({productId: product.id, uid: userInfo?.uid })
+      if (!!userInfo?.uid)
+         mutate({ productId: product.id, uid: userInfo?.uid })
    }
 
    return (
@@ -52,7 +48,7 @@ export default function ProductItem({ product }) {
                   </span>
                </div>
                <div onClick={toggleFavorite} className={styles.favorite}>
-                     <FavoriteIcon color={isFavorite ? '#F19D38' : colorTextBase} />
+                  <FavoriteIcon color={isFavorite ? '#F19D38' : colorTextBase} />
                </div>
             </div>
          </div>

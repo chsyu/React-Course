@@ -1,6 +1,4 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
-import { setUser } from "../redux/usersSlice";
 import {
   getProductById,
   getProducts,
@@ -28,19 +26,17 @@ export const useProductById = (productId) => {
 export const useToggleFavoriteProduct = () => {
   const queryClient = useQueryClient();
   return useMutation(toggleFavoriteProduct, {
-    onSuccess: () => {
+    onSuccess: (data) => {
       queryClient.invalidateQueries(["uid"]);
     },
   });
 };
 
 export const useUserInfo = () => {
-  const dispatch = useDispatch();
   return useQuery({
     queryKey: ["uid"],
     queryFn: getUserInfo,
     initialData: {},
-    onSuccess: (data) => dispatch(setUser(data)),
   });
 };
 
@@ -63,19 +59,19 @@ export const useRegisterWithEmailPassword = () => {
 };
 
 export const useUpdateProfile = () => {
-  const dispatch = useDispatch();
+  const queryClient = useQueryClient();
   return useMutation(updateUserInfo, {
-    onSuccess: (data) => dispatch(setUser(data)),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["uid"]);
+    },  
   });
 };
 
 export const useLogout = () => {
   const queryClient = useQueryClient();
-  const dispatch = useDispatch();
   return useMutation(logout, {
     onSuccess: () => {
       queryClient.invalidateQueries(["uid"]);
-      dispatch(setUser(null));
     },
   });
 };

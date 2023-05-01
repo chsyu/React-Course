@@ -5,6 +5,7 @@ import {
   doc,
   setDoc,
   getDoc,
+  updateDoc,
   getDocs,
   deleteDoc,
   query,
@@ -15,9 +16,8 @@ import {
   getAuth, signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
   initializeAuth,
-  signOut,
-  updateProfile,
 } from 'firebase/auth';
+import _ from "lodash";
 import products from "../json/products.json";
 
 const firebaseConfig = {
@@ -51,7 +51,7 @@ export const feedProducts = async () => {
   });
   // ADD NEW DOCS
   products.forEach(async (product) => {
-    const docRef = await doc(productsCollection);
+    const docRef = doc(productsCollection);
     await setDoc(docRef, {
       ...product,
       id: docRef.id,
@@ -68,13 +68,12 @@ export const getProducts = async () => {
   querySnapshot.forEach(async (product) => {
     await result.push(product.data());
   });
-  console.log({ result });
   return result;
 };
 
 export const getProductById = async ({ queryKey }) => {
   const [id] = queryKey;
-  const docRef = await doc(db, "products", id);
+  const docRef = doc(db, "products", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 };
@@ -95,13 +94,11 @@ export const getProductsByCategory = async ({ queryKey }) => {
 };
 
 export const login = async ({ email, password }) => {
-  const userCredential = await signInWithEmailAndPassword(
+  await signInWithEmailAndPassword(
     auth,
     email,
     password
   );
-  const user = userCredential?.user;
-  return user;
 };
 
 export const register = async ({ name, email, password }) => {
@@ -111,8 +108,13 @@ export const register = async ({ name, email, password }) => {
     password
   );
   const user = userCredential?.user;
-  await updateProfile(auth.currentUser, {
-    displayName: name,
+  const docRef = doc(db, "users", user.uid);
+  await setDoc(docRef, {
+    name,
   });
-  return user;
 };
+
+export const logout = async () => {
+  await auth.signOut();
+}
+

@@ -1,5 +1,6 @@
 .userInfo {
   cursor: pointer;
+  display: none;
 }
 
 .userInfoText {
@@ -13,10 +14,14 @@
   padding-left: 0.6rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 920px) {
   .userInfoText {
     font-size: 0.7rem;
     margin-top: 0.3rem;
+  }
+
+  .userInfo {
+    display: block;
   }
 
   .userInfoOutlined {

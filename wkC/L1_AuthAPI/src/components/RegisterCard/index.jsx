@@ -1,28 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
-import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import React from "react";
 import { Form, Input, Checkbox, Button } from "antd";
 import { WarningOutlined } from "@ant-design/icons";
-
-import { useRegisterWithEmailPassword } from "../../react-query";
 import styles from "./registercard.module.css"
 
 const RegisterCard = ({ redirect }) => {
 
-  const { mutate, error, isLoading, isError, isSuccess, data } = useRegisterWithEmailPassword();
-
   const [form] = Form.useForm();
-  const navigate = useNavigate();
-
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
-    mutate(values);
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      navigate(redirect);
-    }
-  }, [isSuccess, redirect]); 
 
   return (
     <Form
@@ -33,7 +20,7 @@ const RegisterCard = ({ redirect }) => {
       scrollToFirstError
     >
       <Form.Item
-        name="username"
+        name="name"
         label="Your Name"
         tooltip="What do you want others to call you?"
         rules={[
@@ -120,37 +107,15 @@ const RegisterCard = ({ redirect }) => {
         </Checkbox>
       </Form.Item>
       <Form.Item>
-        {isLoading ? (
-          <Button
-            type="primary"
-            className={styles.loginForm__button}
-            htmlType="submit"
-            loading
-          >
-            Create your account
-          </Button>
-        ) : (
-          <Button
-            type="primary"
-            className={styles.loginForm__button}
-            htmlType="submit"
-          >
-            Create your account
-          </Button>
-        )}
+        <Button
+          type="primary"
+          className={styles.loginForm__button}
+          htmlType="submit"
+        >
+          Create your account
+        </Button>
         Already have an account?{" "}
         <Link to={`/auth/login?redirect=${redirect}`}>Login</Link>
-        {!isError ? (
-          <></>
-        ) : (
-          <div className={styles.loginForm__errorWrap}>
-            <h3 className={styles.loginForm__errorTitle}>
-              <WarningOutlined  />
-              {"  "}There was a problem
-            </h3>
-            <p className={styles.loginForm__errorMessage}>{error.response.data?.detail}</p>
-          </div>
-        )}
       </Form.Item>
     </Form>
   );

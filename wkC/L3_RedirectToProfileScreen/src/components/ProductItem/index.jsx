@@ -1,12 +1,17 @@
 
+import { theme } from 'antd';
+import _ from 'lodash';
 import Link from '../Link';
 import styles from './productitem.module.css';
 
 export default function ProductItem({ product }) {
+   const {
+      token: { colorTextBase },
+   } = theme.useToken();
 
    return (
       <div className={styles.item}>
-        <Link to={`/products/id/${product.id}`}>
+         <Link to={`/products/id/${product.id}`}>
             <img
                style={{ width: '100%' }}
                src={product.image}
@@ -23,13 +28,15 @@ export default function ProductItem({ product }) {
                {product.description}
             </p>
             <div className={styles.more}>
-               <Link to={`/products/id/${product.id}`} className={styles.link}>
-                  See More ...
-               </Link>
-               <span
-                  className={styles.textGray}>
-                  USD {product.price}.00
-               </span>
+               <div>
+                  <Link to={`/products/id/${product.id}`} className={styles.link}>
+                     See More ...
+                  </Link>
+                  <span
+                     className={styles.textGray}>
+                     USD {product.price}.00
+                  </span>
+               </div>
             </div>
          </div>
       </div>

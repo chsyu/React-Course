@@ -14,7 +14,7 @@ export default function SetColorMode() {
    }
 
    return (
-      <div onClick={toggleColor} className={styles.cartSummary} >
+      <div onClick={toggleColor} className={styles.colorMode} >
          {
             lightMode ? (
                <Sun color={colorTextBase} />

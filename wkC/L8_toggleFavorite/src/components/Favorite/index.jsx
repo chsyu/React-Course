@@ -1,15 +1,13 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
 import { Badge, theme } from "antd";
 import { FavoriteIcon } from "../Icons";
+import { useUserInfo } from "../../react-query";
 import styles from "./favorite.module.css";
-import { selectUserInfo } from "../../redux/usersSlice";
 
 export default function Favorite() {
   const {
     token: { colorTextBase },
   } = theme.useToken();
-  const userInfo = useSelector(selectUserInfo) || {};
+  const { data: userInfo} = useUserInfo() || {};
   const favorites = userInfo.favorites || [];
   const count = favorites.length;
   const toggleOpen = () => {};

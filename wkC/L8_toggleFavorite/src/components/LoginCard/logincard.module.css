@@ -6,11 +6,7 @@
 }
 
 .loginForm__forgot {
-  float: right;
-}
-
-.loginForm__forgot {
-  float: left;
+  margin-right: 2rem;
 }
 
 .loginForm__button {

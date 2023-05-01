@@ -3,7 +3,6 @@ import {
   getFirestore,
   collection,
   doc,
-  addDoc,
   setDoc,
   getDoc,
   updateDoc,
@@ -43,7 +42,6 @@ const auth = app_length ? getAuth(app) : initializeAuth(app);
 
 // REFERENCE COLLECTION
 const productsCollection = collection(db, "products");
-const usersCollection = collection(db, "users");
 
 export const feedProducts = async () => {
   // DELETE ALL EXISTING DOCS
@@ -53,7 +51,7 @@ export const feedProducts = async () => {
   });
   // ADD NEW DOCS
   products.forEach(async (product) => {
-    const docRef = await doc(productsCollection);
+    const docRef = doc(productsCollection);
     await setDoc(docRef, {
       ...product,
       id: docRef.id,
@@ -61,18 +59,6 @@ export const feedProducts = async () => {
     });
   });
 };
-
-export const toggleFavoriteProduct = async ({productId, uid}) => {
-  const docRef = await doc(db, "users", uid);
-  const docSnap = await getDoc(docRef);
-  const userDoc = docSnap.data();
-  const favorites = userDoc?.favorites || [];
-  if(favorites.length === _.pull(favorites,productId).length){
-    favorites.push(productId);  
-  }
-  await updateDoc(docRef, { favorites }); 
-  return favorites;
-}
 
 export const getProducts = async () => {
   let querySnapshot = await getDocs(productsCollection);
@@ -87,7 +73,7 @@ export const getProducts = async () => {
 
 export const getProductById = async ({ queryKey }) => {
   const [id] = queryKey;
-  const docRef = await doc(db, "products", id);
+  const docRef = doc(db, "products", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 };
@@ -108,14 +94,14 @@ export const getProductsByCategory = async ({ queryKey }) => {
 };
 
 export const getUserInfo = async () => {
-  if(auth.currentUser) {
-    const user = auth.currentUser
-    const docRef = await doc(db, "users", user?.uid);
+  const storedUser = localStorage.getItem("user");
+  const user = auth?.currentUser || JSON.parse(storedUser) || null;
+
+  if(user) {
+    const docRef = doc(db, "users", user.uid);
     const docSnap = await getDoc(docRef);
     const userDoc = docSnap.data();
-
     return {
-      accessToken: user.accessToken,
       uid: user.uid,
       email: user.email,
       ...userDoc,
@@ -123,26 +109,29 @@ export const getUserInfo = async () => {
   } else {
     return {}
   }
+}
 
+export const toggleFavoriteProduct = async ({productId, uid}) => {
+  const docRef = doc(db, "users", uid);
+  const docSnap = await getDoc(docRef);
+  const userDoc = docSnap.data();
+  const favorites = userDoc?.favorites || [];
+  if(favorites.length === _.pull(favorites,productId).length){
+    favorites.push(productId);  
+  }
+  await updateDoc(docRef, { favorites }); 
+  return favorites;
 }
 
 export const login = async ({ email, password }) => {
+
   await signInWithEmailAndPassword(
     auth,
     email,
     password
   );
   const user = auth.currentUser;
-  const docRef = await doc(db, "users", auth.currentUser.uid);
-  const docSnap = await getDoc(docRef);
-  const userDoc = docSnap.data();
-
-  return {
-    accessToken: user.accessToken,
-    uid: user.uid,
-    email: user.email,
-    ...userDoc,
-  };
+  localStorage.setItem("user", JSON.stringify(user));
 };
 
 export const register = async ({ name, email, password }) => {
@@ -152,33 +141,26 @@ export const register = async ({ name, email, password }) => {
     password
   );
   const user = userCredential?.user;
-
-  const docRef = await doc(db, "users", auth.currentUser.uid);
+  localStorage.setItem("user", JSON.stringify(user));
+  const docRef = doc(db, "users", user.uid);
   await setDoc(docRef, {
     name,
   });
-  const docSnap = await getDoc(docRef);
-  const userDoc = docSnap.data();
-  return {
-    accessToken: user.accessToken,
-    uid: user.uid,
-    email: user.email,
-    ...userDoc,
-  };
 };
 
 export const updateUserInfo = async ({ name, adrs, tel, uid }) => {
-  const docRef = await doc(db, "users", uid);
+  const docRef = doc(db, "users", uid);
   await updateDoc(docRef, {
     name,
     adrs,
     tel,
   });
-  const docSnap = await getDoc(docRef);
-  return docSnap.data();
+  const user = auth.currentUser;
+  localStorage.setItem("user", JSON.stringify(user));
 }
 
 export const logout = async () => {
   await auth.signOut();
+  localStorage.removeItem("user");
 }
 
