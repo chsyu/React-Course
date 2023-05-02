@@ -104,7 +104,7 @@ const LoginCard = ({ redirect }) => {
             )}
             Or <Link to={`/auth/register?redirect=${redirect}`}>register now!</Link>
             {!isError ? (
-               <></>
+               <div></div>
             ) : (
                <div className={styles.loginForm__errorWrap}>
                   <h3 className={styles.loginForm__errorTitle}>

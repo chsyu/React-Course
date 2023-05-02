@@ -2,13 +2,17 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import { Form, Input, Checkbox, Button } from "antd";
 import { WarningOutlined } from "@ant-design/icons";
-import styles from "./registercard.module.css"
+
 import { useRegisterWithEmailPassword } from "../../react-query";
+import styles from "./registercard.module.css"
 
 const RegisterCard = ({ redirect }) => {
+
   const { mutate, error, isLoading, isError, isSuccess, data } = useRegisterWithEmailPassword();
+
   const [form] = Form.useForm();
   const navigate = useNavigate();
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     mutate(values);
@@ -18,7 +22,7 @@ const RegisterCard = ({ redirect }) => {
     if (isSuccess) {
       navigate(redirect);
     }
-  }, [isSuccess, redirect]);
+  }, [isSuccess, redirect]); 
 
   return (
     <Form
@@ -137,11 +141,11 @@ const RegisterCard = ({ redirect }) => {
         Already have an account?{" "}
         <Link to={`/auth/login?redirect=${redirect}`}>Login</Link>
         {!isError ? (
-          <></>
+          <div></div>
         ) : (
           <div className={styles.loginForm__errorWrap}>
             <h3 className={styles.loginForm__errorTitle}>
-              <WarningOutlined />
+              <WarningOutlined  />
               {"  "}There was a problem
             </h3>
             <p className={styles.loginForm__errorMessage}>{error.message}</p>

@@ -1,20 +1,30 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { WarningOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
-import styles from './logincard.module.css';
+
 import { useSignInWithEmailPassword } from "../../react-query";
+
+import styles from './logincard.module.css';
+
 
 const LoginCard = ({ redirect }) => {
 
-   const [isRemember, setIsRemember] = useState(false);
    const { mutate, error, isLoading, isError, isSuccess, data } = useSignInWithEmailPassword();
+   const [isRemember, setIsRemember] = useState(false);
    const [form] = Form.useForm();
+   const navigate = useNavigate();
 
    const onFinish = (values) => {
       console.log("Received values of form: ", values);
       mutate(values);
    };
+
+   useEffect(() => {
+      if (isSuccess) {
+         navigate(redirect);
+      }
+   }, [isSuccess, redirect]);
 
    return (
       <Form
@@ -25,6 +35,7 @@ const LoginCard = ({ redirect }) => {
             isRemember: true,
          }}
          onFinish={onFinish}
+      // onFihishFailed={onFinishFailed}
       >
          <Form.Item
             name="email"
@@ -93,7 +104,7 @@ const LoginCard = ({ redirect }) => {
             )}
             Or <Link to={`/auth/register?redirect=${redirect}`}>register now!</Link>
             {!isError ? (
-               <></>
+               <div></div>
             ) : (
                <div className={styles.loginForm__errorWrap}>
                   <h3 className={styles.loginForm__errorTitle}>

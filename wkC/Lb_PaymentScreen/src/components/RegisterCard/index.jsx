@@ -141,7 +141,7 @@ const RegisterCard = ({ redirect }) => {
         Already have an account?{" "}
         <Link to={`/auth/login?redirect=${redirect}`}>Login</Link>
         {!isError ? (
-          <></>
+          <div></div>
         ) : (
           <div className={styles.loginForm__errorWrap}>
             <h3 className={styles.loginForm__errorTitle}>
