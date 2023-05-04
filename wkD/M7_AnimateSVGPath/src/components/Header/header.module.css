@@ -1,0 +1,57 @@
+.header {
+  text-align: center;
+}
+
+.headerTitle {
+  font-size: 1.3rem;
+  padding: 0;
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .headerTitle {
+    font-size: 1.8rem;
+  }
+}
+
+.headerSlogan {
+  opacity: 0.6;
+  padding: 0;
+  margin: 0;
+  line-height: 0.8;
+}
+
+.hrHeaderLine {
+  margin: 25px auto 30px;
+  padding: 0;
+  width: 100px;
+  border: 0;
+  border-top: solid 6px;
+  border-color: #6366f2;
+  opacity: 1;
+}
+
+.iconWrap {
+  position: absolute;
+  right: 0.5rem;
+  top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 2.5rem);
+}
+
+.hideInMobile {
+  display: none;
+}
+
+@media (min-width: 920px) {
+  .iconWrap {
+    right: 1rem;
+    top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 4rem);
+  }
+
+  .hideInMobile {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.text {
+  position: absolute;
+  width: 50rem;
+  left: 25vw;
+  top: 30vh;  
+}
+
+.button {
+  position: absolute;
+  left: 45vw;
+  bottom: 30vh;
+  margin-top: 3rem;
+  color: white;
+  background-color: #000;
+  padding: 1rem 2rem 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #444;
+}

@@ -1,0 +1,44 @@
+.item {
+   border-radius: 1%;
+   border: solid gray 1px;
+   padding: 0;
+}
+
+.info {
+   padding: 1.2rem;
+}
+
+.category {
+   opacity: 0.4;
+   margin-bottom: 0.2rem;
+}
+
+.name {
+   margin-bottom: 0.5rem;
+}
+
+.description {
+   opacity: 0.6;
+   margin-bottom: 1rem;
+}
+
+.link {
+   text-decoration: none;
+   align-self: center;
+   color: #8183ff;
+}
+
+.textGray {
+   opacity: 0.6;
+}
+
+.more {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.favorite {
+   cursor: pointer;
+}
+
