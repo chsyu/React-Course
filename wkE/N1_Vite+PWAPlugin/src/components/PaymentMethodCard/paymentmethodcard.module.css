@@ -1,0 +1,11 @@
+.paymentForm {
+   max-width: 40rem;
+   padding: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ 
+ .paymentForm__button {
+    width: 100%;
+  }
+  

@@ -1,0 +1,12 @@
+.shippingForm {
+  max-width: 40rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shippingForm__button {
+   width: 100%;
+ }
+ 
