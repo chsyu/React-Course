@@ -14,7 +14,7 @@ import PlaceOrder from './pages/PlaceOrder';
 // import Order from './pages/Order';
 
 import { darkTheme, lightTheme } from './theme';
-import { selectLightMode } from "./redux/colorSLice";
+import { selectLightMode } from "./redux/colorSlice";
 
 function Router() {
   const lightMode = useSelector(selectLightMode);
