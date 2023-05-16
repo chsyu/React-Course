@@ -1,5 +1,5 @@
 import { getApps, getApp, initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, setDoc, getDocs, deleteDoc } from "firebase/firestore";
 import products from "../json/products.json";
 
 const firebaseConfig = {

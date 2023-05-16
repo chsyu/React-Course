@@ -5,8 +5,8 @@ import Router from './Router';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-// import { feedProducts } from './api';
-// feedProducts();
+import { feedProducts } from './api';
+feedProducts();
 
 function App() {
 
