@@ -1,21 +1,19 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProductList from "../components/ProductList";
-import products from "../json/products.json";
+import Header from '../components/Header'
+import ProductList from '../components/ProductList'
+import Footer from '../components/Footer'
 
 function Home() {
 
   return (
-    <div className="container mainLayout">
+    <div className="container mx-auto main-layout bg-gray-900 min-h-screen">
       <Header 
-        className="layoutHeader"
-        title="NORDIC NEST Shopping Cart"
-        slogan="An example made by Vite."
+        title="Welcome to the Store"
+        slogan="The best place to buy your favorite products"
       />
-      <ProductList products={products} className="layoutContent" />
-      <Footer className="layoutFooter" />
+      <ProductList className="content" />
+      <Footer className="footer" />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

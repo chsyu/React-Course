@@ -1,5 +1,5 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
@@ -12,14 +12,13 @@ function Product() {
    );
 
    return (
-      <div className="container mainLayout">
+      <div className="container mx-auto main-layout bg-gray-900">
          <Header
-            className="layoutHeader"
             title="Product Detail"
             slogan="An example made by Vite."
          />
-         <ProductDetail product={product} className="layoutContent" />
-         <Footer className="layoutFooter" />
+         <ProductDetail product={product} className="content" />
+         <Footer className="footer" />
       </div>
    );
 }
