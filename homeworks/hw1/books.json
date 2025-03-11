@@ -1,0 +1,56 @@
+[
+   {
+      "ID": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "summary": "In 1922, Nick Carraway, a Yale graduate and World War I veteran, moves to Long Island’s North Shore and becomes entangled with the extravagant Jay Gatsby, who is famous for his lavish parties. The story explores themes of wealth, society, and love in the American Dream, highlighting the moral decay hidden behind the glamorous facade of the 1920s.",
+      "price": 15,
+      "stock": 45,
+      "cover": "./images/book1.png"
+  },
+  {
+      "ID": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "summary": "Set in the Deep South during the 1930s, this novel narrates the experiences of Scout Finch as her father, Atticus Finch, defends a Black man accused of raping a white woman. Through Scout’s eyes, we witness racial injustice and moral growth, as well as the complexities of human behavior in a divided society.",
+      "price": 20,
+      "stock": 60,
+      "cover": "./images/book2.png"
+  },
+  {
+      "ID": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "summary": "In George Orwell's dystopian novel, society is under constant surveillance by Big Brother. The protagonist, Winston Smith, works at the Ministry of Truth, where he alters historical records to fit government propaganda. As he becomes disillusioned with this oppressive regime, Winston seeks truth and rebellion, leading to a tale of political intrigue and psychological manipulation.",
+      "price": 18,
+      "stock": 34,
+      "cover": "./images/book3.png"
+  },
+  {
+      "ID": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "summary": "This timeless novel centers on Elizabeth Bennet, a young woman navigating issues of class, marriage, and morality in 19th century England. Through her spirited intelligence, Elizabeth confronts her own prejudice against the wealthy Mr. Darcy, revealing deeper themes of love, integrity, and social expectations. Austen's sharp wit and social commentary resonate throughout the story.",
+      "price": 25,
+      "stock": 50,
+      "cover": "./images/book4.png"
+  },
+  {
+      "ID": 5,
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "summary": "This novel follows Ishmael, who joins Captain Ahab on a whaling voyage to catch the elusive Moby Dick, a giant white whale. The narrative delves into themes of obsession, revenge, and the complexities of nature, presenting philosophical reflections on humanity's place in the universe. Melville's rich prose and symbolism make this an enduring classic in American literature.",
+      "price": 30,
+      "stock": 40,
+      "cover": "./images/book5.png"
+  },
+  {
+      "ID": 6,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "summary": "The story follows Holden Caulfield, a teenager who has been expelled from his prep school. He wanders New York City, confronting the phoniness of the adult world while grappling with feelings of alienation and loss. Through his cynical perspective and desire to protect the innocence of youth, Salinger's novel has become a poignant exploration of identity and adolescence.",
+      "price": 22,
+      "stock": 55,
+      "cover": "./images/book6.png"
+  }
+]
