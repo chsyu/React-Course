@@ -35,7 +35,7 @@ function ProductDetail({ product }) {
               defaultValue={product.countInStock > 0 ? 1 : 0}
               onChange={val => setQty(val)}
             >
-              {[...Array(product.countInStock).keys()].map((x) => (
+              {Array(product.countInStock).keys().map((x) => (
                 <option key={x + 1} value={x + 1}>
                   {x + 1}
                 </option>
