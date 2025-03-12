@@ -5,15 +5,15 @@ import HamMenu from "@/components/HamMenu"
 
 function Header({ title, slogan }) {
 
-   const [isOnTouch, setIsOnTouch] = useState(false);
+   const [isOpen, setIsOpen] = useState(false);
 
    return (
       <header className="relative text-center flex flex-col items-center header">
          <HamMenu
             className="absolute left-0 top-4"
-            onClick={() => setIsOnTouch(!isOnTouch)}
-            isOnTouch={isOnTouch}
-         />
+            onClick={() => setIsOpen(!isOpen)}
+            isOpen={isOpen}
+            />
          <Link to="/">
             <h2 className="text-white pt-5 pb-2 text-3xl font-bold">
                {title}
