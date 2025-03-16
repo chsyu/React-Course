@@ -1,0 +1,163 @@
+[
+    {
+      "ID": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "summary": "In 1922, Nick Carraway, a Yale graduate and World War I veteran, moves to Long Island’s North Shore and becomes entangled with the extravagant Jay Gatsby, who is famous for his lavish parties. The story explores themes of wealth, society, and love in the American Dream, highlighting the moral decay hidden behind the glamorous facade of the 1920s.",
+      "price": 15,
+      "stock": 45,
+      "cover": "./images/book1.png",
+      "reviews": [
+        {
+          "reviewer": "Alice",
+          "rating": 5,
+          "comment": "A beautifully written critique of the American Dream."
+        },
+        {
+          "reviewer": "John",
+          "rating": 4,
+          "comment": "Great storytelling but a bit melancholic."
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "summary": "Set in the Deep South during the 1930s, this novel narrates the experiences of Scout Finch as her father, Atticus Finch, defends a Black man accused of raping a white woman. Through Scout’s eyes, we witness racial injustice and moral growth, as well as the complexities of human behavior in a divided society.",
+      "price": 20,
+      "stock": 60,
+      "cover": "./images/book2.png",
+      "reviews": [
+        {
+          "reviewer": "Michael",
+          "rating": 5,
+          "comment": "A must-read classic with deep social commentary."
+        },
+        {
+          "reviewer": "Sophie",
+          "rating": 5,
+          "comment": "Timeless story of courage and justice."
+        },
+        {
+          "reviewer": "Emma",
+          "rating": 4,
+          "comment": "Beautifully written but emotionally heavy."
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "summary": "In George Orwell's dystopian novel, society is under constant surveillance by Big Brother. The protagonist, Winston Smith, works at the Ministry of Truth, where he alters historical records to fit government propaganda. As he becomes disillusioned with this oppressive regime, Winston seeks truth and rebellion, leading to a tale of political intrigue and psychological manipulation.",
+      "price": 18,
+      "stock": 34,
+      "cover": "./images/book3.png",
+      "reviews": [
+        {
+          "reviewer": "David",
+          "rating": 5,
+          "comment": "Chillingly relevant in today’s world."
+        },
+        {
+          "reviewer": "Sophia",
+          "rating": 4,
+          "comment": "Dystopian fiction at its best, though a bit dense at times."
+        },
+        {
+          "reviewer": "Ryan",
+          "rating": 5,
+          "comment": "A masterpiece of political fiction."
+        },
+        {
+          "reviewer": "Chris",
+          "rating": 3,
+          "comment": "Important message, but a tough read."
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "summary": "This timeless novel centers on Elizabeth Bennet, a young woman navigating issues of class, marriage, and morality in 19th century England. Through her spirited intelligence, Elizabeth confronts her own prejudice against the wealthy Mr. Darcy, revealing deeper themes of love, integrity, and social expectations. Austen's sharp wit and social commentary resonate throughout the story.",
+      "price": 25,
+      "stock": 50,
+      "cover": "./images/book4.png",
+      "reviews": [
+        {
+          "reviewer": "Emma",
+          "rating": 5,
+          "comment": "Absolutely delightful. Elizabeth Bennet is iconic!"
+        },
+        {
+          "reviewer": "Rachel",
+          "rating": 4,
+          "comment": "A classic love story with wit and depth."
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "summary": "This novel follows Ishmael, who joins Captain Ahab on a whaling voyage to catch the elusive Moby Dick, a giant white whale. The narrative delves into themes of obsession, revenge, and the complexities of nature, presenting philosophical reflections on humanity's place in the universe. Melville's rich prose and symbolism make this an enduring classic in American literature.",
+      "price": 30,
+      "stock": 40,
+      "cover": "./images/book5.png",
+      "reviews": [
+        {
+          "reviewer": "Paul",
+          "rating": 4,
+          "comment": "A dense but rewarding read."
+        },
+        {
+          "reviewer": "George",
+          "rating": 3,
+          "comment": "Too long for my taste, but beautifully written."
+        },
+        {
+          "reviewer": "Anna",
+          "rating": 5,
+          "comment": "Epic, symbolic, and deeply philosophical."
+        }
+      ]
+    },
+    {
+      "ID": 6,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "summary": "The story follows Holden Caulfield, a teenager who has been expelled from his prep school. He wanders New York City, confronting the phoniness of the adult world while grappling with feelings of alienation and loss. Through his cynical perspective and desire to protect the innocence of youth, Salinger's novel has become a poignant exploration of identity and adolescence.",
+      "price": 22,
+      "stock": 55,
+      "cover": "./images/book6.png",
+      "reviews": [
+        {
+          "reviewer": "Jack",
+          "rating": 5,
+          "comment": "Holden’s voice is so unique and real."
+        },
+        {
+          "reviewer": "Nina",
+          "rating": 3,
+          "comment": "I can see why it’s a classic, but I didn’t love it."
+        },
+        {
+          "reviewer": "Olivia",
+          "rating": 4,
+          "comment": "A thought-provoking novel on adolescence."
+        },
+        {
+          "reviewer": "Ethan",
+          "rating": 5,
+          "comment": "One of my all-time favorites!"
+        },
+        {
+          "reviewer": "Lucy",
+          "rating": 4,
+          "comment": "I really connected with Holden’s struggles."
+        }
+      ]
+    }
+  ]
