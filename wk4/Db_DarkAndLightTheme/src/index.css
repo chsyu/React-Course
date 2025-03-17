@@ -2,14 +2,18 @@
 @source "./pages";
 @source "./components";
 @plugin "daisyui" {
-  themes: light, dark, cupcake, dracula;
+  themes: light, dark;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
-  default: true;
   --color-primary: #6366F2;
-  --color-secondary: teal;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #6366F288;
 }
 
 [data-theme="light"] {
