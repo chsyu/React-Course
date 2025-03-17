@@ -15,17 +15,20 @@ function Category() {
   const title = _.startCase(categoryName);
 
   return (
-    <div className="container mx-auto main-layout min-h-screen">
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <Header 
-        title={title}
-        slogan="The best place to buy your favorite products"
-      />
-      <ProductList products={_products} className="content" />
+    <div>
+      <div className="container mx-auto main-layout min-h-screen">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header 
+          title={title}
+          slogan="The best place to buy your favorite products"
+        />
+        <ProductList products={_products} className="content" />
+      </div>      
       <Footer className="footer" />
     </div>
+
   );
 }
 
