@@ -31,11 +31,11 @@ function ProductDetail({ product }) {
           <div className="flex items-center gap-2">
             <span className="font-bold" >Qty:</span>
             <select
-              className="select select-bordered w-20 bg-[#111818] text-white"
+              className="select select-bordered w-20"
               defaultValue={product.countInStock > 0 ? 1 : 0}
               onChange={ event => setQty(event.target.value)}
             >
-              {Array(product.countInStock).keys().map((x) => (
+              {[ ...Array(product.countInStock).keys()].map((x) => (
                 <option key={x + 1} value={x + 1}>
                   {x + 1}
                 </option>

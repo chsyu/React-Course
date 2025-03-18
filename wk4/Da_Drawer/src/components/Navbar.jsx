@@ -41,7 +41,7 @@ export default function NavBar() {
 
       {/* 手機版 Drawer */}
       <div className="drawer md:hidden">
-        <input id="drawer-toggle" type="checkbox" className="drawer-toggle" checked={isOpen} />
+        <input id="drawer-toggle" type="checkbox" className="drawer-toggle" checked={isOpen} readOnly />
         <HamMenu
           id="drawer-toggle" 
           className="absolute transform -translate-y-37 translate-x-1 drawer-toggle"

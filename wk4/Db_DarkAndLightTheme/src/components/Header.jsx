@@ -14,7 +14,7 @@ function Header({ title, slogan }) {
             </h2>
          </Link>
 
-         <p className="opacity-60 text-opacity-80 text-base leading-relaxed xl:w-1/2 lg:w-3/4 mx-auto">
+         <p className="opacity-60 text-base leading-relaxed xl:w-1/2 lg:w-3/4 mx-auto">
             {slogan}
          </p>
          <div className="flex mt-6 justify-center">
