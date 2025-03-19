@@ -3,15 +3,14 @@ import { useSearchParams } from 'react-router';
 import AddToBasket from "@/components/AddToBasket"
 
 function ProductDetail({ product }) {
-  const [searchParams] = useSearchParams();
-  const qtyFromBasket = searchParams.get('qtyFromBasket');
-  const initQty = !!qtyFromBasket ? Number(qtyFromBasket) : product.countInStock > 0 ? 1 : 0
-  const [qty, setQty] = useState(initQty);
+const [searchParams] = useSearchParams();
+const [qty, setQty] = useState(1); // 預設為 1
 
-  useEffect(() => {
-    setQty(initQty);
-  }
-  , [initQty]);
+useEffect(() => {
+  const qtyFromBasket = searchParams.get('qtyFromBasket');
+  const parsedQty = qtyFromBasket ? Number(qtyFromBasket) : (product.countInStock > 0 ? 1 : 0);
+  setQty(isNaN(parsedQty) || parsedQty < 0 ? 0 : parsedQty);
+}, [searchParams, product.countInStock]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-24 gap-8 justify-center">
