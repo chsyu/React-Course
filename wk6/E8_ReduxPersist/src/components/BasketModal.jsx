@@ -82,8 +82,8 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   </button>
 
                   {/* Close button */}
-                  <div className="modal-action mt-4">
-                     <button onClick={handleCancel} className="btn btn-sm">Close</button>
+                  <div className="absolute right-4 top-4 modal-action mt-4">
+                     <button onClick={handleCancel} className="btn btn-sm font-thin">X</button>
                   </div>
                </div>
             </div>
