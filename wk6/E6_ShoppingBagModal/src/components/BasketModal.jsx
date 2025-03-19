@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems, selectCartItems } from "@/redux/cartSlice";
 import { CartIcon } from "@/components/Icons";
+import { Basket } from "@/components/Icons";
 
 export default function BasketModal({ isOpen, toggleModal }) {
    const dispatch = useDispatch();
@@ -77,13 +78,13 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   <button
                      className="btn btn-primary w-full text-base font-light py-3 mt-8 flex justify-center items-center"
                   >
-                     <CartIcon size={20} className="text-white" />
-                     <span className="ml-3">Start Checkout</span>
+                     <CartIcon size={20} color="currentColor" className="text-white" />
+                     <span className="font-thin ml-3">START CHECKOUT</span>
                   </button>
 
                   {/* Close button */}
-                  <div className="modal-action mt-4">
-                     <button onClick={handleCancel} className="btn btn-sm">Close</button>
+                  <div className="absolute right-4 top-4 modal-action mt-4">
+                     <button onClick={handleCancel} className="btn btn-sm font-thin">X</button>
                   </div>
                </div>
             </div>

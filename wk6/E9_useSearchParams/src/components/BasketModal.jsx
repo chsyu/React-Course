@@ -77,8 +77,8 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   <button
                      className="btn btn-primary w-full text-base font-light py-3 mt-8 flex justify-center items-center"
                   >
-                     <CartIcon size={20} className="text-white" />
-                     <span className="ml-3">Start Checkout</span>
+                     <CartIcon size={20} color="currentColor" className="text-white" />
+                     <span className="font-thin ml-3">START CHECKOUT</span>
                   </button>
 
                   {/* Close button */}

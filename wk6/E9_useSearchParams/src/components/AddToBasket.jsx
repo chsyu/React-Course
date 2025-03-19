@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCartItems } from "@/redux/cartSlice";
+import { Basket } from "@/components/Icons";
 
 export default function AddToBasket({ product, qty }) {
   const dispatch = useDispatch();
@@ -22,11 +23,12 @@ export default function AddToBasket({ product, qty }) {
     }, 2000);
   };
 
-   return (
+  return (
     <>
       <button className="btn btn-primary px-8 py-5" onClick={addToCart}>
-        Add To Basket
-      </button>    
+        <Basket size={24} color="currentColor" />
+        <span className="font-thin ml-3">ADD TO BASKET</span>
+      </button>
       {showToast && (
         <div className="toast toast-end">
           <div className="alert">
@@ -38,5 +40,5 @@ export default function AddToBasket({ product, qty }) {
       )}
     </>
 
-   );
- }
+  );
+}
