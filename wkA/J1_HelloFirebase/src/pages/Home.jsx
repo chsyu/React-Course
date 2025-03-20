@@ -1,38 +1,27 @@
-import { Helmet } from "react-helmet-async"
-import { theme } from 'antd';
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProductList from "../components/ProductList";
-import products from "../json/products.json";
+import { Helmet } from 'react-helmet-async';
+import Header from '@/components/Header'
+import ProductList from '@/components/ProductList'
+import Footer from '@/components/Footer'
+import products from "@/json/products.json";
 
 function Home() {
-  const {
-    token: { colorBgBase, colorTextBase },
-  } = theme.useToken();
-  const title = "NORDIC NEST Shopping Cart";
+  const title = "Welcome to the Store";
 
   return (
-    <div className="mainLayout">
-      <Helmet>
-        <title>{title}</title>
-        <style>{`
-            body { 
-              background-color: ${colorBgBase}; 
-              color: ${colorTextBase}
-            }
-        `}</style>
-      </Helmet>
-      <Header
-        className="layoutHeader"
-        title={title}
-        slogan="An example made by Vite."
-      />
-      <div className="layoutContent container">
-        <ProductList products={products} />
+    <div>
+      <div className="container mx-auto main-layout min-h-screen">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header
+          title={title}
+          slogan="The best place to buy your favorite products"
+        />
+        <ProductList products={products} className="content" />
       </div>
-      <Footer className="layoutFooter" />
+      <Footer className="footer" />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

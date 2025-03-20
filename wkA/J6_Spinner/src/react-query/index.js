@@ -1,17 +1,23 @@
 import { useQuery } from '@tanstack/react-query'
-import { getProductById, getProducts, getProductsByCategory} from "../api";
+import { getProductById, getProducts, getProductsByCategory} from "@/api/fireStore";
 
 export const useProducts = () => {
-   const { data, isLoading } = useQuery([], getProducts);
-   return { data, isLoading };
+   return useQuery({
+    queryKey: ['products'], 
+    queryFn: getProducts
+  });
  };
  
  export const useProductsByCategory = (category) => {
-    const { data, isLoading } = useQuery([category], getProductsByCategory);
-    return { data, isLoading };
+    return useQuery({
+      queryKey: [category], 
+      queryFn: getProductsByCategory
+    });
   };
  
  export const useProductById = (productId) => {
-   const { data, isLoading } = useQuery([productId], getProductById);
-   return { data, isLoading };
+   return useQuery({
+    queryKey: [productId], 
+    queryFn: getProductById
+  });
  };
