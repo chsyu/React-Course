@@ -1,36 +1,26 @@
-import { theme } from 'antd';
-import { Helmet } from "react-helmet-async"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import LoginCard from '../components/LoginCard';
+import { Helmet } from 'react-helmet-async';
+import Header from '@/components/Header'
+import LoginCard from '@/components/LoginCard'
+import Footer from '@/components/Footer'
 
 function Login() {
-   const {
-      token: { colorBgBase, colorTextBase },
-   } = theme.useToken();
+   const title = "Login";
 
-   return (
-      <div className="mainLayout">
-         <Helmet>
-            <title>login</title>
-            <style>{`
-               body { 
-                  background-color: ${colorBgBase}; 
-                  color: ${colorTextBase}
-               }
-            `}</style>
-         </Helmet>
-         <Header
-            className="layoutHeader"
-            title="Login"
-            slogan="An example made by Vite."
-         />
-         <div className="layoutContent container">
-            <LoginCard />
-         </div>
-         <Footer className="layoutFooter" />
+  return (
+    <div>
+      <div className="container mx-auto main-layout min-h-screen">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header
+          title={title}
+          slogan="The best place to buy your favorite products"
+        />
+        <LoginCard />
       </div>
-   );
+      <Footer className="footer" />
+    </div>
+  )
 }
 
-export default Login;
+export default Login

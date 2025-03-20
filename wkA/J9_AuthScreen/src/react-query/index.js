@@ -1,37 +1,51 @@
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { useDispatch } from "react-redux";
-import { setUser } from '../redux/usersSlice';
-import { getProductById, getProducts, getProductsByCategory, signInWithEmailPassword, registerWithEmailPassword} from "../api";
+import { setUser } from '@/redux/usersSlice';
+import { getProductById, getProducts, getProductsByCategory} from "@/api/fireStore";
+import { signInWithEmailPassword, registerWithEmailPassword } from "@/api/fireAuth";
 
 export const useProducts = () => {
-   const { data, isLoading } = useQuery([], getProducts);
-   return { data, isLoading };
+   return useQuery({
+    queryKey: ['products'], 
+    queryFn: getProducts
+  });
  };
  
  export const useProductsByCategory = (category) => {
-    const { data, isLoading } = useQuery([category], getProductsByCategory);
-    return { data, isLoading };
+    return useQuery({
+      queryKey: [category], 
+      queryFn: getProductsByCategory
+    });
   };
  
  export const useProductById = (productId) => {
-   const { data, isLoading } = useQuery([productId], getProductById);
-   return { data, isLoading };
+   return useQuery({
+    queryKey: [productId], 
+    queryFn: getProductById
+  });
  };
+
 
  export const useSignInWithEmailPassword = () => {
   const dispatch = useDispatch();
-  const { mutate, isLoading, isSuccess, isError, data, error, status } = useMutation(signInWithEmailPassword, {
-     onSuccess: (data) =>{
-      console.log({data})
-      dispatch(setUser(data))}
+  const mutation = useMutation({
+    mutationFn: signInWithEmailPassword,
+    onSuccess: (data) => {
+      dispatch(setUser(data));
+    }
   });
-  return { mutate, isLoading, isSuccess, isError, data, error, status };
-}
+
+  return mutation;
+};
 
 export const useRegisterWithEmailPassword = () => {
   const dispatch = useDispatch();
-  const { mutate, isLoading, isSuccess, isError, data, error, status } = useMutation(registerWithEmailPassword, {
-     onSuccess: (data) => dispatch(setUser(data))
+  const mutation = useMutation({
+    mutationFn: registerWithEmailPassword,
+    onSuccess: (data) => {
+      dispatch(setUser(data));
+    }
   });
-  return { mutate, isLoading, isSuccess, isError, data, error, status };
-}
+
+  return mutation;
+};
