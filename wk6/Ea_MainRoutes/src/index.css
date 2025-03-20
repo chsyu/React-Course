@@ -1,0 +1,64 @@
+@import "tailwindcss" source(none);
+@source "./pages";
+@source "./components";
+@plugin "daisyui" {
+  themes: light, dark;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #6366F2;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #6366F2;
+}
+
+[data-theme="light"] {
+  .footer-bg {
+    background-color: #3E3F92;
+  }
+
+  .drawer-bg {
+    background-color: #fff;
+  }
+}
+
+[data-theme="dark"] {
+  .drawer-bg {
+    background-color: #222;
+  }
+}
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.main-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas: 
+    'header'
+    'content'
+    'footer'
+  ;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
