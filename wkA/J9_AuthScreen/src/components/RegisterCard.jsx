@@ -47,7 +47,7 @@ const RegisterCard = ({ redirect }) => {
           <input
             type="text"
             name="username"
-            placeholder="Your name"
+            placeholder="e.g., John Doe"
             value={formData.username}
             onChange={e => setFormData({ ...formData, username: e.target.value })}
             className="input input-bordered w-full pl-10"
@@ -64,7 +64,7 @@ const RegisterCard = ({ redirect }) => {
           <input
             type="email"
             name="email"
-            placeholder="E-mail"
+            placeholder="e.g., john@example.com"
             value={formData.email}
             onChange={e => setFormData({ ...formData, email: e.target.value })}
             className="input input-bordered w-full pl-10"
@@ -81,7 +81,7 @@ const RegisterCard = ({ redirect }) => {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="At least 6 characters"
             value={formData.password}
             onChange={e => setFormData({ ...formData, password: e.target.value })}
             className="input input-bordered w-full pl-10"

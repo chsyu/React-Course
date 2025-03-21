@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems, selectCartItems } from "@/redux/cartSlice";
-import { CartIcon } from "@/components/Icons";
+import { ShoppingBasket } from "lucide-react";
 
 export default function BasketModal({ isOpen, toggleModal }) {
    const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   ) : (
                      cartItems.map(item => (
                         <li key={item.id} className="flex justify-between items-center pb-4 mb-4 border-b border-gray-400">
-                           <Link to={`/products/id/${item.id}`} onClick={handleCancel}>
+                           <Link to={`/products/id/${item.id}?qtyFromBasket=${item.qty}`} onClick={handleCancel}>
                               <img className="max-w-16 max-h-16 flex-1 cursor-pointer" src={item.image} alt={item.name} />
                            </Link>
                            <div className="ml-8 flex-8 w-48 text-left">
@@ -77,7 +77,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   <button
                      className="btn btn-primary w-full text-base font-light py-3 mt-8 flex justify-center items-center"
                   >
-                     <CartIcon size={20} color="currentColor" className="text-white" />
+                     <ShoppingBasket strokeWidth={1} className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" />
                      <span className="font-thin ml-3">START CHECKOUT</span>
                   </button>
 

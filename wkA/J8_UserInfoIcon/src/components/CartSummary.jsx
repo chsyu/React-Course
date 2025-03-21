@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { CartIcon } from "@/components/Icons";
+import { ShoppingBasket } from "lucide-react";
 import BasketModal from "@/components/BasketModal"
 import { selectCartItems } from "@/redux/cartSlice";
 
@@ -24,8 +24,8 @@ function CartSummary() {
                      {count}
                   </span>
                )}
-               <CartIcon color="currentColor" />
-            </div>
+               <ShoppingBasket strokeWidth={1.5} className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" />
+               </div>
             <p className="hidden md:block text-xs opacity-60 mt-[-4px]">Bag</p>
          </nav>
          <BasketModal

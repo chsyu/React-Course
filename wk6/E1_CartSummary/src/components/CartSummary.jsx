@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CartIcon } from "@/components/Icons";
+import { ShoppingBasket } from "lucide-react";
 
 function CartSummary() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +12,8 @@ function CartSummary() {
     >
       <div className="indicator">
         <span className="indicator-item badge badge-primary text-white">5</span>
-        <CartIcon size={32} color="currentColor" />
-      </div>
+        <ShoppingBasket strokeWidth={1.5} className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" />
+        </div>
       <p className="text-xs opacity-60 mt-[-4px]">Shopping bag</p>
     </nav>
   );

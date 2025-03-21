@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Sun, Moon } from "@/components/Icons";
+import { Sun, Moon } from "lucide-react";
 import { selectLightMode, setColorMode } from "@/redux/colorSLice";
 
 export default function SetColorMode() {
@@ -19,9 +19,9 @@ export default function SetColorMode() {
       <div onClick={toggleColor} className="cursor-pointer" >
          {
             lightMode ? (
-               <Sun color="currentColor" />
+               <Sun className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" />
             ) : (
-               <Moon color="currentColor" /> 
+               <Moon className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" /> 
             )
          }
       </div>

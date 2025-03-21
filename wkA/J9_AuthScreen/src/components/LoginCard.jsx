@@ -37,7 +37,7 @@ const LoginCard = ({ redirect }) => {
           <input
             type="email"
             name="email"
-            placeholder="E-Mail"
+            placeholder="e.g., john@example.com"
             className="input input-bordered w-full pl-10"
             required
           />
@@ -52,7 +52,7 @@ const LoginCard = ({ redirect }) => {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="At least 6 characters"
             className="input input-bordered w-full pl-10"
             required
           />

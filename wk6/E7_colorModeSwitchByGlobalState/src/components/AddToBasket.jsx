@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCartItems } from "@/redux/cartSlice";
-import { Basket } from "@/components/Icons";
+import { ShoppingBasket } from "lucide-react";
 
 export default function AddToBasket({ product, qty }) {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function AddToBasket({ product, qty }) {
   return (
     <>
       <button className="btn btn-primary px-8 py-5" onClick={addToCart}>
-        <Basket size={24} color="currentColor" />
+        <ShoppingBasket strokeWidth={1} className="w-5 h-5 md:w-6 md:h-6 text-current group-hover:scale-105 transition-transform" />
         <span className="font-thin ml-3">ADD TO BASKET</span>
       </button>
       {showToast && (
