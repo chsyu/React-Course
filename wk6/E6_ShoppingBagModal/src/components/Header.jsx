@@ -18,7 +18,9 @@ function Header({ title, slogan }) {
          <p className="opacity-60 text-base leading-relaxed xl:w-1/2 lg:w-3/4 mx-auto">
             {slogan}
          </p>
-         <CartSummary />
+         <div className="absolute right-0 top-8 grid grid-cols-2 gap-0 w-[4rem] md:w-[7rem]">
+            <CartSummary />
+         </div>         
          <div className="flex mt-6 justify-center">
             <hr className="my-[25px] mx-auto w-[100px] border-0 border-t-[6px] border-primary opacity-100 rounded" />
          </div>

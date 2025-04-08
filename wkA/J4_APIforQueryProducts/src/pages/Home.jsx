@@ -8,8 +8,8 @@ function Home() {
   const title = "Welcome to the Store";
 
   return (
-    <div>
-      <div className="container mx-auto main-layout min-h-screen">
+    <div className="main-layout min-h-screen">
+      <div className="container mx-auto">
         <Helmet>
           <title>{title}</title>
         </Helmet>
@@ -19,7 +19,7 @@ function Home() {
         />
         <ProductList products={products} className="content" />
       </div>
-      <Footer className="footer" />
+      <Footer />
     </div>
   )
 }

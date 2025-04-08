@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { ShoppingBasket } from "lucide-react";
-import { CartIcon } from "@/components/Icons";
 import BasketModal from "@/components/BasketModal"
 import { selectCartItems } from "@/redux/cartSlice";
 

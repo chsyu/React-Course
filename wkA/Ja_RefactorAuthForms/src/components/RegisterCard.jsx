@@ -1,12 +1,9 @@
 import { Mail, Lock, User } from "lucide-react";
-import { useRegisterWithEmailPassword } from "@/react-query";
-import { useNavigate, Link } from "react-router";
-import { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { useState } from "react";
 import { FormInput, FormError, AuthFormLayout } from "@/components/common";
 
 const RegisterCard = ({ redirect }) => {
-  const { mutate, error, isLoading, isSuccess } = useRegisterWithEmailPassword();
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     username: "",
@@ -16,30 +13,9 @@ const RegisterCard = ({ redirect }) => {
     agreement: false,
   });
 
-  const onChange = (e) => {
-    const { name, type, checked, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+  const onChange = (e) => {};
 
-  const onFinish = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.rePassword) {
-      alert("Passwords do not match");
-      return;
-    }
-    if (!formData.agreement) {
-      alert("Please accept the agreement");
-      return;
-    }
-    mutate(formData);
-  };
-
-  useEffect(() => {
-    if (isSuccess) navigate(redirect);
-  }, [isSuccess, redirect]);
+  const onFinish = (e) => {};
 
   return (
     <AuthFormLayout onSubmit={onFinish}>
@@ -86,13 +62,13 @@ const RegisterCard = ({ redirect }) => {
         value={formData.agreement}
         onChange={onChange}
       />
-      <button type="submit" className="btn btn-primary w-full" disabled={isLoading}>
-        {isLoading ? "Creating..." : "Create your account"}
+      <button type="submit" className="btn btn-primary w-full" disabled={false}>
+        Create your account
       </button>
       <p className="text-sm mt-2">
         Already have an account? <Link to={`/auth/login?redirect=${redirect}`} className="link link-primary">Login</Link>
       </p>
-      <FormError error={error?.response?.data?.detail} />
+      <FormError error={""} />
     </AuthFormLayout>
   );
 };

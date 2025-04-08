@@ -58,7 +58,7 @@ body {
   grid-area: content;
 }
 
-.footer {
+.footer-grid {
   grid-area: footer;
 }
 

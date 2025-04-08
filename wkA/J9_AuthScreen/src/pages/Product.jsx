@@ -13,8 +13,8 @@ function Product() {
    const title = "Product Detail";
 
    return (
-      <div>
-         <div className="container mx-auto main-layout">
+      <div className="main-layout min-h-screen">
+         <div className="container mx-auto">
             <Helmet>
                <title>{title}</title>
             </Helmet>

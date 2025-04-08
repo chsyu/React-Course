@@ -13,8 +13,8 @@ function Category() {
   const title = _.startCase(categoryName);
 
   return (
-    <div>
-      <div className="container mx-auto main-layout min-h-screen">
+    <div className="main-layout min-h-screen">
+      <div className="container mx-auto">
         <Helmet>
           <title>{title}</title>
         </Helmet>
@@ -22,7 +22,7 @@ function Category() {
           title={title}
           slogan="The best place to buy your favorite products"
         />
-        <ProductList products={_products} className="content" />
+        <ProductList products={_products} isLoading={isLoading} className="content" />
       </div>      
       <Footer className="footer" />
     </div>

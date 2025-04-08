@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { useRegisterWithEmailPassword } from "@/react-query";
-import { AlertTriangle, Mail, Lock, User } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router";
+import { Mail, Lock, User } from "lucide-react";
 
 const RegisterCard = ({ redirect }) => {
-  const { mutate, error, isLoading, isError, isSuccess } = useRegisterWithEmailPassword();
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     username: "",
@@ -16,28 +13,12 @@ const RegisterCard = ({ redirect }) => {
   });
 
   const onFinish = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.rePassword) {
-      alert("Passwords do not match");
-      return;
-    }
-    if (!formData.agreement) {
-      alert("Please accept the agreement");
-      return;
-    }
-    mutate(formData);
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      navigate(redirect);
-    }
-  }, [isSuccess, redirect]);
 
   return (
     <form
       onSubmit={onFinish}
-      className="bg-base-100 p-6 mx-auto w-[500px] rounded-xl shadow-md space-y-4"
+      className="bg-base-100 p-6 mx-auto w-[500px] rounded-xl shadow-md space-y-4 content"
     >
       <div>
         <label className="label">
@@ -100,7 +81,7 @@ const RegisterCard = ({ redirect }) => {
             name="rePassword"
             placeholder="Re-enter Password"
             value={formData.rePassword}
-            onChange={e => setFormData({ ...formData, rePassword: e.target.value })}
+            onChange={e => {}}
             className="input input-bordered w-full pl-10"
             required
           />
@@ -118,20 +99,12 @@ const RegisterCard = ({ redirect }) => {
           I have read the <Link to="/" className="link link-primary">agreement</Link>
         </span>
       </div>
-      <button type="submit" className="btn btn-primary w-full" disabled={isLoading}>
-        {isLoading ? "Creating..." : "Create your account"}
+      <button type="submit" className="btn btn-primary w-full" disabled={false}>
+        Create your account
       </button>
       <p className="text-sm mt-2">
         Already have an account? <Link to={`/auth/login?redirect=${redirect}`} className="link link-primary">Login</Link>
       </p>
-      {isError && (
-        <div className="mt-4 p-3 border border-error rounded-md">
-          <h3 className="text-error font-bold flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4" /> There was a problem
-          </h3>
-          <p className="text-xs text-error-content mt-1">{error?.response?.data?.detail}</p>
-        </div>
-      )}
     </form>
   );
 };

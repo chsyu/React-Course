@@ -19,7 +19,7 @@ function Home() {
           title={title}
           slogan="The best place to buy your favorite products"
         />
-        <ProductList products={products} className="content" />
+        <ProductList products={products} isLoading={isLoading} className="content" />
       </div>
       <Footer className="footer" />
     </div>

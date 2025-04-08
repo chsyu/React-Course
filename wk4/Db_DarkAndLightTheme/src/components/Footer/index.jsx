@@ -2,7 +2,7 @@ import './footer.css';
 
 export default function Footer() {
   return (
-    <div>
+    <div className="footer-grid">
       {/* 分隔線 */}
       <hr className="my-6 w-full container mx-auto border-t-2 border-primary rounded-sm opacity-100" />
       <div className="footer-bg">

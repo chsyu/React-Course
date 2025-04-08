@@ -1,5 +1,5 @@
-export const signInWithEmailPassword = async ({ email, password }) => {
+export const login = async ({ email, password }) => {
 };
 
-export const registerWithEmailPassword = async ({ email, password, username }) => {
+export const register = async ({ email, password, username }) => {
 };

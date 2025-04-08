@@ -6,7 +6,7 @@ function ProductDetail({ product }) {
   const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-24 gap-8 justify-center">
+    <div className="grid grid-cols-1 lg:grid-cols-24 gap-8 justify-center content">
       {/* 左側：產品圖片（佔6/24） */}
       <div className="lg:col-span-6 lg:col-start-3">
         <img
