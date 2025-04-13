@@ -1,36 +1,26 @@
-import { theme } from 'antd';
-import { Helmet } from "react-helmet-async"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProfileCard from '../components/ProfileCard';
+import { Helmet } from 'react-helmet-async';
+import Header from '@/components/Header'
+import ProfileCard from '@/components/ProfileCard'
+import Footer from '@/components/Footer'
 
 function Profile() {
-   const {
-      token: { colorBgBase, colorTextBase },
-   } = theme.useToken();
+   const title = "Profile";
 
-   return (
-      <div className="mainLayout">
-         <Helmet>
-            <title>profile</title>
-            <style>{`
-               body { 
-                  background-color: ${colorBgBase}; 
-                  color: ${colorTextBase}
-               }
-            `}</style>
-         </Helmet>
-         <Header
-            className="layoutHeader"
-            title="Profile"
-            slogan="An example made by Vite."
-         />
-         <div className="layoutContent container">
-            <ProfileCard />
-         </div>
-         <Footer className="layoutFooter" />
+  return (
+    <div className="main-layout min-h-screen">
+      <div className="container mx-auto ">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header
+          title={title}
+          slogan="The best place to buy your favorite products"
+        />
+        <ProfileCard />
       </div>
-   );
+      <Footer />
+    </div>
+  )
 }
 
-export default Profile;
+export default Profile

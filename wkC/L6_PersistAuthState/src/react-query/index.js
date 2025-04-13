@@ -1,67 +1,92 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import {
-  getProductById,
-  getProducts,
-  getProductsByCategory,
-  login,
-  register,
-  getUserInfo,
-  updateUserInfo,
-  logout,
-} from "../api";
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useNavigate } from 'react-router';
+import { getProductById, getProducts, getProductsByCategory} from "@/api/fireStore";
+import { login, register, getUserInfo, updateUserInfo,logout } from "@/api/fireAuth";
 
 export const useProducts = () => {
-  return useQuery([], getProducts);
-};
-
-export const useProductsByCategory = (category) => {
-  return useQuery([category], getProductsByCategory);
-};
-
-export const useProductById = (productId) => {
-  return useQuery([productId], getProductById);
-};
-
-export const useUserInfo = () => {
-  return useQuery({
-    queryKey: ["uid"],
-    queryFn: getUserInfo,
-    initialData: {},
+   return useQuery({
+    queryKey: ['products'], 
+    queryFn: getProducts
   });
-};
+ };
+ 
+ export const useProductsByCategory = (category) => {
+    return useQuery({
+      queryKey: [category], 
+      queryFn: getProductsByCategory
+    });
+  };
+ 
+ export const useProductById = (productId) => {
+   return useQuery({
+    queryKey: [productId], 
+    queryFn: getProductById
+  });
+ };
+
 
 export const useSignInWithEmailPassword = () => {
   const queryClient = useQueryClient();
-  return useMutation(login, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(["uid"]);
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn: login,
+    onSuccess: (_, variables) => {
+      const { redirect } = variables || {};
+      queryClient.invalidateQueries(['userInfo']);
+      // Redirect to the specified path after successful login
+      if (redirect) {
+        navigate(redirect);
+      } else {
+        navigate("/");
+      }
     },
   });
 };
 
 export const useRegisterWithEmailPassword = () => {
   const queryClient = useQueryClient();
-  return useMutation(register, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(["uid"]);
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn: register,
+    onSuccess: (_, variables) => {
+      const { redirect } = variables;
+      queryClient.invalidateQueries(['userInfo']);      
+      // Redirect to the specified path after successful login
+      if (redirect) {
+        navigate(redirect);
+      } else {
+        navigate("/");
+      }
     },
   });
 };
 
 export const useUpdateProfile = () => {
   const queryClient = useQueryClient();
-  return useMutation(updateUserInfo, {
+  return useMutation({
+    mutationFn: updateUserInfo,
     onSuccess: () => {
-      queryClient.invalidateQueries(["uid"]);
-    },
+      queryClient.invalidateQueries(['userInfo']);
+    },  
+  });
+};
+
+export const useUserInfo = () => {
+  return useQuery({
+    queryKey: ["userInfo"],
+    queryFn: getUserInfo,
+    initialData: {},
   });
 };
 
 export const useLogout = () => {
   const queryClient = useQueryClient();
-  return useMutation(logout, {
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn: logout, 
     onSuccess: () => {
-      queryClient.invalidateQueries(["uid"]);
+      queryClient.removeQueries(['userInfo']); 
+      navigate("/auth/login");    
     },
   });
 };
