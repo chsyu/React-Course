@@ -1,16 +1,24 @@
 import { useState } from "react";
 import { Heart } from "lucide-react";
+import { useToggleFavorite } from "@/react-query";
 
-function Favorite() {
-   const [favorite, setFavorite] = useState(false);
-   const toggleFavorite = () => {
-      setFavorite(!favorite);
+function Favorite({ favorite, userId, productId}) {
+   const toggleFavoriteMutation = useToggleFavorite();
+   const handleToggleFavorite = () => {
+      if (!userId) {
+         alert("請先登入");
+         return;
+      }
+      toggleFavoriteMutation.mutate({
+         userId,
+         productId,
+      });
    }
 
    return (
       <>
          <nav
-            onClick={toggleFavorite}
+            onClick={handleToggleFavorite}
             className="relative cursor-pointer"
          >
             <Heart 

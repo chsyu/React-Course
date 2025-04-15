@@ -8,7 +8,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { db } from "@/api/firebaseConfig";
+import { db, auth } from "@/api/firebaseConfig";
 // import products from "@/json/products.json";
 
 // REFERENCE COLLECTION
@@ -61,4 +61,30 @@ export const getProductsByCategory = async ({ queryKey }) => {
   return result;
 };
 
+export const getUserInfo = async () => {
+  const user = auth?.currentUser || null;
+  if (user?.uid) {
+    const docRef = doc(db, "users", user?.uid);
+    const docSnap = await getDoc(docRef);
+    const userDoc = docSnap.data();
+    return {
+      uid: user.uid,
+      email: user.email,
+      ...userDoc,
+    };
+  } else {
+    return {};
+  }
+};
+
+export const updateUserInfo = async ({ username, adrs, tel, uid }) => {
+  const docRef = doc(db, "users", uid);
+  await updateDoc(docRef, {
+    username,
+    adrs,
+    tel,
+  });
+  const user = auth.currentUser;
+  localStorage.setItem("user", JSON.stringify(user));
+};
  

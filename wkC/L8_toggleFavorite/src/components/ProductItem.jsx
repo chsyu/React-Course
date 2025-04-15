@@ -2,8 +2,16 @@
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Favorite from "@/components/Favorite";
+import { useUserInfo } from '@/react-query';
 
 function ProductItem({ product }) {
+   const { data: userInfo } = useUserInfo();
+   const userId = userInfo?.uid || null;
+   const productId = product.id;
+   const favorite = userInfo?.favorites?.some(
+      (fav) => fav.productId === productId || fav.id === productId
+    );
+
    return (
       <section className="pt-4 px-3 lg:px-4">
          <div className="border border-gray-500 rounded overflow-hidden">
@@ -31,7 +39,11 @@ function ProductItem({ product }) {
                      <span className="text-gray-500 inline-flex items-center leading-none text-lg pr-3 py-1 font-bold">
                         {product.price}
                      </span>
-                     <Favorite />                     
+                     <Favorite 
+                        favorite={favorite}
+                        userId={userId} 
+                        productId={productId} 
+                     />                     
                   </div>
 
                </div>

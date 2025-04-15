@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router';
-import { getProductById, getProducts, getProductsByCategory} from "@/api/fireStore";
-import { login, register, getUserInfo, updateUserInfo,logout } from "@/api/fireAuth";
+import { getProductById, getProducts, getProductsByCategory, getUserInfo, updateUserInfo} from "@/api/fireStore";
+import { login, register,logout } from "@/api/fireAuth";
 
 export const useProducts = () => {
    return useQuery({
