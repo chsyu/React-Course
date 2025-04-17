@@ -28,6 +28,9 @@ const cartSlice = createSlice({
     removeCartItems: (state, action) => {
       state.cartItems = state.cartItems.filter((x) => x.id !== action.payload);
     },
+    removeAllCartItems: (state) => {
+      state.cartItems = [];
+    },
     saveShippingAddress: (state, action) => {
       state.shippingAddress = action.payload;
     },
@@ -54,6 +57,7 @@ export const selectOrderData = (state) => state.cart.orderData;
 export const {
   addCartItems,
   removeCartItems,
+  removeAllCartItems,
   saveShippingAddress,
   savePaymentMethod,
   savePrice,

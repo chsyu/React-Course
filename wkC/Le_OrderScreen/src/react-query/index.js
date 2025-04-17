@@ -11,7 +11,7 @@ import {
   createOrder,
 } from "@/api/fireStore";
 import { login, register, logout } from "@/api/fireAuth";
-import { saveOrderData } from "@/redux/cartSlice";
+import { saveOrderData, removeAllCartItems } from "@/redux/cartSlice";
 
 export const useProducts = () => {
   return useQuery({
@@ -122,6 +122,7 @@ export function useCreateOrder() {
   return useMutation({
     mutationFn: createOrder,
     onSuccess: ({ orderData }) => {
+      dispatch(removeAllCartItems());
       dispatch(saveOrderData(orderData));
     },
     onError: (err) => {
