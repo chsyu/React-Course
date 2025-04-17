@@ -107,26 +107,28 @@ export const useToggleFavorite = () => {
     mutationFn: toggleFavorite,
     onSuccess: (_, { productId }) => {
       // 🎯 成功後可重新抓取商品快取或排行榜
-      queryClient.invalidateQueries(['product', productId]);
-      queryClient.invalidateQueries(['favorites', 'ranking']);
+      queryClient.invalidateQueries(["product", productId]);
+      queryClient.invalidateQueries(["favorites", "ranking"]);
     },
     onError: (error) => {
-      console.error('收藏失敗', error);
+      console.error("收藏失敗", error);
     },
   });
 };
 
 export function useCreateOrder() {
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+
   return useMutation({
     mutationFn: createOrder,
     onSuccess: ({ orderData }) => {
       dispatch(removeAllCartItems());
       dispatch(saveOrderData(orderData));
+      navigate("/shopping/order");
     },
     onError: (err) => {
-      alert('下單失敗', err);
+      alert("下單失敗", err);
     },
   });
 }

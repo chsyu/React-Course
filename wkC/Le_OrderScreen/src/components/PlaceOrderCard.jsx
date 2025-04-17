@@ -27,7 +27,6 @@ export default function PlaceOrderCard() {
          data: { cartItems, shippingAddress, paymentMethod, itemsPrice, shippingPrice, taxPrice, totalPrice },
          userId
       });
-      navigate('/shopping/order');
    };
 
    return (
