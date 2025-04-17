@@ -1,37 +1,44 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // 使用 localStorage
-import cartReducer from './cartSlice';
-import colorReducer from './colorSlice';
-import usersReducer from './usersSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // 使用 localStorage
+import cartReducer from "./cartSlice";
+import colorReducer from "./colorSlice";
+import usersReducer from "./usersSlice";
 
-// Data Persist Config
-const persistConfig = {
-  key: 'shoppingCart',
+const cartPersistConfig = {
+  key: "cart",
   storage,
-}
+};
 
-const persistedCartReducer = persistReducer(persistConfig, cartReducer);
-const persistedColorReducer = persistReducer(persistConfig, colorReducer);
-const persistedUsersReducer = persistReducer(persistConfig, usersReducer);
+const colorPersistConfig = {
+  key: "color",
+  storage,
+};
+
+const usersPersistConfig = {
+  key: "users",
+  storage,
+};
+
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistedColorReducer = persistReducer(colorPersistConfig, colorReducer);
+const persistedUsersReducer = persistReducer(usersPersistConfig, usersReducer);
 
 // Part2: Combine Reducers and Create a Store
 export const store = configureStore({
-   reducer: {
+  reducer: {
     cart: persistedCartReducer,
     color: persistedColorReducer,
     users: persistedUsersReducer,
-   },
-   devTools: process.env.NODE_ENV !== 'production',
-   middleware: (getDefaultMiddleware) =>
+  },
+  devTools: process.env.NODE_ENV !== "production",
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      thunk: true,
       serializableCheck: {
-        // 如果用 redux-persist，需要忽略這些 action
-        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }), });
+    }),
+});
 
 //  export store to global
 export const persistor = persistStore(store);
-

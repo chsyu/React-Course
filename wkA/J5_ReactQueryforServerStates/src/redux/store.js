@@ -4,14 +4,18 @@ import storage from 'redux-persist/lib/storage'; // 使用 localStorage
 import cartReducer from './cartSlice';
 import colorReducer from './colorSlice';
 
-// Data Persist Config
-const persistConfig = {
-  key: 'shoppingCart',
+const cartPersistConfig = {
+  key: "cart",
   storage,
-}
+};
 
-const persistedCartReducer = persistReducer(persistConfig, cartReducer);
-const persistedColorReducer = persistReducer(persistConfig, colorReducer);
+const colorPersistConfig = {
+  key: "color",
+  storage,
+};
+
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistedColorReducer = persistReducer(colorPersistConfig, colorReducer);
 
 // Part2: Combine Reducers and Create a Store
 export const store = configureStore({
@@ -22,12 +26,11 @@ export const store = configureStore({
    devTools: process.env.NODE_ENV !== 'production',
    middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      thunk: true,
       serializableCheck: {
-        // 如果用 redux-persist，需要忽略這些 action
-        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }), });
+    }),
+  });
 
 //  export store to global
 export const persistor = persistStore(store);
