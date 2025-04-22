@@ -1,5 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistReducer, persistStore } from 'redux-persist';
+import {
+  persistReducer,
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 import storage from 'redux-persist/lib/storage'; // 使用 localStorage
 import cartReducer from './cartSlice';
 import colorReducer from './colorSlice';
