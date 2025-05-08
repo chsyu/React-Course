@@ -1,37 +1,26 @@
-import { theme } from 'antd';
-import { Helmet } from "react-helmet-async"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import RegisterCard from '../components/RegisterCard';
-import MotionDiv from '../components/MotionDiv';
+import { Helmet } from 'react-helmet-async';
+import Header from '@/components/Header'
+import RegisterCard from '@/components/RegisterCard'
+import Footer from '@/components/Footer'
 
 function Register() {
-   const {
-      token: { colorBgBase, colorTextBase },
-   } = theme.useToken();
 
+   const title = "Register";
    return (
-      <MotionDiv className="mainLayout">
-         <Helmet>
-            <title>register</title>
-            <style>{`
-               body { 
-                  background-color: ${colorBgBase}; 
-                  color: ${colorTextBase}
-               }
-            `}</style>
-         </Helmet>
-         <Header
-            className="layoutHeader"
-            title="Register"
-            slogan="An example made by Vite."
-         />
-         <div className="layoutContent container">
+      <div className="main-layout min-h-screen">
+         <div className="container mx-auto">
+            <Helmet>
+               <title>{title}</title>
+            </Helmet>
+            <Header
+               title={title}
+               slogan="The best place to buy your favorite products"
+            />
             <RegisterCard />
          </div>
-         <Footer className="layoutFooter" />
-      </MotionDiv>
-   );
+         <Footer className="footer" />
+      </div>
+   )
 }
 
-export default Register;
+export default Register

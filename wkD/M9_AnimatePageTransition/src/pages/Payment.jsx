@@ -1,35 +1,28 @@
-import { theme } from 'antd';
-import { Helmet } from "react-helmet-async"
-import ShippingHeader from '../components/ShippingHeader';
-import Footer from "../components/Footer"
-import PaymentMethodCard from '../components/PaymentMethodCard';
+import { Helmet } from 'react-helmet-async';
+import ShippingHeader from '@/components/ShippingHeader'
+import PaymentMethodCard from '@/components/PaymentMethodCard';
+import Footer from '@/components/Footer'
 
-function Paymeng() {
-   const {
-      token: { colorBgBase, colorTextBase },
-   } = theme.useToken();
+function Payment() {
+   const title = "Payment";
 
-   return (
-      <div className="mainLayout">
-         <Helmet>
-            <title>product</title>
-            <style>{`
-               body { 
-                  background-color: ${colorBgBase}; 
-                  color: ${colorTextBase}
-               }
-            `}</style>
-         </Helmet>
-         <ShippingHeader
-            title="Payment Page" step1 step2 step3
-            className="layoutHeader"
+  return (
+    <div className="main-layout min-h-screen">
+      <div className="container mx-auto ">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <ShippingHeader
+          title={title}
+          step1
+          step2
+          step3
          />
-         <div className="layoutContent container">
-            <PaymentMethodCard />
-         </div>
-         <Footer className="layoutFooter" />
+        <PaymentMethodCard />
       </div>
-   );
+      <Footer />
+    </div>
+  )
 }
 
-export default Paymeng;
+export default Payment

@@ -1,14 +1,9 @@
-import 'antd/dist/reset.css';
-import './App.css';
-import FadeInDiv from './components/MotionDiv';
-import ParentChild from './components/ParentChild';
+import ParentChildDiv from '@/components/ParentChildDiv';
 
 const App = () => {
   return (
-    <div className="container">
-      <ParentChild />
-    </div>
-  );
-}
+    <ParentChildDiv />
+  );  
+};
 
 export default App;

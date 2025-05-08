@@ -1,35 +1,27 @@
-import { theme } from 'antd';
-import { Helmet } from "react-helmet-async"
-import ShippingHeader from '../components/ShippingHeader';
-import Footer from "../components/Footer"
-import ShippingAddressCard from '../components/ShippingAddressCard';
+import { Helmet } from 'react-helmet-async';
+import ShippingHeader from '@/components/ShippingHeader'
+import ShippingCard from '@/components/ShippingCard'
+import Footer from '@/components/Footer'
 
 function Shipping() {
-   const {
-      token: { colorBgBase, colorTextBase },
-   } = theme.useToken();
+   const title = "Shipping";
 
-   return (
-      <div className="mainLayout">
-         <Helmet>
-            <title>product</title>
-            <style>{`
-               body { 
-                  background-color: ${colorBgBase}; 
-                  color: ${colorTextBase}
-               }
-            `}</style>
-         </Helmet>
-         <ShippingHeader
-            title="Shipping Page" step1 step2
-            className="layoutHeader"
+  return (
+    <div className="main-layout min-h-screen">
+      <div className="container mx-auto ">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <ShippingHeader
+          title={title}
+          step1
+          step2
          />
-         <div className="layoutContent container">
-            <ShippingAddressCard />
-         </div>
-         <Footer className="layoutFooter" />
+        <ShippingCard />
       </div>
-   );
+      <Footer />
+    </div>
+  )
 }
 
-export default Shipping;
+export default Shipping

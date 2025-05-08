@@ -1,42 +1,30 @@
-import { Helmet } from "react-helmet-async"
-import { theme } from 'antd';
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProductList from "../components/ProductList";
-import { useProducts } from '../react-query';
-import MotionDiv from '../components/MotionDiv';
+import { Helmet } from 'react-helmet-async';
+import Header from '@/components/Header'
+import ProductList from '@/components/ProductList'
+import Footer from '@/components/Footer'
+import { useProducts } from '@/react-query';
+import MotionDiv from '@/components/MotionDiv';
 
 function Home() {
-  const {
-    token: { colorBgBase, colorTextBase },
-  } = theme.useToken();
-  const title = "NORDIC NEST Shopping Cart";
-
+  const title = "Welcome to the Store";
   const { data, isLoading } = useProducts();
   const products = data || [{id:1},{id:2},{id:3},{id:4},{id:5},{id:6}];
 
   return (
-    <MotionDiv className="mainLayout">
-      <Helmet>
-        <title>{title}</title>
-        <style>{`
-            body { 
-              background-color: ${colorBgBase}; 
-              color: ${colorTextBase}
-            }
-        `}</style>
-      </Helmet>
-      <Header
-        className="layoutHeader"
-        title={title}
-        slogan="An example made by Vite."
-      />
-      <div className="layoutContent container">
-        <ProductList products={products} isLoading={isLoading} />
+    <MotionDiv>
+      <div className="container mx-auto main-layout min-h-screen">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header
+          title={title}
+          slogan="The best place to buy your favorite products"
+        />
+        <ProductList products={products} isLoading={isLoading} className="content" />
       </div>
-      <Footer className="layoutFooter" />
+      <Footer className="footer" />
     </MotionDiv>
-  );
+  )
 }
 
-export default Home;
+export default Home

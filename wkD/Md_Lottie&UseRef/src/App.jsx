@@ -1,19 +1,12 @@
-import 'antd/dist/reset.css';
 import './App.css';
-import UncontrolledLottie from './components/UncontrolledLottie';
-import ControlledLottie from './components/ControlledLottie/index.';
-
+import UncontrolledLottie from '@/components/UncontrolledLottie';
 
 const App = () => {
 
   return (
-    <div className="app">
-      <h1>REACT LOTTIES</h1>
-      <div className="lotties">
+      <div className="flex flex-col items-center justify-center min-h-screen">
         <UncontrolledLottie />
-        <ControlledLottie />
       </div>
-    </div>
   );
 }
 
