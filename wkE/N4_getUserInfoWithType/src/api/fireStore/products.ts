@@ -13,7 +13,7 @@ import type { Product } from "@/types";
 import products from "@/json/products.json";
 
 // REFERENCE COLLECTION
-const productsCollection = collection(db, "products"); 
+const productsCollection = collection(db, "products");
 
 // APIs
 export const feedProducts = async () => {
@@ -23,16 +23,14 @@ export const feedProducts = async () => {
     await deleteDoc(doc(db, "products", product.id));
   });
   // ADD NEW DOCS
-  products.forEach(async (product:Product) => {
+  products.forEach(async (product: Product) => {
     const docRef = await doc(productsCollection);
     await setDoc(docRef, { ...product, id: docRef.id, category: product.category.toUpperCase() });
   });
 };
 
-export const getProducts = async ():Promise<Product[]> => {
+export const getProducts = async () => {
   let querySnapshot = await getDocs(productsCollection);
-
-  // Convert the query to a json array.
   let result:Product[] = [];
   querySnapshot.forEach((doc) => {
     const product = doc.data();
@@ -45,7 +43,7 @@ export const getProductById = async ({ queryKey }) => {
   const [id] = queryKey;
   const docRef = await doc(db, "products", id);
   const docSnap = await getDoc(docRef);
-  return docSnap.data();
+  return docSnap.data() as Product;
 };
 
 export const getProductsByCategory = async ({ queryKey }) => {
@@ -58,7 +56,7 @@ export const getProductsByCategory = async ({ queryKey }) => {
   // Convert the query to a json array.
   let result = [];
   querySnapshot.forEach(async (product) => {
-    await result.push(product.data());
+    await result.push(product.data() as Product);
   });
   return result;
 };

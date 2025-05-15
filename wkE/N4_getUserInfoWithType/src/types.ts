@@ -23,14 +23,14 @@ export interface UserDoc {
 export interface FavoriteDoc {
   id: string;
   productId: string;
-  createdAt: Timestamp | null; // serverTimestamp() 回傳的是 Timestamp，讀取時可能為 null
+  createdAt: Timestamp | null;
 }
 
 // getUserInfo 回傳的完整使用者資訊型態
 export interface UserInfo extends Partial<UserDoc> {
   uid: string;
   email: string | null;
-  favorites: FavoriteDoc[];
+  favorites?: FavoriteDoc[];
 }
 
 // UpdateUserInfo 參數型態

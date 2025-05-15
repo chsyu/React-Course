@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { FirebaseError } from "firebase/app";
 import {
   getProductById,
   getProducts,
@@ -14,8 +15,17 @@ import { login, register, logout } from "@/api/fireAuth";
 import { saveOrderData, removeAllCartItems } from "@/redux/cartSlice";
 import type { Product, UserInfo, UpdateUserInfoParams } from "@/types";
 
+const initialUserInfo: UserInfo = {
+  uid: '',
+  email: null,
+  username: '',
+  adrs: '',
+  tel: '',
+  favorites: [],
+};
+
 export const useProducts = () => {
-  return useQuery<Product[], Error>({
+  return useQuery<Product[], FirebaseError>({
     queryKey: ["products"],
     queryFn: getProducts,
   });
@@ -73,7 +83,7 @@ export const useRegisterWithEmailPassword = () => {
 
 export const useUpdateProfile = () => {
   const queryClient = useQueryClient();
-  return useMutation<void, Error, UpdateUserInfoParams>({
+  return useMutation<void, FirebaseError, UpdateUserInfoParams>({
     mutationFn: updateUserInfo,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["userInfo"] });
@@ -82,10 +92,10 @@ export const useUpdateProfile = () => {
 };
 
 export const useUserInfo = () => {
-  return useQuery<UserInfo | {}, Error>({
+  return useQuery<UserInfo, FirebaseError>({
     queryKey: ["userInfo"],
     queryFn: getUserInfo,
-    initialData: {},
+    initialData: initialUserInfo,
   });
 };
 

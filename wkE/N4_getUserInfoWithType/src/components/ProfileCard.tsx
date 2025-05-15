@@ -1,7 +1,8 @@
 import { useUserInfo, useLogout, useUpdateProfile } from '@/react-query';
 import { useState, useEffect } from 'react';
 import { Home, Phone, User } from "lucide-react";
-import { FormInput, FormError, AuthFormLayout } from "@/components/common";
+import { FormInput, AuthFormLayout } from "@/components/common";
+import type { UpdateUserInfoParams } from '@/types';
 
 const ProfileCard = () => {
    const { data: userInfo } = useUserInfo();
@@ -11,7 +12,7 @@ const ProfileCard = () => {
       username: userInfo?.username || '',
       adrs: userInfo?.adrs || '',
       tel: userInfo?.tel || '',
-   });
+    });
 
    const handleLogout = () => {
       logout.mutate();
@@ -27,10 +28,12 @@ const ProfileCard = () => {
 
    const handleFinish = (e) => {
       e.preventDefault();
-      updateProfile.mutate({
+      const updateParams: UpdateUserInfoParams = {
          ...formData,
-         uid: userInfo?.uid,
-      });
+         uid: userInfo.uid
+       };
+     
+      updateProfile.mutate(updateParams);
    }
 
    useEffect(() => {
