@@ -83,21 +83,11 @@ export interface PriceInfo {
   totalPrice: number;
 }
 
-export interface OrderData {
+export interface OrderData extends ShippingAddress, PriceInfo {
   orderId: string;
   userId: string;
   createdAt: string;
   cartItems: CartItem[];
-  fullName: string;
-  adrs: string;
-  city: string;
-  postalCode: string;
-  tel: string;
-  country: string;
-  itemsPrice: number;
-  shippingPrice: number;
-  taxPrice: number;
-  totalPrice: number;
   paymentMethod: string;
 }
 
